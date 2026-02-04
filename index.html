@@ -1,0 +1,2526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TourDen - Discover The World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: #ffffff;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .bg-animate {
+            animation: backgroundShift 8s ease-in-out infinite;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Smooth transitions */
+        .smooth-transition {
+            transition: all 0.3s ease;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #06b6d4;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0891b2;
+        }
+
+        /* Header scroll effect */
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+        }
+
+        /* Background image transition */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease-in-out;
+            z-index: 0;
+        }
+
+        .hero-bg.active {
+            opacity: 0.5;
+        }
+
+        .hero-bg.inactive {
+            opacity: 0;
+        }
+    </style>
+
+    <style>
+        /* أنيميشن CSS - كلاسات مخصصة */
+        .tourden-animate {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* أنواع الحركات */
+        .tourden-slide-up {
+            transform: translateY(40px);
+        }
+
+        .tourden-slide-left {
+            transform: translateX(-40px);
+        }
+
+        .tourden-slide-right {
+            transform: translateX(40px);
+        }
+
+        .tourden-scale {
+            transform: scale(0.9);
+        }
+
+        .tourden-rotate {
+            transform: rotate(-5deg) translateY(20px);
+        }
+
+        .tourden-float {
+            transform: translateY(30px);
+        }
+
+        .tourden-pop {
+            transform: scale(0.8) translateY(20px);
+        }
+
+        /* حالة الأنيميشن النشطة */
+        .tourden-animate.tourden-active {
+            opacity: 1;
+            transform: translate(0) scale(1) rotate(0);
+        }
+
+        /* تأثيرات هامر خاصة */
+        .tourden-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tourden-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* Header */
+
+
+
+        nav a {
+            color: #475569;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1e293b;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1e293b;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 41, 59, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 41, 59, 0.4);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* Grid Container */
+        .packages-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Card Styles */
+        .package-card {
+            position: relative;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .package-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .package-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .package-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .package-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .package-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .package-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .package-card:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .package-card:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .package-card:hover .card-image {
+            transform: scale(1.12);
+        }
+
+        /* Overlay */
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), transparent);
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        .package-card:hover .card-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+        }
+
+        /* Discount Badge */
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 41, 59, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover .discount-badge {
+            transform: scale(1.1);
+        }
+
+        /* Card Content */
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            color: white;
+            z-index: 5;
+        }
+
+        .card-destination {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            line-height: 1.4;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card-price-current {
+            font-size: 24px;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-price-original {
+            font-size: 14px;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 16px;
+        }
+
+        .card-duration {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .star:hover {
+            animation: shimmer 0.6s ease-in-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .packages-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .package-card {
+                height: 400px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-destination {
+                font-size: 24px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .package-card {
+                height: 350px;
+            }
+        }
+    </style>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Banner Container */
+        .banner {
+            display: flex;
+            align-items: center;
+            min-height: 400pv;
+            background: linear-gradient(135deg, #121e30 0%, #121e30 50%, #121e30 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Left Section - Image */
+        .banner-left {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .banner-image {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .banner-left:hover .banner-image {
+            transform: scale(1.05);
+        }
+
+        /* Right Section - Content */
+        .banner-right {
+            flex: 1;
+            padding: 60px 40px;
+            color: white;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .banner-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .banner-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .banner-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        /* Email Subscription */
+        .email-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            background: white;
+            color: #1a5c4a;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .email-input::placeholder {
+            color: #999;
+        }
+
+        .email-input:focus {
+            outline: none;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .subscribe-btn {
+            padding: 16px 32px;
+            background: white;
+            color: #1a5c4a;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+        }
+
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .subscribe-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Decorative Elements */
+        .banner-decoration {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .decoration-1 {
+            top: -100px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decoration-2 {
+            bottom: -150px;
+            left: -100px;
+            animation: float 8s ease-in-out infinite 1s;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .banner {
+                flex-direction: column;
+                min-height: auto;
+                padding: 40px 0;
+            }
+
+            .banner-left {
+                flex: 0;
+                padding: 40px 20px;
+            }
+
+            .banner-image {
+                max-width: 400px;
+            }
+
+            .banner-right {
+                flex: 0;
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .banner-title {
+                font-size: 36px;
+            }
+
+            .email-section {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner-title {
+                font-size: 28px;
+            }
+
+            .banner-subtitle {
+                font-size: 14px;
+            }
+
+            .banner-left {
+                padding: 20px;
+            }
+
+            .banner-right {
+                padding: 30px 20px;
+            }
+
+            .banner-image {
+                max-width: 300px;
+            }
+
+            .email-input,
+            .subscribe-btn {
+                padding: 14px 16px;
+                font-size: 13px;
+            }
+
+            .contact-item {
+                padding: 15px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .contact-details p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-title {
+                font-size: 24px;
+            }
+
+            .banner-subtitle {
+                font-size: 13px;
+                margin-bottom: 30px;
+            }
+
+            .banner-image {
+                max-width: 250px;
+            }
+
+            .email-section {
+                gap: 8px;
+            }
+
+            .email-input,
+            .subscribe-btn {
+                padding: 12px 14px;
+                font-size: 12px;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .contact-item {
+                padding: 12px;
+                gap: 10px;
+            }
+
+            .contact-details h4 {
+                font-size: 11px;
+            }
+
+            .contact-details p {
+                font-size: 12px;
+            }
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-scale {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hover\:pulse-scale:hover {
+            animation: pulse-scale 0.6s ease-in-out;
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .feature-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #e5e7eb;
+            line-height: 1;
+        }
+    </style>
+</head>
+
+<body class=" text-white">
+    <!-- Navigation Header -->
+    <header id="header" bg-slate-900 class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 text-2xl font-bold">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                </svg>
+                <span>TourDen</span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex items-center gap-8 p-5">
+                <div class="flex items-center gap-6  rounded-full px-6 py-2 border border-white/20">
+                    <a href="#" class="hover:text-cyan-400 transition-colors text-sm">Home</a>
+                    <a href="#" class="hover:text-cyan-400 transition-colors text-sm">About</a>
+                    <button class="flex items-center gap-1 hover:text-cyan-400 transition-colors text-sm py-3">
+                        Pages
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </button>
+                    <button class="flex items-center gap-1 hover:text-cyan-400 transition-colors text-sm">
+                        Services
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </button>
+                    <button class="flex items-center gap-1 hover:text-cyan-400 transition-colors text-sm">
+                        Blog
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </button>
+                    <a href="#" class="hover:text-cyan-400 transition-colors text-sm">Contact</a>
+                </div>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button
+                    class="bg-white text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-cyan-400 transition-colors text-sm">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[100vh] lg:h-[90vh] bg-slate-900 flex items-center pt-20 overflow-visible">
+        <!-- Background images container -->
+        <div id="bgContainer" class="absolute inset-0">
+            <div id="bg1" class="hero-bg active"
+                style="background-image: url('./img/471683368_1035564001920379_2994586937371991257_n.jpg' )">
+            </div>
+            <div id="bg2" class="hero-bg inactive" style="background-image: url('./img/qf367QfrPR76Sti3ABzF.webp' )">
+            </div>
+            <div id="bg3" class="hero-bg inactive"
+                style="background-image: url('./img/pexels-silvia-trigo-545701-1296204.jpg' )">
+            </div>
+        </div>
+
+        <!-- Dark overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900/70  via-slate-900/40 to-slate-900/5  z-10">
+        </div>
+
+
+        <!-- Content Container -->
+        <div class="relative z-20 max-w-7xl md:pt-[250px]  mx-auto w-full px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-8 items-center">
+                <!-- Left Content -->
+                <div class="animate-fade-in">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 border border-cyan-500/50 rounded-full px-4 py-2 mb-8 w-fit bg-cyan-500/10">
+                        <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                        </svg>
+                        <span class="text-sm font-semibold text-cyan-400">WELCOME TO TOURDEN</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+                        Discover The World
+
+
+                        With Tour Den
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-lg text-gray-300 mb-8 max-w-md leading-relaxed">
+                        Your trusted travel partner for unforgettable journeys, unique destinations, and seamless travel
+                        experiences.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button
+                            class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition">
+                            Explore Destinations
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </button>
+                        <button
+                            class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition border border-white/20">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948-.684l1.498-4.493a1 1 0 011.502-.684l1.498 4.493a1 1 0 00.948.684H19a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+                            </svg>
+                            Call Us
+                        </button>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div
+                        class="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-full px-6 py-3 w-fit border border-white/10">
+                        <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948-.684l1.498-4.493a1 1 0 011.502-.684l1.498 4.493a1 1 0 00.948.684H19a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Call Us</p>
+                            <p class="font-semibold">+ (123) 567-8912</p>
+                        </div>
+                    </div>
+                    <!-- hidden md:block -->
+                    <div
+                        class="mt-16 grid grid-cols-2   md:grid-cols-4 p-5 gap-6 border-t border-b  border-white/50  backdrop-blur-md   pt-8">
+                        <div class="text-center animate-slide-in-up border-r border-white/50"
+                            style="animation-delay: 0.1s">
+                            <p class="text-4xl md:text-5xl font-bold text-[]">50+</p>
+                            <p class="text-gray-400 text-sm mt-2">Destinations</p>
+                        </div>
+                        <div class="text-center animate-slide-in-up border-r border-white/50 "
+                            style="animation-delay: 0.2s">
+                            <p class="text-4xl md:text-5xl font-bold text-[]">500K</p>
+                            <p class="text-gray-400 text-sm mt-2">Completed Trips</p>
+                        </div>
+                        <div class="text-center animate-slide-in-up border-r border-white/50"
+                            style="animation-delay: 0.3s">
+                            <p class="text-4xl md:text-5xl font-bold text-[]">410K</p>
+                            <p class="text-gray-400 text-sm mt-2">Group Trips</p>
+                        </div>
+                        <div class="text-center animate-slide-in-up border-r border-white/50"
+                            style="animation-delay: 0.4s">
+                            <p class="text-4xl md:text-5xl font-bold text-[]">300+</p>
+                            <p class="text-gray-400 text-sm mt-2">Positive Reviews</p>
+                        </div>
+
+                    </div>
+                    <!-- Stats Bottom Content -->
+                    <div class="mt-10 p-8 py-12 bg-white text-[#121b2e] backdrop-blur-md border border-[#121b2e] rounded-2xl
+         flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+
+                        <!-- Text Content -->
+                        <div class="max-w-2xl ">
+                            <h3 class="text-2xl md:text-3xl text-[#121b2e] font-bold mb-3">
+                                Why Travelers Choose TourDen
+                            </h3>
+                            <p class=" leading-relaxed ">
+                                We provide unforgettable travel experiences with carefully curated destinations,
+
+                            </p>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Right Cards Section -->
+                <div class="hidden lg:flex flex-col z-20 gap-5 pt-[100px] 
+         w-[350px] xl:w-[380px] 
+         sticky top-24 self-start 
+         ml-12 xl:ml-20
+         mt-32">
+                    <!-- Discount Card -->
+                    <div class="group relative rounded-3xl overflow-hidden h-56 cursor-pointer card-hover shadow-2xl">
+                        <img src="./img/pexels-andreimike-4632512.jpg" alt="Discount Up 50%"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                        <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Discount Up 50%</h3>
+                            <p class="text-sm text-gray-200 mb-3 line-clamp-2">
+                                Lorem ipsum dolor sit amet, elit. Ut elit tellus, luctus nec
+                            </p>
+                            <a href="#"
+                                class="text-white hover:text-cyan-400 transition-colors text-sm font-semibold flex items-center gap-1">
+                                Discover More
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Safe Traveling Card -->
+                    <div class="group relative rounded-3xl overflow-hidden h-60 cursor-pointer card-hover shadow-2xl">
+                        <img src="./img/d28dab6a28d4011d4f22da89e1a5a84e.jpg" alt="Safe Traveling"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                        <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">Safe Traveling</h3>
+                            <p class="text-sm text-gray-200 mb-2 line-clamp-2">
+                                Lorem ipsum dolor sit amet, elit. Ut elit tellus, luctus nec
+                            </p>
+                            <a href="#"
+                                class="text-white hover:text-cyan-400 transition-colors text-sm font-semibold flex items-center gap-1">
+                                Discover More
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Happy Travelers Card -->
+                    <div
+                        class="group relative rounded-3xl overflow-hidden h-65 z-5 cursor-pointer card-hover shadow-2xl bg-slate-800">
+                        <img src="./img/Rectangle-43.png" alt="Happy Travelers" class="w-full h-full object- ">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent">
+                        </div>
+                        <div
+                            class="absolute bottom-0 right-0 left-0 p-6 text-white flex items-end justify-between h-full">
+                            <div>
+                                <button
+                                    class="w-12 h-12 bg-cyan-500 hover:bg-cyan-600 rounded-full flex items-center justify-center smooth-transition">
+                                    <svg class="w-6 h-6 fill-white" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-3xl font-bold">200K</p>
+                                <p class="text-sm text-gray-300">Happy Travelers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <!-- Main Content - About Us Section -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-[200px] md:py-[350px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Section -->
+            <div class="flex flex-col justify-center">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 w-fit mb-6 tourden-animate tourden-slide-left tourden-hover">
+                    <svg class="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                    </svg>
+                    <span class="text-sm font-semibold text-teal-600 uppercase tracking-wide">About Us</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight tourden-animate tourden-slide-up tourden-hover"
+                    style="font-family: 'Playfair Display', serif;">
+                    Your Trusted Travel Partner For You
+                </h1>
+
+                <!-- Description -->
+                <p class="text-gray-600 text-lg leading-relaxed mb-8 tourden-animate tourden-slide-up">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                    mattis, pulvinar dapibus leo.
+                </p>
+
+                <!-- Large Image Card -->
+                <div class="relative rounded-3xl overflow-hidden h-80 mb-8 tourden-animate tourden-pop tourden-hover">
+                    <img src="./img/New-Project-2026-01-29T124425.946.jpg" alt="Travel Partner"
+                        class="w-full h-full object-cover">
+
+                    <!-- Card Overlay -->
+                    <!-- Card Overlay -->
+                    <div class="absolute -bottom-14 left-0 right-0 p-8">
+
+                        <!-- Outer Border Wrapper -->
+                        <div class="rounded-3xl p-[12px]  bg-white shadow-2xl">
+
+                            <!-- Inner Card -->
+                            <div class="bg-[#121e30] rounded-3xl p-8 text-white">
+
+                                <p class="text-sm text-teal-200 mb-3">
+                                    Your Trusted Travel Partner.
+                                </p>
+
+                                <p class="text-base text-teal-50 mb-6 leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+                                    luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                                </p>
+
+                                <!-- Author Info -->
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                                            alt="Sunny Melon" class="w-14 h-14 rounded-full border-2 border-teal-400">
+
+                                        <div>
+                                            <p class="font-semibold text-white text-lg">
+                                                Sunny Melon
+                                            </p>
+                                            <p class="text-sm text-teal-200">
+                                                Travel Planner
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <span class="text-5xl font-bold text-teal-300">
+                                        99
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="flex flex-col gap-8">
+                <!-- Top Images Row -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Image 1 -->
+                    <div class="rounded-2xl overflow-hidden h-48 tourden-animate tourden-slide-right tourden-hover">
+                        <img src="./img/IMAGE-24.png" alt="Travel Professional" class="w-full h-full object-cover">
+                    </div>
+
+                    <!-- Image 2 -->
+                    <div class="rounded-2xl overflow-hidden h-48 tourden-animate tourden-slide-left tourden-hover">
+                        <img src="./img/IMAGE-25-1.png" alt="Tropical Paradise" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Vision and Mission Cards -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Our Vision Card -->
+                    <div
+                        class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 tourden-animate tourden-pop tourden-hover">
+                        <div
+                            class="inline-flex items-center gap-2 bg-[#121e30] text-white rounded-full px-4 py-2 mb-4 tourden-animate tourden-rotate">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                            </svg>
+                            <span class="text-sm font-semibold">Our Vision</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                            ullamcorper mattis, pulvinar dapibus leo.
+                        </p>
+                    </div>
+
+                    <!-- Our Mission Card -->
+                    <div
+                        class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 tourden-animate tourden-pop tourden-hover">
+                        <div
+                            class="inline-flex items-center gap-2 bg-[#121e30] text-white rounded-full px-4 py-2 mb-4 tourden-animate tourden-rotate">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                            </svg>
+                            <span class="text-sm font-semibold">Our Mission</span>
+                        </div>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                            ullamcorper mattis, pulvinar dapibus leo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Stat 1 -->
+                    <div
+                        class="bg-[#121e30] text-white rounded-2xl p-6 flex items-center gap-4 tourden-animate tourden-float tourden-hover">
+                        <div
+                            class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 tourden-animate tourden-scale">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold">20+</p>
+                            <p class="text-sm text-teal-100">Travel Experience</p>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div
+                        class="bg-[#121e30] text-white rounded-2xl p-6 flex items-center gap-4 tourden-animate tourden-float tourden-hover">
+                        <div
+                            class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 tourden-animate tourden-scale">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold">50+</p>
+                            <p class="text-sm text-teal-100">Destinations Covered</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description Text -->
+                <p class="text-gray-600 text-base leading-relaxed tourden-animate tourden-slide-up">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                    mattis, pulvinar dapibus leo.
+                </p>
+
+                <!-- CTA Button -->
+                <button
+                    class="bg-[#121e30] hover:bg-[#121e30] text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 w-fit transition-colors tourden-animate tourden-pop tourden-hover">
+                    More About Us
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript المخصص للأنيميشن -->
+    <script>
+        // نظام أنيميشن TourDen المخصص
+        class TourDenAnimations {
+            constructor(options = {}) {
+                // إعدادات مخصصة
+                this.options = {
+                    animationClass: 'tourden-animate',
+                    activeClass: 'tourden-active',
+                    threshold: 0.15,
+                    rootMargin: '0px',
+                    stagger: true,
+                    maxStaggerDelay: 600,
+                    ...options
+                };
+
+                // عناصر المراقبة
+                this.observer = null;
+                this.animatedElements = [];
+                this.hasInitialized = false;
+
+                // تهيئة النظام
+                this.init();
+            }
+
+            init() {
+                if (this.hasInitialized) return;
+
+                // العثور على كل العناصر التي تحتوي على كلاس الأنيميشن
+                this.animatedElements = Array.from(
+                    document.querySelectorAll(`.${this.options.animationClass}`)
+                );
+
+                if (this.animatedElements.length === 0) {
+                    console.warn('No TourDen animation elements found');
+                    return;
+                }
+
+                // إنشاء Intersection Observer
+                this.createObserver();
+
+                // بدء المراقبة
+                this.startObserving();
+
+                this.hasInitialized = true;
+                console.log(`TourDen Animations initialized with ${this.animatedElements.length} elements`);
+            }
+
+            createObserver() {
+                this.observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry, index) => {
+                            if (entry.isIntersecting) {
+                                this.animateElement(entry.target, index);
+                                this.observer.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    {
+                        threshold: this.options.threshold,
+                        rootMargin: this.options.rootMargin
+                    }
+                );
+            }
+
+            startObserving() {
+                this.animatedElements.forEach(element => {
+                    this.observer.observe(element);
+                });
+            }
+
+            animateElement(element, index) {
+                if (this.options.stagger) {
+                    // تأخير عشوائي للعناصر
+                    const staggerDelay = Math.random() * this.options.maxStaggerDelay;
+
+                    setTimeout(() => {
+                        element.classList.add(this.options.activeClass);
+                    }, staggerDelay);
+                } else {
+                    // بدون تأخير
+                    element.classList.add(this.options.activeClass);
+                }
+            }
+
+            // طريقة لإعادة تعيين الأنيميشن
+            reset() {
+                this.animatedElements.forEach(element => {
+                    element.classList.remove(this.options.activeClass);
+                    this.observer.observe(element);
+                });
+            }
+
+            // طريقة لإضافة عناصر جديدة
+            addElements(selector) {
+                const newElements = Array.from(document.querySelectorAll(selector));
+                newElements.forEach(element => {
+                    if (!this.animatedElements.includes(element)) {
+                        this.animatedElements.push(element);
+                        this.observer.observe(element);
+                    }
+                });
+            }
+
+            // طريقة لتغيير الإعدادات
+            updateOptions(newOptions) {
+                this.options = { ...this.options, ...newOptions };
+
+                // إعادة إنشاء الـ Observer بالإعدادات الجديدة
+                if (this.observer) {
+                    this.observer.disconnect();
+                    this.createObserver();
+                    this.startObserving();
+                }
+            }
+        }
+
+        // نظام الـ Header المخصص
+        class TourDenHeader {
+            constructor() {
+                this.header = document.querySelector('header');
+                this.init();
+            }
+
+            init() {
+                if (!this.header) return;
+
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        this.header.classList.add('tourden-scrolled');
+                    } else {
+                        this.header.classList.remove('tourden-scrolled');
+                    }
+                });
+            }
+        }
+
+        // نظام الـ Hover Effects المخصص
+        class TourDenHoverEffects {
+            constructor() {
+                this.hoverElements = document.querySelectorAll('.tourden-hover');
+                this.init();
+            }
+
+            init() {
+                this.hoverElements.forEach(element => {
+                    element.addEventListener('mouseenter', this.handleMouseEnter.bind(this));
+                    element.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
+                });
+            }
+
+            handleMouseEnter(e) {
+                const element = e.currentTarget;
+                element.style.transform = 'translateY(-5px)';
+                element.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+            }
+
+            handleMouseLeave(e) {
+                const element = e.currentTarget;
+                element.style.transform = '';
+                element.style.boxShadow = '';
+            }
+        }
+
+        // تهيئة الأنظمة عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            // تهيئة أنيميشن التمرير
+            const tourdenAnimations = new TourDenAnimations({
+                stagger: true,
+                maxStaggerDelay: 600,
+                threshold: 0.1
+            });
+
+            // تهيئة تأثيرات الـ Header
+            const tourdenHeader = new TourDenHeader();
+
+            // تهيئة تأثيرات الـ Hover
+            const tourdenHoverEffects = new TourDenHoverEffects();
+
+            // جعل الكائنات متاحة عالمياً للتحكم بها من الخارج
+            window.TourDen = {
+                animations: tourdenAnimations,
+                header: tourdenHeader,
+                hover: tourdenHoverEffects
+            };
+
+            console.log('TourDen systems initialized successfully');
+        });
+
+        // دالة مساعدة للتحكم اليدوي
+        function tourdenAnimateElement(element) {
+            if (element && element.classList.contains('tourden-animate')) {
+                element.classList.add('tourden-active');
+            }
+        }
+
+        // دالة لإعادة تعيين كل الأنيميشن
+        function tourdenResetAnimations() {
+            if (window.TourDen && window.TourDen.animations) {
+                window.TourDen.animations.reset();
+            }
+        }
+
+        // جعل الدوال متاحة عالمياً
+        window.tourdenAnimateElement = tourdenAnimateElement;
+        window.tourdenResetAnimations = tourdenResetAnimations;
+    </script>
+
+    <!-- Hero Section -->
+    <section class="w-full bg-[#e9f2f0] -mt-[80px]">
+        <div class="hero ">
+            <div class="hero-content py-12">
+                <h1>Tourism <span class="highlight">Packages</span></h1>
+                <p>
+                    Discover the most beautiful travel destinations around the world with our exclusive
+                    packages, carefully designed just for you.
+                </p>
+                <button class="cta-button">
+                    View All Packages
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+        <!-- Packages Grid -->
+        <div class="packages-grid">
+            <!-- Card 1: Maldives -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=500&h=600&fit=crop"
+                    alt="Maldives" class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">10% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">Maldives</div>
+                    <div class="card-title">Maldives Luxury Escape</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $180 USD</span>
+                        <span class="card-price-original">$200 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 Nights - 9 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Thailand -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=600&fit=crop"
+                    alt="Thailand" class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">12% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">Thailand</div>
+                    <div class="card-title">Thailand Adventure Tour</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $290 USD</span>
+                        <span class="card-price-original">$300 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>3 Nights - 4 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Canada -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
+                    alt="Canada" class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">15% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">Canada</div>
+                    <div class="card-title">Canada's Waterfall</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $100 USD</span>
+                        <span class="card-price-original">$200 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>5 Nights - 6 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: India -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&h=600&fit=crop" alt="India"
+                    class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">10% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">India</div>
+                    <div class="card-title">India's Taj Mahal</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $200 USD</span>
+                        <span class="card-price-original">$300 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>6 Nights - 7 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Dubai -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop" alt="Dubai"
+                    class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">10% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">Dubai</div>
+                    <div class="card-title">Explore Dubai Holiday Package</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $180 USD</span>
+                        <span class="card-price-original">$200 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 Nights - 9 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Nepal -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop" alt="Nepal"
+                    class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">12% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">Nepal</div>
+                    <div class="card-title">Nepal Nature Discovery</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $180 USD</span>
+                        <span class="card-price-original">$200 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 Nights - 9 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: Colombia -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
+                    alt="Colombia" class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">15% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">Colombia</div>
+                    <div class="card-title">Colombia Historical Tour</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $180 USD</span>
+                        <span class="card-price-original">$200 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 Nights - 9 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8: Greece -->
+            <div class="package-card">
+                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=500&h=600&fit=crop"
+                    alt="Greece" class="card-image">
+                <div class="card-overlay"></div>
+                <div class="discount-badge">10% OFF</div>
+                <div class="card-content">
+                    <div class="card-destination">Greece</div>
+                    <div class="card-title">Discover Greece's Beauty</div>
+                    <div class="card-price">
+                        <span class="card-price-current">من $180 USD</span>
+                        <span class="card-price-original">$200 USD</span>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325 )</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 Nights - 9 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add hover effect to cards
+        const cards = document.querySelectorAll('.package-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.25)';
+            });
+            card.addEventListener('mouseleave', function () {
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.15)';
+            });
+        });
+
+        // CTA Button click
+        document.querySelector('.cta-button').addEventListener('click', function () {
+            alert('شكراً لاهتمامك! سيتم توجيهك إلى جميع الباقات.');
+        });
+    </script>
+
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <!-- Decorative Elements -->
+        <div class="banner-decoration decoration-1"></div>
+        <div class="banner-decoration decoration-2"></div>
+
+        <!-- Left Section - Image -->
+        <div class="banner-left">
+            <img src="./img/imgi_2_h5_img-2.png" alt="Travel" class="banner-image">
+        </div>
+
+        <!-- Right Section - Content -->
+        <div class="banner-right">
+            <!-- Icon -->
+            <svg class="banner-icon" fill="none" stroke="white" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8m0 8l-9-2m9 2l9-2m-9-8l9 2m-9-2l-9 2"></path>
+            </svg>
+
+            <!-- Title -->
+            <h1 class="banner-title">Making Your Every Trip Memorable.</h1>
+
+            <!-- Subtitle -->
+            <p class="banner-subtitle">Sign up and we'll send the best deals to you</p>
+
+            <!-- Email Subscription -->
+            <div class="email-section">
+                <input type="email" class="email-input" placeholder="Your Email" required>
+                <button class="subscribe-btn">
+                    Subscribe
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">☎</div>
+                    <div class="contact-details">
+                        <h4>Call Us:</h4>
+                        <p>+ (123) 567-8912</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <p>tourden@example.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Email subscription
+        document.querySelector('.subscribe-btn').addEventListener('click', function () {
+            const email = document.querySelector('.email-input').value;
+            if (email) {
+                alert('شكراً لاشتراكك! سيتم إرسال أفضل العروض إلى بريدك الإلكتروني.');
+                document.querySelector('.email-input').value = '';
+            } else {
+                alert('يرجى إدخال بريد إلكتروني صحيح');
+            }
+        });
+
+        // Enter key support
+        document.querySelector('.email-input').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.subscribe-btn').click();
+            }
+        });
+    </script>
+
+    <!-- Main Container -->
+    <div class="min-h-screen  bg-[#e9f2f0] py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-start">
+                <!-- Left Content -->
+                <div class="relative">
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-8 -left-8 w-24 h-24 bg-blue-200 rounded-full opacity-20"></div>
+                    <div
+                        class="absolute top-20 -right-12 w-32 h-32 border-2 border-dashed border-slate-300 rounded-full">
+                    </div>
+
+                    <!-- Airplane Icon -->
+                    <div class="absolute -top-4 left-1/3 animate-float">
+                        <svg class="w-12 h-12 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z" />
+                        </svg>
+                    </div>
+
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 mb-6 text-slate-600">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                        </svg>
+                        <span class="text-sm font-semibold tracking-wide">SERVICES</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="playfair text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                        Our Travel<br />Services
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        Lorem ipsum dolor sit amet, adipiscing elit. Ut elit tellus, luctus nec
+                    </p>
+
+                    <!-- CTA Button -->
+                    <button
+                        class="inline-flex items-center gap-3 bg-[#121e30] hover:bg-[#121e30] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+                        See All Services
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Right Side - Top Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-blue-300 to-blue-400 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+                                alt="Custom Tour"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8m0 8l-9-2m9 2l9-2m-9-8l9 2m-9-2l-9 2">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">Custom Tour Packages</h3>
+                            <p class="text-slate-600 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit.</p>
+                            <div class="flex items-center justify-between">
+                                <div></div>
+                                <button
+                                    class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-amber-200 to-amber-300 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop"
+                                alt="Hotel Booking"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7h-2v2h2v-2zm-4 0H8v2h2v-2zm4-4h-2v2h2V8zm-4 0H8v2h2V8zm4 8h-2v2h2v-2zm-4 0H8v2h2v-2z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">Hotel & Resort Booking</h3>
+                            <p class="text-slate-600 text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit.</p>
+                            <div class="flex items-center justify-between">
+                                <div></div>
+                                <button
+                                    class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 3 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-teal-300 to-teal-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=350&fit=crop"
+                            alt="International Trips"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">International Trips</h3>
+                        <p class="text-slate-600 text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-sky-300 to-sky-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=350&fit=crop"
+                            alt="Travel Guide"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">Travel Guide & Support</h3>
+                        <p class="text-slate-600 text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-emerald-300 to-emerald-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=350&fit=crop"
+                            alt="Flight Booking"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-0.9-2-2-2zM1 2v6h6V2H1zm0 8v6h6v-6H1zm20-8v6h6V2h-6zm-9 0v6h6V2h-6zM9 9H3V3h6v6zm11 0h-6V3h6v6zM9 20h6v-6H9v6z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">Flight Booking & Ticketing</h3>
+                        <p class="text-slate-600 text-sm mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Container -->
+    <div class="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Section - Images -->
+                <div class="animate-slide-in-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Large Image Top -->
+                        <div class="col-span-2 lg:col-span-1 rounded-3xl overflow-hidden shadow-xl h-64 lg:h-80">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop"
+                                alt="Dubai"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+
+                        <!-- Small Image Top Right -->
+                        <div class="rounded-3xl overflow-hidden shadow-lg h-64 lg:h-80">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=400&fit=crop"
+                                alt="Travel"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+
+                        <!-- Small Image Bottom Left -->
+                        <div class="rounded-3xl overflow-hidden shadow-lg h-48">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                                alt="Water"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+
+                        <!-- Experience Badge -->
+                        <div
+                            class="rounded-3xl bg-[#121e30] to-teal-800 p-6 flex flex-col items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <div class="text-5xl font-bold mb-2">20+</div>
+                            <div class="text-center text-sm font-semibold">Years experience</div>
+                        </div>
+
+                        <!-- Large Image Bottom Right -->
+                        <div class="col-span-2 lg:col-span-1 rounded-3xl overflow-hidden shadow-xl h-64">
+                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=300&fit=crop"
+                                alt="Eiffel Tower"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section - Content -->
+                <div class="animate-slide-in-right">
+                    <!-- Badge -->
+                    <div class="inline-flex items-center gap-2 mb-6 text-slate-600">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                        </svg>
+                        <span class="text-sm font-semibold tracking-wide uppercase">WHY CHOOSE US</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h1 class="playfair text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                        Why Your Journey Is Safe With Us
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-slate-600 text-lg mb-12 leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                        mattis, pulvinar dapibus leo.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="space-y-8">
+                        <!-- Feature 1 -->
+                        <div class="flex gap-6 group">
+                            <div class="flex-shrink-0">
+                                <div class="feature-number">01</div>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
+                                    Expert Travel Guidance
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                    ullamcorper mattis, pulvinar dapibus leo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="flex gap-6 group">
+                            <div class="flex-shrink-0">
+                                <div class="feature-number">02</div>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
+                                    Affordable & Flexible Packages
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                    ullamcorper mattis, pulvinar dapibus leo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="flex gap-6 group">
+                            <div class="flex-shrink-0">
+                                <div class="feature-number">03</div>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
+                                    24/7 Customer Support
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                    ullamcorper mattis, pulvinar dapibus leo.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="flex gap-6 group">
+                            <div class="flex-shrink-0">
+                                <div class="feature-number">04</div>
+                            </div>
+                            <div class="flex-1">
+                                <h3
+                                    class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
+                                    Seamless Travel Experience
+                                </h3>
+                                <p class="text-slate-600 leading-relaxed">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                    ullamcorper mattis, pulvinar dapibus leo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Background rotation
+        let currentBgIndex = 0;
+        const backgrounds = ['bg1', 'bg2', 'bg3'];
+
+        function rotateBackground() {
+            // Hide current
+            document.getElementById(backgrounds[currentBgIndex]).classList.remove('active');
+            document.getElementById(backgrounds[currentBgIndex]).classList.add('inactive');
+
+            // Show next
+            currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+            document.getElementById(backgrounds[currentBgIndex]).classList.remove('inactive');
+            document.getElementById(backgrounds[currentBgIndex]).classList.add('active');
+        }
+
+        // Rotate background every 8 seconds
+        setInterval(rotateBackground, 8000);
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = entry.target.getAttribute('data-animation');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animations
+        document.querySelectorAll('[data-animation]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
