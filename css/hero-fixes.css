@@ -1,0 +1,52 @@
+/* Hero fixes for consistent visibility and mobile scroll */
+.hero {
+  min-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.hero-bg {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  width: 100%;
+  height: 100%;
+}
+
+/* Make active background fully visible */
+.hero-bg.active {
+  opacity: 1 !important;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-bg.inactive {
+  opacity: 0 !important;
+}
+
+/* Target the overlay (the absolute inset-0 z-10 dark overlay inside hero) */
+.hero > .absolute.inset-0.z-10 {
+  background: linear-gradient(90deg, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.35) 50%, rgba(15,23,42,0.05) 100%) !important;
+}
+
+/* Mobile: reduce overlay darkness so images remain visible; ensure touch scrolling */
+@media (max-width: 768px) {
+  .hero > .absolute.inset-0.z-10 {
+    background: linear-gradient(90deg, rgba(15,23,42,0.32) 0%, rgba(15,23,42,0.18) 50%, rgba(15,23,42,0.02) 100%) !important;
+  }
+
+  .hero {
+    padding-top: 90px; /* avoid header overlap on small screens */
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero > .absolute.inset-0.z-10 {
+    background: linear-gradient(90deg, rgba(15,23,42,0.25) 0%, rgba(15,23,42,0.12) 50%, rgba(15,23,42,0.01) 100%) !important;
+  }
+}

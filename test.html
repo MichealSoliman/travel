@@ -1,177 +1,232 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لماذا تختارنا</title>
+    <title>TourDen - Complete Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* General Styles */
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .playfair {
-            font-family: 'Playfair Display', serif;
+
+        /* FAQ Section Styles */
+        .faq-bg {
+            background-color: #f3f8f7;
         }
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+
+        .faq-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+
+        .faq-header {
+            padding: 18px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            background: white;
+            color: #111;
         }
-        .animate-slide-in-left {
-            animation: slideInLeft 0.8s ease-out;
+
+        .faq-header.active {
+            background: #003333;
+            color: white;
         }
-        .animate-slide-in-right {
-            animation: slideInRight 0.8s ease-out;
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f9fbfb;
         }
-        .feature-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #e5e7eb;
-            line-height: 1;
+
+        .faq-content.active {
+            max-height: 200px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-content p {
+            padding: 20px 24px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+
+        .faq-header.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section Styles */
+        .contact-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop') center/cover;
+        }
+
+        .form-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .form-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .btn-teal {
+            background: #14b8a6;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-teal:hover {
+            background: #0d9488;
+            transform: translateY(-2px);
+        }
+
+        /* Footer Styles */
+        .footer-bg {
+            background-color: #003333;
+        }
+
+        .heading-line {
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .heading-line::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: 0;
+            width: 40px;
+            height: 2px;
+            background: white;
         }
     </style>
 </head>
+
 <body class="bg-white">
-    <!-- Main Container -->
-    <div class="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
+
+    <!-- FAQ Section -->
+    <section class="faq-bg py-24">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="bg-white px-4 py-2 rounded text-teal-800 font-bold text-sm shadow-sm border border-teal-100">
+                    <i class="fas fa-plane mr-2"></i> FAQ'S
+                </span>
+                <h2 class="text-5xl font-bold text-gray-900 mt-6 mb-4">Answers To Your Travel Questions</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- Left Section - Images -->
-                <div class="animate-slide-in-left">
-                    <div class="grid grid-cols-2 gap-4">
-                        <!-- Large Image Top -->
-                        <div class="col-span-2 lg:col-span-1 rounded-3xl overflow-hidden shadow-xl h-64 lg:h-80">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop" alt="Dubai" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        </div>
-
-                        <!-- Small Image Top Right -->
-                        <div class="rounded-3xl overflow-hidden shadow-lg h-64 lg:h-80">
-                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=400&fit=crop" alt="Travel" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        </div>
-
-                        <!-- Small Image Bottom Left -->
-                        <div class="rounded-3xl overflow-hidden shadow-lg h-48">
-                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" alt="Water" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        </div>
-
-                        <!-- Experience Badge -->
-                        <div class="rounded-3xl bg-gradient-to-br from-teal-900 to-teal-800 p-6 flex flex-col items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-                            <div class="text-5xl font-bold mb-2">20+</div>
-                            <div class="text-center text-sm font-semibold">Years experience</div>
-                        </div>
-
-                        <!-- Large Image Bottom Right -->
-                        <div class="col-span-2 lg:col-span-1 rounded-3xl overflow-hidden shadow-xl h-64">
-                            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=300&fit=crop" alt="Eiffel Tower" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                        </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1530789253516-ad44b9c526ed?w=800&h=600&fit=crop"
+                        alt="Travel" class="rounded-2xl shadow-2xl">
+                    <div
+                        class="absolute bottom-8 left-8 right-8 bg-black bg-opacity-60 backdrop-blur-md p-8 rounded-2xl border border-white border-opacity-20">
+                        <h3 class="text-2xl font-bold text-white mb-3">Do You Have Any Question?</h3>
+                        <p class="text-gray-300 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                            tellus, luctus nec ullamcorper mattis.</p>
+                        <button class="bg-white text-teal-900 px-6 py-3 rounded-full font-bold flex items-center gap-2">
+                            Contact Us <i class="fas fa-arrow-up-right-from-square text-sm"></i>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Right Section - Content -->
-                <div class="animate-slide-in-right">
-                    <!-- Badge -->
-                    <div class="inline-flex items-center gap-2 mb-6 text-slate-600">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-                        </svg>
-                        <span class="text-sm font-semibold tracking-wide uppercase">WHY CHOOSE US</span>
+                <div class="space-y-2">
+                    <!-- FAQ 1 -->
+                    <div class="faq-card">
+                        <div class="faq-header active" onclick="toggleFAQ(this)">
+                            <span class="font-bold">Do You Offer Customized Tour Packages?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content active">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                ullamcorper mattis, pulvinar dapibus leo.</p>
+                        </div>
                     </div>
-
-                    <!-- Title -->
-                    <h1 class="playfair text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                        Why Your Journey Is Safe With Us
-                    </h1>
-
-                    <!-- Description -->
-                    <p class="text-slate-600 text-lg mb-12 leading-relaxed">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                    </p>
-
-                    <!-- Features List -->
-                    <div class="space-y-8">
-                        <!-- Feature 1 -->
-                        <div class="flex gap-6 group">
-                            <div class="flex-shrink-0">
-                                <div class="feature-number">01</div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="playfair text-2xl font-bold text-teal-900 mb-3 group-hover:text-teal-700 transition-colors">
-                                    Expert Travel Guidance
-                                </h3>
-                                <p class="text-slate-600 leading-relaxed">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
+                    <!-- FAQ 2 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">What Payment Methods Do You Accept?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
-
-                        <!-- Feature 2 -->
-                        <div class="flex gap-6 group">
-                            <div class="flex-shrink-0">
-                                <div class="feature-number">02</div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="playfair text-2xl font-bold text-teal-900 mb-3 group-hover:text-teal-700 transition-colors">
-                                    Affordable & Flexible Packages
-                                </h3>
-                                <p class="text-slate-600 leading-relaxed">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
+                        <div class="faq-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                ullamcorper mattis, pulvinar dapibus leo.</p>
                         </div>
-
-                        <!-- Feature 3 -->
-                        <div class="flex gap-6 group">
-                            <div class="flex-shrink-0">
-                                <div class="feature-number">03</div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="playfair text-2xl font-bold text-teal-900 mb-3 group-hover:text-teal-700 transition-colors">
-                                    24/7 Customer Support
-                                </h3>
-                                <p class="text-slate-600 leading-relaxed">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
+                    </div>
+                    <!-- FAQ 3 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">Are Flight Tickets Included In The Tour Price?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
-
-                        <!-- Feature 4 -->
-                        <div class="flex gap-6 group">
-                            <div class="flex-shrink-0">
-                                <div class="feature-number">04</div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="playfair text-2xl font-bold text-teal-900 mb-3 group-hover:text-teal-700 transition-colors">
-                                    Seamless Travel Experience
-                                </h3>
-                                <p class="text-slate-600 leading-relaxed">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-                                </p>
-                            </div>
+                        <div class="faq-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                ullamcorper mattis, pulvinar dapibus leo.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">What Is Your Cancellation Policy?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                ullamcorper mattis, pulvinar dapibus leo.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ 5 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">How Do I Book A Tour?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                                ullamcorper mattis, pulvinar dapibus leo.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+
+
+    <script>
+        function toggleFAQ(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+
+            document.querySelectorAll('.faq-header').forEach(h => {
+                h.classList.remove('active');
+                h.nextElementSibling.classList.remove('active');
+            });
+
+            if (!isActive) {
+                header.classList.add('active');
+                content.classList.add('active');
+            }
+        }
+    </script>
 </body>
+
 </html>
