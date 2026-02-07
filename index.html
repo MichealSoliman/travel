@@ -247,7 +247,7 @@
         }
 
         nav a:hover {
-            color: #1e293b;
+            color: #e69a17;
         }
 
         /* Hero Section */
@@ -271,7 +271,7 @@
         }
 
         .hero h1 .highlight {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #e69a17 0%, #e69a17 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -289,7 +289,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #1e293b;
+            background: #e69a17;
             color: white;
             padding: 16px 32px;
             border-radius: 50px;
@@ -413,7 +413,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(30, 41, 59, 0.9);
+            background:#e69a17;
             color: white;
             padding: 8px 16px;
             border-radius: 8px;
@@ -505,7 +505,7 @@
 
         /* Footer */
         footer {
-            background: #1e293b;
+            background: #e69a17;
             color: white;
             padding: 50px 20px 20px;
             margin-top: 60px;
@@ -640,397 +640,7 @@
         }
     </style>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Banner Container */
-        .banner {
-            display: flex;
-            align-items: center;
-            min-height: 400pv;
-            background: linear-gradient(135deg, #121e30 0%, #121e30 50%, #121e30 100%);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Left Section - Image */
-        .banner-left {
-            flex: 1;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        .banner-image {
-            width: 100%;
-            max-width: 500px;
-            height: 400px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .banner-left:hover .banner-image {
-            transform: scale(1.05);
-        }
-
-        /* Right Section - Content */
-        .banner-right {
-            flex: 1;
-            padding: 60px 40px;
-            color: white;
-            animation: slideInRight 1s ease-out;
-        }
-
-        .banner-icon {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 20px;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .banner-title {
-        
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .banner-subtitle {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
-            line-height: 1.6;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        /* Email Subscription */
-        .email-section {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 50px;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .email-input {
-            flex: 1;
-            padding: 16px 20px;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Cairo', sans-serif;
-            font-size: 14px;
-            background: white;
-            color: #1a5c4a;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .email-input::placeholder {
-            color: #999;
-        }
-
-        .email-input:focus {
-            outline: none;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .subscribe-btn {
-            padding: 16px 32px;
-            background: white;
-            color: #1a5c4a;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Cairo', sans-serif;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            white-space: nowrap;
-        }
-
-        .subscribe-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .subscribe-btn:active {
-            transform: translateY(0);
-        }
-
-        /* Contact Info */
-        .contact-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .contact-icon {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .contact-details h4 {
-            font-size: 13px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 5px;
-        }
-
-        .contact-details p {
-            font-size: 16px;
-            font-weight: 700;
-            color: white;
-        }
-
-        /* Decorative Elements */
-        .banner-decoration {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .decoration-1 {
-            top: -100px;
-            right: -100px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .decoration-2 {
-            bottom: -150px;
-            left: -100px;
-            animation: float 8s ease-in-out infinite 1s;
-        }
-
-        /* Animations */
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(30px);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .banner {
-                flex-direction: column;
-                min-height: auto;
-                padding: 40px 0;
-            }
-
-            .banner-left {
-                flex: 0;
-                padding: 40px 20px;
-            }
-
-            .banner-image {
-                max-width: 400px;
-            }
-
-            .banner-right {
-                flex: 0;
-                padding: 40px 20px;
-                text-align: center;
-            }
-
-            .banner-title {
-                font-size: 36px;
-            }
-
-            .email-section {
-                flex-direction: column;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .banner-title {
-                font-size: 28px;
-            }
-
-            .banner-subtitle {
-                font-size: 14px;
-            }
-
-            .banner-left {
-                padding: 20px;
-            }
-
-            .banner-right {
-                padding: 30px 20px;
-            }
-
-            .banner-image {
-                max-width: 300px;
-            }
-
-            .email-input,
-            .subscribe-btn {
-                padding: 14px 16px;
-                font-size: 13px;
-            }
-
-            .contact-item {
-                padding: 15px;
-            }
-
-            .contact-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-            }
-
-            .contact-details p {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .banner-title {
-                font-size: 24px;
-            }
-
-            .banner-subtitle {
-                font-size: 13px;
-                margin-bottom: 30px;
-            }
-
-            .banner-image {
-                max-width: 250px;
-            }
-
-            .email-section {
-                gap: 8px;
-            }
-
-            .email-input,
-            .subscribe-btn {
-                padding: 12px 14px;
-                font-size: 12px;
-            }
-
-            .contact-info {
-                gap: 15px;
-            }
-
-            .contact-item {
-                padding: 12px;
-                gap: 10px;
-            }
-
-            .contact-details h4 {
-                font-size: 11px;
-            }
-
-            .contact-details p {
-                font-size: 12px;
-            }
-        }
-    </style>
+  
 
     <style>
         body {
@@ -1150,7 +760,7 @@
         }
         
         .contact-icon {
-            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            background: linear-gradient(135deg, #e69a17 0%, #e69a17 100%);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -1161,7 +771,7 @@
         }
         
         .btn-gradient {
-            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            background: linear-gradient(135deg, #e69a17 0%, #e69a17 100%);
             transition: all 0.3s ease;
         }
         
@@ -1171,7 +781,7 @@
         }
         
         .play-btn {
-            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            background: linear-gradient(135deg, #e69a17 0%, #e69a17 100%);
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -1258,7 +868,7 @@
         }
 
         .faq-header.active {
-            background: #1a2336;
+            background: #e69a17;
             color: white;
         }
 
@@ -1306,11 +916,10 @@
             <!-- Navigation Menu -->
             <nav class="hidden md:flex items-center gap-8 p-5">
                 <div class="flex items-center gap-6 rounded-full px-6 py-5 border border-white/20">
-                    <a href="#" class="hover:text-cyan-400 text-white text-sm">الرئيسية</a>
-                    <a href="/about.html" class="hover:text-cyan-400 text-white text-sm">من نحن</a>
-                    <a href="#" class="hover:text-cyan-400 text-white text-sm">الخدمات</a>
-                    <a href="#" class="hover:text-cyan-400 text-white text-sm">المدونة</a>
-                    <a href="#" class="hover:text-cyan-400 text-white text-sm">تواصل معنا</a>
+                    <a href="#" class="hover:text-[#e69a17] text-white text-sm">الرئيسية</a>
+                    <a href="/about.html" class="hover:text-[#e69a17] text-white text-sm">من نحن</a>
+                    <a href="/services.html" class="hover:text-[#e69a17] text-white text-sm">الخدمات</a>
+                    <a href="#" class="hover:text-[#e69a17] text-white text-sm">تواصل معنا</a>
                 </div>
             </nav>
 
@@ -1322,10 +931,13 @@
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </button>
-                <button
-                    class="bg-white text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-cyan-400 transition-colors text-sm">
-                    احجز الآن
-                </button>
+                <a href="https://wa.me/20000000000" 
+                    target="_blank"
+                    class="bg-white text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-colors text-sm inline-flex items-center gap-2">
+                    
+                        <i class="fab fa-whatsapp"></i>
+                        واتساب
+                    </a>
             </div>
         </div>
 
@@ -1350,16 +962,16 @@
     </div>
 
     <!-- Content Container -->
-    <div class="relative z-20 max-w-7xl py-22  md:pt-[250px]  mx-auto w-full px-4 sm:px-6 lg:px-8">
+    <div class="relative z-20 max-w-7xl py-16  md:pt-[250px]  mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 z-20 gap-8 items-center ">
             <!-- Left Content -->
             <div class="animate-fade-in ">
                 <!-- Badge -->
                 <div class="inline-flex  items-center gap-2 border border-cyan-500/50 rounded-full  px-4 py-2 mb-8 w-fit bg-cyan-500/10">
-                    <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 text-[#e69a17]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
                     </svg>
-                    <span class="text-sm font-semibold text-cyan-400 ">مرحبًا بكم في وكالة روز</span>
+                    <span class="text-sm font-semibold text-[#e69a17] ">مرحبًا بكم في وكالة روز</span>
                 </div>
 
                 <!-- Main Heading -->
@@ -1375,62 +987,32 @@
                 </p>
 
                 <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                    <button
-                        class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition">
-                        استكشف الوجهات
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                    </button>
-                    <button
-                        class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition border border-white/20">
-                        اتصل بنا
-                    </button>
-                </div>
+               <div class="flex flex-col sm:flex-row gap-4 mb-8">
 
-                <!-- Contact Info -->
-                <div
-                    class="flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-full px-6 py-3 w-fit border border-white/10">
-                    <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948-.684l1.498-4.493a1 1 0 011.502-.684l1.498 4.493a1 1 0 00.948.684H19a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="text-sm text-gray-400">اتصل الآن</p>
-                        <p class="font-semibold">+20 000 000 000</p>
-                    </div>
-                </div>
+                <!-- زر الاتصال -->
+                <a href="tel:+20000000000"
+                    class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition shadow-lg hover:shadow-xl">
+                    
+                    <i class="fas fa-phone"></i>
+                    اتصال بنا
+                </a>
 
-                <div
-                    class=" grid grid-cols-2   md:grid-cols-4 p-5 gap-6 border-t border-b  border-white/50  backdrop-blur-md   pt-8">
-                    <div class="text-center animate-slide-in-up border-r border-white/50">
-                        <p class="text-4xl md:text-5xl font-bold text-[]">60+</p>
-                        <p class="text-gray-400 text-sm mt-2">وجهة سياحية</p>
-                    </div>
-                    <div class="text-center animate-slide-in-up border-r border-white/50 ">
-                        <p class="text-4xl md:text-5xl font-bold text-[]">700K</p>
-                        <p class="text-gray-400 text-sm mt-2">رحلة مكتملة</p>
-                    </div>
-                    <div class="text-center animate-slide-in-up border-r border-white/50">
-                        <p class="text-4xl md:text-5xl font-bold text-[]">450K</p>
-                        <p class="text-gray-400 text-sm mt-2">رحلات جماعية</p>
-                    </div>
-                    <div class="text-center animate-slide-in-up border-r border-white/50">
-                        <p class="text-4xl md:text-5xl font-bold text-[]">500+</p>
-                        <p class="text-gray-400 text-sm mt-2">تقييمات إيجابية</p>
-                    </div>
-                </div>
+                <!-- زر واتساب -->
+                <a href="https://wa.me/20000000000"
+                    target="_blank"
+                    class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition shadow-lg hover:shadow-xl">
+                    
+                    <i class="fab fa-whatsapp"></i>
+                    تواصل عبر واتساب
+                </a>
 
-                <!-- Stats Bottom Content -->
-                <div class="mt-10 p-8 py-12 bg-white 
-     flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            </div>
 
-                   
-                </div>
+
+              
+
+                
+
             </div>
 
             <!-- Right Cards Section -->
@@ -1450,7 +1032,7 @@
                             عروض مميزة على أفضل الرحلات والوجهات السياحية
                         </p>
                         <a href="#"
-                            class="text-white hover:text-cyan-400 transition-colors text-sm font-semibold flex items-center gap-1">
+                            class="text-white hover:text-[#e69a17] transition-colors text-sm font-semibold flex items-center gap-1">
                             اعرف المزيد
                         </a>
                     </div>
@@ -1466,7 +1048,7 @@
                             نضمن لك راحة وأمان كاملين طوال رحلتك
                         </p>
                         <a href="#"
-                            class="text-white hover:text-cyan-400 transition-colors text-sm font-semibold flex items-center gap-1">
+                            class="text-white hover:text-[#e69a17] transition-colors text-sm font-semibold flex items-center gap-1">
                             اعرف المزيد
                         </a>
                     </div>
@@ -1501,14 +1083,14 @@
         <div class="flex flex-col justify-center">
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 w-fit mb-6 tourden-animate tourden-slide-left tourden-hover">
-                <svg class="w-5 h-5 text-teal-600" fill="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-[#e69a17]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
                 </svg>
-                <span class="text-sm font-semibold text-teal-600 uppercase tracking-wide">من نحن</span>
+                <span class="text-sm font-semibold text-[#e69a17] uppercase tracking-wide">من نحن</span>
             </div>
 
             <!-- Main Heading -->
-            <h2 class="text-5xl py-3 md:text-6xl font-bold text-gray-900 mb-6 leading-tight tourden-animate tourden-slide-up tourden-hover"
+            <h2 class="text-5xl py-3 md:text-6xl font-bold text-slate-800 mb-6 leading-tight tourden-animate tourden-slide-up tourden-hover"
                 >
                 شريكك الموثوق في السفر والسياحة
             </h2>
@@ -1527,7 +1109,7 @@
                 <!-- Card Overlay -->
                 <div class="absolute -bottom-14 left-0 right-0 p-8">
                     <div class="rounded-3xl  shadow-2xl">
-                        <div class="bg-[#121e30] rounded-3xl p-8 text-white">
+                        <div class="bg-[#e69a17] rounded-3xl p-8 text-white">
                             <p class="text-sm text-teal-200 mb-3">
                                 شريكك الموثوق في السفر
                             </p>
@@ -1541,7 +1123,7 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center gap-4">
                                     <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
-                                        alt="مدير الرحلات" class="w-14 h-14 rounded-full border-2 border-teal-400">
+                                        alt="مدير الرحلات" class="w-14 h-14 rounded-full border-2 border-[#e69a17]">
                                     <div>
                                         <p class="font-semibold text-white text-lg">
                                             فريق وكالة روز
@@ -1580,7 +1162,7 @@
                 <div
                     class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 tourden-animate tourden-pop tourden-hover">
                     <div
-                        class="inline-flex items-center gap-2 bg-[#121e30] text-white rounded-full px-4 py-2 mb-4 tourden-animate tourden-rotate">
+                        class="inline-flex items-center gap-2 bg-[#e69a17] text-white rounded-full px-4 py-2 mb-4 tourden-animate tourden-rotate">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
                         </svg>
@@ -1594,7 +1176,7 @@
                 <div
                     class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 tourden-animate tourden-pop tourden-hover">
                     <div
-                        class="inline-flex items-center gap-2 bg-[#121e30] text-white rounded-full px-4 py-2 mb-4 tourden-animate tourden-rotate">
+                        class="inline-flex items-center gap-2 bg-[#e69a17] text-white rounded-full px-4 py-2 mb-4 tourden-animate tourden-rotate">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
                         </svg>
@@ -1609,7 +1191,7 @@
             <!-- Stats Section -->
             <div class="grid grid-cols-2 gap-6">
                 <div
-                    class="bg-[#121e30] text-white rounded-2xl p-6 flex items-center gap-4 tourden-animate tourden-float tourden-hover">
+                    class="bg-[#e69a17] text-white rounded-2xl p-6 flex items-center gap-4 tourden-animate tourden-float tourden-hover">
                     <div
                         class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 tourden-animate tourden-scale">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -1623,7 +1205,7 @@
                 </div>
 
                 <div
-                    class="bg-[#121e30] text-white rounded-2xl p-6 flex items-center gap-4 tourden-animate tourden-float tourden-hover">
+                    class="bg-[#e69a17] text-white rounded-2xl p-6 flex items-center gap-4 tourden-animate tourden-float tourden-hover">
                     <div
                         class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 tourden-animate tourden-scale">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -1644,7 +1226,7 @@
 
             <!-- CTA Button -->
             <button
-                class="bg-[#121e30] hover:bg-[#121e30] text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 w-fit transition-colors tourden-animate tourden-pop tourden-hover">
+                class="bg-[#e69a17] hover:bg-[#e69a17] text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 w-fit transition-colors tourden-animate tourden-pop tourden-hover">
                 المزيد عنا
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -2130,61 +1712,7 @@
     </script>
 
 
-<!-- Banner Section -->
-<section class="banner">
-    <!-- Decorative Elements -->
-    <div class="banner-decoration decoration-1"></div>
-    <div class="banner-decoration decoration-2"></div>
 
-    <!-- Left Section - Image -->
-    <div class="banner-left">
-        <img src="./img/imgi_2_h5_img-2.png" alt="السفر" class="banner-image">
-    </div>
-
-    <!-- Right Section - Content -->
-    <div class="banner-right">
-        <!-- Icon -->
-        <svg class="banner-icon" fill="none" stroke="white" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8m0 8l-9-2m9 2l9-2m-9-8l9 2m-9-2l-9 2"></path>
-        </svg>
-
-        <!-- Title -->
-        <h1 class="banner-title">نجعل كل رحلة تجربة لا تُنسى</h1>
-
-        <!-- Subtitle -->
-        <p class="banner-subtitle">اشترك الآن وسنرسل لك أفضل العروض الحصرية</p>
-
-        <!-- Email Subscription -->
-        <div class="email-section">
-            <input type="email" class="email-input" placeholder="بريدك الإلكتروني" required>
-            <button class="subscribe-btn">
-                اشترك الآن
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Contact Info -->
-        <div class="contact-info">
-            <div class="contact-item">
-                <div class="contact-icon">☎</div>
-                <div class="contact-details">
-                    <h4>اتصل بنا:</h4>
-                    <p>+ (123) 567-8912</p>
-                </div>
-            </div>
-            <div class="contact-item">
-                <div class="contact-icon">✉</div>
-                <div class="contact-details">
-                    <h4>البريد الإلكتروني</h4>
-                    <p>tourden@example.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
     <script>
         // Email subscription
@@ -2243,7 +1771,7 @@
     </p>
 
     <!-- زر الإجراء -->
-    <button class="inline-flex items-center gap-3 bg-[#121e30] hover:bg-[#121e30] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+    <button class="inline-flex items-center gap-3 bg-[#e69a17] hover:bg-[#e69a17] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
         عرض كل الخدمات
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -2273,14 +1801,14 @@
                                     </svg>
                                 </div>
                             </div>
-                            <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">خدمات التأشيرات</h3>
+                            <h3 class="playfair text-2xl font-bold text-[#e69a17] mb-3">خدمات التأشيرات</h3>
                             <p class="text-slate-600 text-sm mb-4">
                                 نوفر لك جميع خدمات التأشيرات للسفر بسهولة وسرعة مع ضمان متابعة كل الإجراءات القانونية المطلوبة.
                             </p>
                             <div class="flex items-center justify-between">
                                 <div></div>
                                 <button
-                                    class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    class="w-12 h-12 bg-[#e69a17] hover:bg-[#e69a17] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M9 5l7 7-7 7"></path>
@@ -2307,13 +1835,13 @@
                                     </svg>
                                 </div>
                             </div>
-                            <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">حجز الفنادق والمنتجعات</h3>
+                            <h3 class="playfair text-2xl font-bold text-[#e69a17] mb-3">حجز الفنادق والمنتجعات</h3>
                             <p class="text-slate-600 text-sm mb-4">
                                 نوفر لك أفضل خيارات حجز الفنادق والمنتجعات حول العالم بأسعار مناسبة وخدمة مميزة لضمان إقامة مريحة.
                             </p>
                             <div class="flex items-center justify-between">
                                 <div></div>
-                                <button class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <button class="w-12 h-12 bg-[#e69a17] hover:bg-[#e69a17] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
@@ -2330,7 +1858,7 @@
                 <!-- Card 3 -->
 <div
     class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-    <div class="h-56 bg-gradient-to-br from-teal-300 to-teal-400 overflow-hidden">
+    <div class="h-56 bg-gradient-to-br from-teal-300 to-[#e69a17] overflow-hidden">
         <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=350&fit=crop"
             alt="برامج وجولات سياحية"
             class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
@@ -2346,13 +1874,13 @@
                 </svg>
             </div>
         </div>
-        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">برامج وجولات سياحية</h3>
+        <h3 class="playfair text-2xl font-bold text-[#e69a17] mb-3">برامج وجولات سياحية</h3>
         <p class="text-slate-600 text-sm mb-6">
             نوفر لك أفضل برامج الجولات السياحية المحلية والدولية مع جولات مخصصة حسب رغبتك واهتماماتك.
         </p>
         <div class="flex items-center justify-end">
             <button
-                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                class="w-12 h-12 bg-[#e69a17] hover:bg-[#e69a17] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 5l7 7-7 7"></path>
@@ -2380,13 +1908,13 @@
                 </svg>
             </div>
         </div>
-        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">انتقالات وتوصيل</h3>
+        <h3 class="playfair text-2xl font-bold text-[#e69a17] mb-3">انتقالات وتوصيل</h3>
         <p class="text-slate-600 text-sm mb-6">
             نوفر خدمات الانتقالات والمواصلات داخل المدن وبينها مع أفضل السيارات والسائقين لضمان راحتك.
         </p>
         <div class="flex items-center justify-end">
             <button
-                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                class="w-12 h-12 bg-[#e69a17] hover:bg-[#e69a17] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 5l7 7-7 7"></path>
@@ -2414,13 +1942,13 @@
                 </svg>
             </div>
         </div>
-        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">حجز طيران</h3>
+        <h3 class="playfair text-2xl font-bold text-[#e69a17] mb-3">حجز طيران</h3>
         <p class="text-slate-600 text-sm mb-6">
             نوفر لك أفضل خيارات حجز الطيران داخليًا ودوليًا مع أسعار تنافسية وخيارات متعددة للرحلات.
         </p>
         <div class="flex items-center justify-end">
             <button
-                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                class="w-12 h-12 bg-[#e69a17] hover:bg-[#e69a17] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 5l7 7-7 7"></path>
@@ -2448,13 +1976,13 @@
                 </svg>
             </div>
         </div>
-        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">رحلات كروز</h3>
+        <h3 class="playfair text-2xl font-bold text-[#e69a17] mb-3">رحلات كروز</h3>
         <p class="text-slate-600 text-sm mb-6">
             استمتع برحلات الكروز الفاخرة على مختلف البحار والمحيطات مع خدمات متكاملة للراحة والاستجمام.
         </p>
         <div class="flex items-center justify-end">
             <button
-                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                class="w-12 h-12 bg-[#e69a17] hover:bg-[#e69a17] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 5l7 7-7 7"></path>
@@ -2481,13 +2009,13 @@
                 </svg>
             </div>
         </div>
-        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">قطارات أوروبا</h3>
+        <h3 class="playfair text-2xl font-bold text-[#e69a17] mb-3">قطارات أوروبا</h3>
         <p class="text-slate-600 text-sm mb-6">
             حجز تذاكر قطارات أوروبا بسهولة مع اختيار أفضل المسارات والمواعيد لتجربة سفر ممتعة ومريحة.
         </p>
         <div class="flex items-center justify-end">
             <button
-                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                class="w-12 h-12 bg-[#e69a17] hover:bg-[#e69a17] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M9 5l7 7-7 7"></path>
@@ -2502,141 +2030,7 @@
     </div>
 
 
-   <!-- Main Container -->
-<div class="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-            <!-- Left Section - Images -->
-            <div class="animate-slide-in-left">
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- Large Image Top -->
-                    <div class="col-span-2 lg:col-span-1 rounded-3xl overflow-hidden shadow-xl h-64 lg:h-80">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=400&fit=crop"
-                            alt="دبي"
-                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                    </div>
-
-                    <!-- Small Image Top Right -->
-                    <div class="rounded-3xl overflow-hidden shadow-lg h-64 lg:h-80">
-                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=400&fit=crop"
-                            alt="سفر"
-                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                    </div>
-
-                    <!-- Small Image Bottom Left -->
-                    <div class="rounded-3xl overflow-hidden shadow-lg h-48">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
-                            alt="مياه"
-                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                    </div>
-
-                    <!-- Experience Badge -->
-                    <div
-                        class="rounded-3xl bg-[#121e30] to-teal-800 p-6 flex flex-col items-center justify-center text-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="text-5xl font-bold mb-2">20+</div>
-                        <div class="text-center text-sm font-semibold">سنة خبرة</div>
-                    </div>
-
-                    <!-- Large Image Bottom Right -->
-                    <div class="col-span-2 lg:col-span-1 rounded-3xl overflow-hidden shadow-xl h-64">
-                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&h=300&fit=crop"
-                            alt="برج إيفل"
-                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Section - Content -->
-            <div class="animate-slide-in-right">
-                <!-- Badge -->
-                <div class="inline-flex items-center gap-2 mb-6 text-slate-600">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
-                    </svg>
-                    <span class="text-sm font-semibold tracking-wide uppercase">لماذا تختارنا</span>
-                </div>
-
-                <!-- Title -->
-                <h1 class="playfair text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-                    رحلتك آمنة معنا
-                </h1>
-
-                <!-- Description -->
-                <p class="text-slate-600 text-lg mb-12 leading-relaxed">
-                    نقدم لك خدمات سياحية متكاملة تضمن لك رحلة مريحة وآمنة مع أفضل الأسعار والدعم المستمر.
-                </p>
-
-                <!-- Features List -->
-                <div class="space-y-8">
-                    <!-- Feature 1 -->
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0">
-                            <div class="feature-number">01</div>
-                        </div>
-                        <div class="flex-1">
-                            <h3
-                                class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
-                                إرشادات سفر احترافية
-                            </h3>
-                            <p class="text-slate-600 leading-relaxed">
-                                نوفر لك استشارات وخطط سفر مخصصة لضمان تجربة سياحية سلسة وممتعة لكل عملائنا.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0">
-                            <div class="feature-number">02</div>
-                        </div>
-                        <div class="flex-1">
-                            <h3
-                                class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
-                                باقات مرنة وبأسعار مناسبة
-                            </h3>
-                            <p class="text-slate-600 leading-relaxed">
-                                نقدم مجموعة من الباقات السياحية القابلة للتخصيص لتناسب جميع الميزانيات والاحتياجات.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0">
-                            <div class="feature-number">03</div>
-                        </div>
-                        <div class="flex-1">
-                            <h3
-                                class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
-                                دعم العملاء 24/7
-                            </h3>
-                            <p class="text-slate-600 leading-relaxed">
-                                فريقنا متاح على مدار الساعة للرد على استفساراتك وحل أي مشكلة خلال رحلتك.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 4 -->
-                    <div class="flex gap-6 group">
-                        <div class="flex-shrink-0">
-                            <div class="feature-number">04</div>
-                        </div>
-                        <div class="flex-1">
-                            <h3
-                                class="playfair text-2xl font-bold text-[#121e30] mb-3 group-hover:text-teal-700 transition-colors">
-                                تجربة سفر سلسة
-                            </h3>
-                            <p class="text-slate-600 leading-relaxed">
-                                نحرص على تنظيم جميع تفاصيل رحلتك لضمان تجربة ممتعة بدون أي توتر أو تأخير.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- قسم التواصل -->
 <section class="contact-bg min-h-[400px] flex items-center justify-center py-20">
@@ -2647,7 +2041,7 @@
             <div class="text-white">
                 <div class="mb-8">
                     <span class="label-tag">
-                        <i class="fas fa-plane text-teal-400"></i> تواصل معنا
+                        <i class="fas fa-plane text-[#e69a17]"></i> تواصل معنا
                     </span>
                 </div>
                 
@@ -2666,7 +2060,7 @@
                         </div>
                         <div>
                             <h3 class="text-white font-bold text-lg">هل تحتاج أي مساعدة؟</h3>
-                            <p class="text-teal-400 font-medium">(+20) 656 656 55784</p>
+                            <p class="text-[#e69a17] font-medium">(+20) 656 656 55784</p>
                         </div>
                     </div>
                     
@@ -2676,7 +2070,7 @@
                         </div>
                         <div>
                             <h3 class="text-white font-bold text-lg">البريد الإلكتروني</h3>
-                            <p class="text-teal-400 font-medium">info@travelagency.com</p>
+                            <p class="text-[#e69a17] font-medium">info@travelagency.com</p>
                         </div>
                     </div>
                 </div>
@@ -2689,7 +2083,7 @@
                         <div class="play-btn">
                             <i class="fas fa-play ml-1"></i>
                         </div>
-                        <span class="text-white font-bold group-hover:text-teal-400 transition">شاهد الفيديو</span>
+                        <span class="text-white font-bold group-hover:text-[#e69a17] transition">شاهد الفيديو</span>
                     </div>
                 </div>
             </div>
@@ -2723,10 +2117,10 @@
 <section class="faq-bg py-24">
     <div class="max-w-7xl mx-auto px-8">
         <div class="text-center mb-16">
-            <span class="bg-white px-4 py-2 rounded text-teal-800 font-bold text-sm shadow-sm border border-teal-100">
+            <span class="bg-white px-4 py-2 rounded text-[#e69a17] font-bold text-sm shadow-sm border border-teal-100">
                 <i class="fas fa-plane mr-2"></i> الأسئلة الشائعة
             </span>
-            <h2 class="text-5xl font-bold text-gray-900 mt-6 mb-4">إجابات على أسئلتك السياحية</h2>
+            <h2 class="text-5xl font-bold text-[#e69a17] mt-6 mb-4">إجابات على أسئلتك السياحية</h2>
             <p class="text-gray-500 max-w-2xl mx-auto">نقدم لك إجابات مفصلة لأكثر الأسئلة شيوعًا حول رحلاتنا وخدماتنا لتسهيل تجربة السفر الخاصة بك.</p>
         </div>
 

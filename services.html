@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TourDen - Discover The World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            font-family: 'Cairo', sans-serif;
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        a,
+        li,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+
+            font-family: 'Cairo', sans-serif;
+
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+
+            100% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-slide-in-up {
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .bg-animate {
+            animation: backgroundShift 8s ease-in-out infinite;
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Smooth transitions */
+        .smooth-transition {
+            transition: all 0.3s ease;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #06b6d4;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0891b2;
+        }
+
+        /* Header scroll effect */
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+        }
+
+        /* Background image transition */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s ease-in-out;
+            z-index: 0;
+        }
+
+        .hero-bg.active {
+            opacity: 0.5;
+        }
+
+        .hero-bg.inactive {
+            opacity: 0;
+        }
+    </style>
+
+    <style>
+        /* أنيميشن CSS - كلاسات مخصصة */
+        .tourden-animate {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* أنواع الحركات */
+        .tourden-slide-up {
+            transform: translateY(40px);
+        }
+
+        .tourden-slide-left {
+            transform: translateX(-40px);
+        }
+
+        .tourden-slide-right {
+            transform: translateX(40px);
+        }
+
+        .tourden-scale {
+            transform: scale(0.9);
+        }
+
+        .tourden-rotate {
+            transform: rotate(-5deg) translateY(20px);
+        }
+
+        .tourden-float {
+            transform: translateY(30px);
+        }
+
+        .tourden-pop {
+            transform: scale(0.8) translateY(20px);
+        }
+
+        /* حالة الأنيميشن النشطة */
+        .tourden-animate.tourden-active {
+            opacity: 1;
+            transform: translate(0) scale(1) rotate(0);
+        }
+
+        /* تأثيرات هامر خاصة */
+        .tourden-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tourden-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* Header */
+
+
+
+        nav a {
+            color: #475569;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1e293b;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            
+            font-size: 60px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #1e293b;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 41, 59, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 41, 59, 0.4);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        /* Grid Container */
+        .packages-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Card Styles */
+        .package-card {
+            position: relative;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .package-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .package-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .package-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .package-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .package-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .package-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .package-card:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .package-card:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .package-card:hover .card-image {
+            transform: scale(1.12);
+        }
+
+        /* Overlay */
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3), transparent);
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        .package-card:hover .card-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+        }
+
+        /* Discount Badge */
+        .discount-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 41, 59, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .package-card:hover .discount-badge {
+            transform: scale(1.1);
+        }
+
+        /* Card Content */
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            color: white;
+            z-index: 5;
+        }
+
+        .card-destination {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            line-height: 1.4;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-price {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card-price-current {
+            font-size: 24px;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-price-original {
+            font-size: 14px;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 16px;
+        }
+
+        .card-duration {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+          
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shimmer {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .star:hover {
+            animation: shimmer 0.6s ease-in-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .packages-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .package-card {
+                height: 400px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-destination {
+                font-size: 24px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .package-card {
+                height: 350px;
+            }
+        }
+    </style>
+    <!-- fq -->
+
+    <style>
+        /* FAQ Section Styles */
+        .faq-bg {
+            background-color: #f3f8f7;
+        }
+
+        .faq-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-header {
+            padding: 18px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            background: white;
+            color: #111;
+        }
+
+        .faq-header.active {
+            background: #1a2336;
+            color: white;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f9fbfb;
+        }
+
+        .faq-content.active {
+            max-height: 200px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-content p {
+            padding: 20px 24px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+
+        .faq-header.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body class=" text-white">
+
+    <header id="header" bg-slate-900 class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between" dir="rtl">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 text-2xl font-bold">
+                <img src="./img/logo 1.png" class="w-14 h-14" alt="الشعار">
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex items-center gap-8 p-5">
+                <div class="flex items-center gap-6 rounded-full px-6 py-5 border border-white/20">
+                    <a href="./index.html" class="hover:text-cyan-400 text-white text-sm">الرئيسية</a>
+                    <a href="./about.html" class="hover:text-cyan-400 text-white text-sm">من نحن</a>
+                    <a href="#" class="hover:text-cyan-400 text-white text-sm">الخدمات</a>
+                    <a href="/contact.html" class="hover:text-cyan-400 text-white text-sm">تواصل معنا</a>
+                </div>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button
+                    class="bg-white text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-cyan-400 transition-colors text-sm">
+                    احجز الآن
+                </button>
+            </div>
+        </div>
+
+    </header>
+
+   <!-- Hero Section - خدماتنا -->
+<section
+    class="relative h-[70vh] min-h-[600px] bg-gradient-to-r from-teal-900/90 to-teal-800/90 flex items-center overflow-hidden">
+    
+    <!-- صورة الخلفية -->
+    <div class="absolute inset-0 z-0">
+        <img src="./img/471683368_1035564001920379_2994586937371991257_n.jpg"
+            alt="خدمات وكالة روز للسفر والسياحة"
+            class="w-full h-full object-cover opacity-40">
+    </div>
+
+    <!-- محتوى الوسط -->
+    <div class="relative z-10 max-w-6xl mx-auto w-full px-6 text-center">
+        
+        <!-- العنوان الرئيسي -->
+        <div class="mb-8 animate-fade-in">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+                خدماتنا
+            </h1>
+            <div class="w-32 h-1.5 bg-amber-400 mx-auto mb-8"></div>
+        </div>
+
+        <!-- الوصف -->
+        <div class="max-w-3xl mx-auto mb-12">
+            <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                في <span class="font-bold text-amber-300">وكالة روز للسفر والسياحة</span> نقدم باقة متكاملة من الخدمات السياحية
+                المصممة لتمنحك تجربة سفر مريحة وفاخرة ✈️
+                <br>
+                من حجز الطيران والفنادق إلى تنظيم البرامج السياحية والرحلات الخاصة
+            </p>
+        </div>
+
+        <!-- أزرار -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            
+            <!-- زر حجز الآن -->
+            <a href="https://wa.me/20000000000"
+                target="_blank"
+                class="group bg-amber-400 text-teal-900 hover:bg-amber-500 px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <i class="fab fa-whatsapp"></i>
+                احجز رحلتك الآن
+            </a>
+
+            <!-- زر استعراض الخدمات -->
+            <a href="#services"
+                class="group bg-white/10 border border-white/30 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-3 transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-suitcase-rolling"></i>
+                استعرض خدماتنا
+            </a>
+        </div>
+    </div>
+
+    <!-- عناصر زخرفية -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <div class="h-20 bg-gradient-to-t from-white/10 to-transparent"></div>
+    </div>
+</section>
+
+
+
+    <!-- Main Container -->
+    <div class="min-h-screen  bg-[#e9f2f0] py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-start">
+                <!-- Left Content -->
+                <div class="relative">
+                    <!-- عناصر زخرفية -->
+                    <div class="absolute -top-8 -left-8 w-24 h-24 bg-blue-200 rounded-full opacity-20"></div>
+                    <div
+                        class="absolute top-20 -right-12 w-32 h-32 border-2 border-dashed border-slate-300 rounded-full">
+                    </div>
+
+                    <!-- أيقونة الطائرة -->
+                    <div class="absolute -top-4 left-1/3 animate-float">
+                        <svg class="w-12 h-12 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z" />
+                        </svg>
+                    </div>
+
+                    <!-- شارة -->
+                    <div class="inline-flex items-center gap-2 mb-6 text-slate-600">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
+                        </svg>
+                        <span class="text-sm font-semibold tracking-wide">خدماتنا</span>
+                    </div>
+
+                    <!-- العنوان -->
+                    <h1 class="playfair text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                        خدماتنا<br />في السفر والسياحة
+                    </h1>
+
+                    <!-- الوصف -->
+                    <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                        نقدم لك مجموعة متكاملة من الخدمات السياحية والسفرية، من تأشيرات وحجز فنادق وطيران، إلى برامج
+                        سياحية ورحلات كروز وقطارات أوروبا.
+                    </p>
+
+                    <!-- زر الإجراء -->
+                    <button
+                        class="inline-flex items-center gap-3 bg-[#121e30] hover:bg-[#121e30] text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105">
+                        عرض كل الخدمات
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+
+                <!-- Right Side - Top Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-blue-300 to-blue-400 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+                                alt="تأشيرات"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8m0 8l-9-2m9 2l9-2m-9-8l9 2m-9-2l-9 2">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">خدمات التأشيرات</h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                نوفر لك جميع خدمات التأشيرات للسفر بسهولة وسرعة مع ضمان متابعة كل الإجراءات القانونية
+                                المطلوبة.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div></div>
+                                <button
+                                    class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-amber-200 to-amber-300 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop"
+                                alt="حجز الفنادق"
+                                class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5-7h-2v2h2v-2zm-4 0H8v2h2v-2zm4-4h-2v2h2V8zm-4 0H8v2h2V8zm4 8h-2v2h2v-2zm-4 0H8v2h2v-2z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">حجز الفنادق والمنتجعات</h3>
+                            <p class="text-slate-600 text-sm mb-4">
+                                نوفر لك أفضل خيارات حجز الفنادق والمنتجعات حول العالم بأسعار مناسبة وخدمة مميزة لضمان
+                                إقامة مريحة.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <div></div>
+                                <button
+                                    class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 3 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-teal-300 to-teal-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=350&fit=crop"
+                            alt="برامج وجولات سياحية"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">برامج وجولات سياحية</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            نوفر لك أفضل برامج الجولات السياحية المحلية والدولية مع جولات مخصصة حسب رغبتك واهتماماتك.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card 4 -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-sky-300 to-sky-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=350&fit=crop"
+                            alt="انتقالات وتوصيل"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">انتقالات وتوصيل</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            نوفر خدمات الانتقالات والمواصلات داخل المدن وبينها مع أفضل السيارات والسائقين لضمان راحتك.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card – حجز طيران -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-emerald-300 to-emerald-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=350&fit=crop"
+                            alt="حجز طيران"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-0.9-2-2-2zM1 2v6h6V2H1zm0 8v6h6v-6H1zm20-8v6h6V2h-6zm-9 0v6h6V2h-6zM9 9H3V3h6v6zm11 0h-6V3h6v6zM9 20h6v-6H9v6z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">حجز طيران</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            نوفر لك أفضل خيارات حجز الطيران داخليًا ودوليًا مع أسعار تنافسية وخيارات متعددة للرحلات.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--  -->
+                <!-- Card – كروز -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-blue-400 to-blue-500 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=350&fit=crop"
+                            alt="كروز"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">رحلات كروز</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            استمتع برحلات الكروز الفاخرة على مختلف البحار والمحيطات مع خدمات متكاملة للراحة والاستجمام.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <!-- Card – قطارات أوروبا -->
+                <div
+                    class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                    <div class="h-56 bg-gradient-to-br from-red-300 to-red-400 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=400&h=350&fit=crop"
+                            alt="قطارات أوروبا"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-slate-700" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C8 2 4 6 4 10v8h16v-8c0-4-4-8-8-8zM6 18v2h12v-2H6z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="playfair text-2xl font-bold text-slate-900 mb-3">قطارات أوروبا</h3>
+                        <p class="text-slate-600 text-sm mb-6">
+                            حجز تذاكر قطارات أوروبا بسهولة مع اختيار أفضل المسارات والمواعيد لتجربة سفر ممتعة ومريحة.
+                        </p>
+                        <div class="flex items-center justify-end">
+                            <button
+                                class="w-12 h-12 bg-[#121e30] hover:bg-[#121e30] text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+   <!-- Hero Section -->
+    <section class="w-full bg-[#e9f2f0] -mt-[80px]">
+      <div class="hero ">
+    <div class="hero-content py-12">
+        <h1>باقات <span class="highlight">السياحة</span></h1>
+        <p>
+            اكتشف أجمل وجهات السفر حول العالم مع باقاتنا الحصرية،
+            المصممة بعناية لتناسب جميع احتياجاتك.
+        </p>
+        <button class="cta-button">
+            عرض جميع الباقات
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+
+
+       <!-- Packages Grid -->
+<div class="packages-grid">
+    <!-- Card 1: Maldives -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=500&h=600&fit=crop"
+            alt="Maldives" class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 10%</div>
+        <div class="card-content">
+            <div class="card-destination">جزر المالديف</div>
+            <div class="card-title">عطلة فاخرة في جزر المالديف</div>
+            <div class="card-price">
+                <span class="card-price-current">من 180$</span>
+                <span class="card-price-original">200$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>8 ليالي - 9 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 2: Thailand -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=600&fit=crop"
+            alt="Thailand" class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 12%</div>
+        <div class="card-content">
+            <div class="card-destination">تايلاند</div>
+            <div class="card-title">رحلة مغامرات في تايلاند</div>
+            <div class="card-price">
+                <span class="card-price-current">من 290$</span>
+                <span class="card-price-original">300$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>3 ليالي - 4 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 3: Canada -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
+            alt="Canada" class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 15%</div>
+        <div class="card-content">
+            <div class="card-destination">كندا</div>
+            <div class="card-title">شلالات كندا الساحرة</div>
+            <div class="card-price">
+                <span class="card-price-current">من 100$</span>
+                <span class="card-price-original">200$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>5 ليالي - 6 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 4: India -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&h=600&fit=crop" alt="India"
+            class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 10%</div>
+        <div class="card-content">
+            <div class="card-destination">الهند</div>
+            <div class="card-title">تاج محل – تحفة الهند</div>
+            <div class="card-price">
+                <span class="card-price-current">من 200$</span>
+                <span class="card-price-original">300$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>6 ليالي - 7 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 5: Dubai -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop" alt="Dubai"
+            class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 10%</div>
+        <div class="card-content">
+            <div class="card-destination">دبي</div>
+            <div class="card-title">باقة عطلة استكشاف دبي</div>
+            <div class="card-price">
+                <span class="card-price-current">من 180$</span>
+                <span class="card-price-original">200$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>8 ليالي - 9 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 6: Nepal -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop" alt="Nepal"
+            class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 12%</div>
+        <div class="card-content">
+            <div class="card-destination">نيبال</div>
+            <div class="card-title">اكتشاف الطبيعة في نيبال</div>
+            <div class="card-price">
+                <span class="card-price-current">من 180$</span>
+                <span class="card-price-original">200$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>8 ليالي - 9 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 7: Colombia -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
+            alt="Colombia" class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 15%</div>
+        <div class="card-content">
+            <div class="card-destination">كولومبيا</div>
+            <div class="card-title">جولة تاريخية في كولومبيا</div>
+            <div class="card-price">
+                <span class="card-price-current">من 180$</span>
+                <span class="card-price-original">200$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>8 ليالي - 9 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card 8: Greece -->
+    <div class="package-card">
+        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=500&h=600&fit=crop"
+            alt="Greece" class="card-image">
+        <div class="card-overlay"></div>
+        <div class="discount-badge">خصم 10%</div>
+        <div class="card-content">
+            <div class="card-destination">اليونان</div>
+            <div class="card-title">اكتشف جمال اليونان</div>
+            <div class="card-price">
+                <span class="card-price-current">من 180$</span>
+                <span class="card-price-original">200$</span>
+            </div>
+            <div class="card-footer">
+                <div class="card-rating">
+                    <span class="star">★</span>
+                    <span>5.00 (325)</span>
+                </div>
+                <div class="card-duration">
+                    <span>⏱</span>
+                    <span>8 ليالي - 9 أيام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </section>
+
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add hover effect to cards
+        const cards = document.querySelectorAll('.package-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.25)';
+            });
+            card.addEventListener('mouseleave', function () {
+                this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.15)';
+            });
+        });
+
+        // CTA Button click
+        document.querySelector('.cta-button').addEventListener('click', function () {
+            alert('شكراً لاهتمامك! سيتم توجيهك إلى جميع الباقات.');
+        });
+    </script>
+
+
+
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-bg py-24">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="text-center mb-16">
+                <span
+                    class="bg-white px-4 py-2 rounded text-teal-800 font-bold text-sm shadow-sm border border-teal-100">
+                    <i class="fas fa-plane mr-2"></i> الأسئلة الشائعة
+                </span>
+                <h2 class="text-5xl font-bold text-gray-900 mt-6 mb-4">إجابات على أسئلتك السياحية</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">نقدم لك إجابات مفصلة لأكثر الأسئلة شيوعًا حول رحلاتنا
+                    وخدماتنا لتسهيل تجربة السفر الخاصة بك.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="./img/woman-yellow-sweatshirt-is-sitting-red-shovel-word-world-bottom-removebg-preview.webp"
+                        alt="Travel" class="rounded-2xl ">
+                    <div class="absolute bottom-8 left-8 right-8 p-8 rounded-2xl ">
+                        <button
+                            class="bg-[#1a2336] text-white px-6 py-3 rounded-full font-bold flex items-center gap-2">
+                            تواصل معنا <i class="fas fa-arrow-up-right-from-square text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <!-- FAQ 1 -->
+                    <div class="faq-card">
+                        <div class="faq-header active" onclick="toggleFAQ(this)">
+                            <span class="font-bold">هل تقدمون باقات سياحية مخصصة؟</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content active">
+                            <p>نعم، يمكننا تصميم باقات سياحية مخصصة وفق احتياجاتك واهتماماتك لضمان أفضل تجربة سفر.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">ما هي طرق الدفع المتاحة؟</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>نقبل الدفع عبر البطاقات الائتمانية، التحويل البنكي، والمحافظ الإلكترونية لتسهيل الحجز.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">هل تشمل باقة الرحلة تذاكر الطيران؟</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>بعض الباقات تشمل تذاكر الطيران، ويمكنك اختيار إضافة التذاكر حسب احتياجاتك.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">ما هي سياسة الإلغاء لديكم؟</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>يمكنك إلغاء أو تعديل الحجز وفق الشروط المحددة في سياسة الإلغاء، مع إمكانية استرداد المبلغ
+                                حسب نوع الباقة.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-card">
+                        <div class="faq-header" onclick="toggleFAQ(this)">
+                            <span class="font-bold">كيف يمكنني حجز رحلة سياحية؟</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-content">
+                            <p>يمكنك حجز رحلتك من خلال موقعنا مباشرة، أو التواصل معنا عبر الهاتف أو البريد الإلكتروني
+                                لتسهيل عملية الحجز.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="bg-[#1a2336] text-white py-8 md:py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- المحتوى الرئيسي للفوتر -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
+
+                <!-- شعار ووصف الوكالة -->
+                <div class="col-span-1">
+                    <div class="flex items-center gap-3 mb-4 lg:mb-6">
+                        <img src="./img/logo 1.png" class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
+                            alt="شعار وكالة روز">
+                        <h2 class="text-xl md:text-2xl font-bold">وكالة روز</h2>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4 lg:mb-6">
+                        نحن نقدم أفضل خدمات السفر والسياحة لضمان تجربة ممتعة ومريحة لعملائنا الكرام حول العالم.
+                    </p>
+                    <div>
+                        <h3 class="font-bold mb-3 lg:mb-4 text-sm md:text-base">تابعنا على :</h3>
+                        <div class="flex gap-3">
+                            <a href="#"
+                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-facebook-f text-sm md:text-base"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-twitter text-sm md:text-base"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-linkedin-in text-sm md:text-base"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                                <i class="fab fa-youtube text-sm md:text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- الصفحات الرئيسية -->
+                <div class="col-span-1">
+                    <div class="mb-6 lg:mb-8">
+                        <h3
+                            class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
+                            الصفحات الرئيسية
+                            <span class="text-teal-300 mr-2">⋯</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-2 lg:space-y-3 text-gray-200">
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> الرئيسية
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> من نحن
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> خدماتنا
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> فريقنا
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> المدونة
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> اتصل بنا
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- باقات السفر -->
+                <div class="col-span-1">
+                    <div class="mb-6 lg:mb-8">
+                        <h3
+                            class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
+                            باقات السفر
+                            <span class="text-teal-300 mr-2">⋯</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-2 lg:space-y-3 text-gray-200">
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> رحلة فاخرة إلى جزر المالديف
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> مغامرة تايلاند
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> باقة عطلة دبي
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> الرحلة الذهبية للهند
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> استكشاف الطبيعة في نيبال
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> جولة تجديف الأنهار
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- اتصل بنا -->
+                <div class="col-span-1">
+                    <div class="mb-6 lg:mb-8">
+                        <h3
+                            class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
+                            اتصل بنا
+                            <span class="text-teal-300 mr-2">⋯</span>
+                        </h3>
+                    </div>
+                    <div class="space-y-4 lg:space-y-6">
+                        <!-- الهاتف -->
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <div
+                                class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone text-sm md:text-base lg:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 text-sm md:text-base">الهاتف</h4>
+                                <p class="text-gray-300 text-xs md:text-sm">+123 4566 7899</p>
+                            </div>
+                        </div>
+
+                        <!-- البريد -->
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <div
+                                class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-sm md:text-base lg:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 text-sm md:text-base">البريد الإلكتروني</h4>
+                                <p class="text-gray-300 text-xs md:text-sm">example@Domain.com</p>
+                            </div>
+                        </div>
+
+                        <!-- الموقع -->
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <div
+                                class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-sm md:text-base lg:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 text-sm md:text-base">موقع المكتب</h4>
+                                <p class="text-gray-300 text-xs md:text-sm">16 شارع جرين، دكا</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- خط فاصل -->
+            <div class="border-t border-teal-700/50 my-6 lg:my-8"></div>
+
+            <!-- حقوق الطبع والنشر -->
+            <div class="text-center text-gray-300 text-xs md:text-sm px-4">
+                <p>وكالة روز © حقوق النشر 2026. جميع الحقوق محفوظة لـ ashikacademy</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- رابط Font Awesome إذا لم يكن مضافاً -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JavaScript -->
+    <script>
+        // Background rotation
+        let currentBgIndex = 0;
+        const backgrounds = ['bg1', 'bg2', 'bg3'];
+
+        function rotateBackground() {
+            // Hide current
+            document.getElementById(backgrounds[currentBgIndex]).classList.remove('active');
+            document.getElementById(backgrounds[currentBgIndex]).classList.add('inactive');
+
+            // Show next
+            currentBgIndex = (currentBgIndex + 1) % backgrounds.length;
+            document.getElementById(backgrounds[currentBgIndex]).classList.remove('inactive');
+            document.getElementById(backgrounds[currentBgIndex]).classList.add('active');
+        }
+
+        // Rotate background every 8 seconds
+        setInterval(rotateBackground, 8000);
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = entry.target.getAttribute('data-animation');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with animations
+        document.querySelectorAll('[data-animation]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
