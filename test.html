@@ -1,232 +1,423 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TourDen - Complete Page</title>
+    <title>من نحن - وكالة روز للسفر والسياحة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            font-family: 'Cairo', sans-serif;
         }
-
-        /* FAQ Section Styles */
-        .faq-bg {
-            background-color: #f3f8f7;
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
-        .faq-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 12px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
-
-        .faq-header {
-            padding: 18px 24px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
-            background: white;
-            color: #111;
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
-
-        .faq-header.active {
-            background: #003333;
-            color: white;
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background: #f9fbfb;
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
         }
-
-        .faq-content.active {
-            max-height: 200px;
-            border-bottom: 1px solid #eee;
+        
+        .animate-fadeInLeft {
+            animation: fadeInLeft 0.8s ease-out forwards;
         }
-
-        .faq-content p {
-            padding: 20px 24px;
-            color: #666;
-            font-size: 15px;
+        
+        .animate-fadeInRight {
+            animation: fadeInRight 0.8s ease-out forwards;
         }
-
-        .faq-toggle {
-            transition: transform 0.3s;
+        
+        .animate-pulse-slow {
+            animation: pulse 3s infinite ease-in-out;
         }
-
-        .faq-header.active .faq-toggle {
-            transform: rotate(180deg);
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
-
-        /* Contact Section Styles */
-        .contact-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop') center/cover;
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .form-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+        
+        .animate-on-scroll-left {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease-out;
         }
-
-        .form-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+        
+        .animate-on-scroll-left.animated {
+            opacity: 1;
+            transform: translateX(0);
         }
-
-        .btn-teal {
-            background: #14b8a6;
-            color: white;
-            transition: all 0.3s;
+        
+        .animate-on-scroll-right {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease-out;
         }
-
-        .btn-teal:hover {
-            background: #0d9488;
-            transform: translateY(-2px);
+        
+        .animate-on-scroll-right.animated {
+            opacity: 1;
+            transform: translateX(0);
         }
-
-        /* Footer Styles */
-        .footer-bg {
-            background-color: #003333;
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
         }
-
-        .heading-line {
-            position: relative;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
-
-        .heading-line::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            right: 0;
-            width: 40px;
-            height: 2px;
-            background: white;
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f766e 0%, #0e7490 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #f59e0b, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1335&q=80');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
-
-<body class="bg-white">
-
-    <!-- FAQ Section -->
-    <section class="faq-bg py-24">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="text-center mb-16">
-                <span
-                    class="bg-white px-4 py-2 rounded text-teal-800 font-bold text-sm shadow-sm border border-teal-100">
-                    <i class="fas fa-plane mr-2"></i> FAQ'S
-                </span>
-                <h2 class="text-5xl font-bold text-gray-900 mt-6 mb-4">Answers To Your Travel Questions</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                    elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1530789253516-ad44b9c526ed?w=800&h=600&fit=crop"
-                        alt="Travel" class="rounded-2xl shadow-2xl">
-                    <div
-                        class="absolute bottom-8 left-8 right-8 bg-black bg-opacity-60 backdrop-blur-md p-8 rounded-2xl border border-white border-opacity-20">
-                        <h3 class="text-2xl font-bold text-white mb-3">Do You Have Any Question?</h3>
-                        <p class="text-gray-300 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                            tellus, luctus nec ullamcorper mattis.</p>
-                        <button class="bg-white text-teal-900 px-6 py-3 rounded-full font-bold flex items-center gap-2">
-                            Contact Us <i class="fas fa-arrow-up-right-from-square text-sm"></i>
-                        </button>
+<body class="bg-gray-50" dir="rtl">
+    
+  
+    
+    <!-- About Us Main Section -->
+    <div class="max-w-7xl mx-auto px-4 py-16" id="about">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <!-- Animated Title -->
+                <div class="animate-on-scroll mb-12">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6 gradient-text">وكالة روز للسفر والسياحة</h2>
+                    <div class="w-24 h-2 bg-amber-500 rounded-full mb-8"></div>
+                    
+                    <div class="text-gray-700 leading-relaxed space-y-6 text-lg">
+                        <p class="animate-on-scroll">
+                            تأسست وكالة <span class="font-bold text-teal-700">روز للسفر والسياحة</span> عام 2010 برؤية طموحة لتحويل أحلام السفر إلى واقع ملموس. على مدار أكثر من 15 عاماً، كنا شريكاً موثوقاً للآلاف من المسافرين الذين سعوا لاكتشاف العالم بطرق جديدة ومثيرة.
+                        </p>
+                        
+                        <p class="animate-on-scroll">
+                            نحن نؤمن بأن <span class="font-bold text-teal-700">السفر تجربة تحويلية</span> تثري النفس وتوسع الآفاق. لذلك، لا نقدم مجرد رحلات وحجوزات، بل نصنع تجارب سفر استثنائية تتوافق مع أحلام كل عميل وتوقعاته.
+                        </p>
+                        
+                        <p class="animate-on-scroll">
+                            بفضل شبكة شراكاتنا العالمية الممتدة وعلاقاتنا القوية مع أفضل شركات الطيران والفنادق والمرشدين السياحيين حول العالم، نضمن لعملائنا الحصول على <span class="font-bold text-teal-700">أفضل العروض والخدمات المميزة</span> التي تجعل كل رحلة فريدة من نوعها.
+                        </p>
                     </div>
                 </div>
-
-                <div class="space-y-2">
-                    <!-- FAQ 1 -->
-                    <div class="faq-card">
-                        <div class="faq-header active" onclick="toggleFAQ(this)">
-                            <span class="font-bold">Do You Offer Customized Tour Packages?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
+                
+             
+                
+                <!-- Vision & Mission -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12" id="vision">
+                    <div class="gradient-bg text-white rounded-2xl p-8 shadow-xl animate-on-scroll-left card-hover">
+                        <div class="text-amber-300 text-4xl mb-4"><i class="fas fa-eye"></i></div>
+                        <h3 class="text-2xl font-bold mb-4">رؤيتنا</h3>
+                        <p class="text-white/90">أن نكون الوكالة الرائدة في صناعة السياحة بالسعودية والشرق الأوسط، من خلال تقديم تجارب سفر استثنائية تلهم المسافرين وتتجاوز توقعاتهم.</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-2xl p-8 shadow-xl animate-on-scroll-right card-hover">
+                        <div class="text-white text-4xl mb-4"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="text-2xl font-bold mb-4">رسالتنا</h3>
+                        <p class="text-white/90">تمكين الأفراد والعائلات من استكشاف العالم بثقة وسهولة، من خلال خدمات سياحية مبتكرة ومخصصة، مع الحفاظ على أعلى معايير الجودة والموثوقية.</p>
+                    </div>
+                </div>
+                
+                <!-- Values -->
+                <div class="animate-on-scroll">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-8">قيمنا الأساسية</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg card-hover">
+                            <div class="text-teal-600 text-2xl mt-1"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">الثقة والشفافية</h4>
+                                <p class="text-gray-600">نحرص على بناء علاقات طويلة الأمد مع عملائنا تعتمد على الصدق والشفافية في كل التفاصيل.</p>
+                            </div>
                         </div>
-                        <div class="faq-content active">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.</p>
+                        
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg card-hover">
+                            <div class="text-teal-600 text-2xl mt-1"><i class="fas fa-lightbulb"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">الابتكار</h4>
+                                <p class="text-gray-600">نطور باستمرار خدماتنا وعروضنا لتلبية الاحتياجات المتغيرة للمسافرين في العصر الحديث.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg card-hover">
+                            <div class="text-teal-600 text-2xl mt-1"><i class="fas fa-heart"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">التفاني</h4>
+                                <p class="text-gray-600">نضع عملاءنا في قلب كل ما نقوم به، ونسعى جاهدين لتقديم تجارب تتجاوز توقعاتهم.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-lg card-hover">
+                            <div class="text-teal-600 text-2xl mt-1"><i class="fas fa-award"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-900 mb-2">التميز</h4>
+                                <p class="text-gray-600">نلتزم بأعلى معايير الجودة في كل جوانب عملنا، من التخطيط إلى التنفيذ والمتابعة.</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- FAQ 2 -->
-                    <div class="faq-card">
-                        <div class="faq-header" onclick="toggleFAQ(this)">
-                            <span class="font-bold">What Payment Methods Do You Accept?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-8">
+                <!-- Team Section -->
+                <div class="gradient-bg text-white rounded-2xl p-8 shadow-xl animate-on-scroll-right" id="team">
+                    <h2 class="text-3xl font-bold mb-8 text-center">فريق روز</h2>
+                    
+                    <!-- Profile -->
+                    <div class="flex flex-col items-center mb-8">
+                        <div class="relative mb-6">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                                 alt="مدير الوكالة" 
+                                 class="w-32 h-32 rounded-full border-4 border-amber-400 object-cover shadow-lg floating">
+                            <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-crown text-white"></i>
+                            </div>
                         </div>
-                        <div class="faq-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.</p>
+                        <h3 class="text-2xl font-bold">أحمد محمود</h3>
+                        <p class="text-amber-200 mt-1">المؤسس والمدير التنفيذي</p>
+                        
+                        <p class="text-sm text-white/80 text-center mt-4 leading-relaxed">
+                            خبير سياحي مع أكثر من 20 عاماً من الخبرة في صناعة السفر. قاد أحمد فريق روز لتحقيق نمو متميز وسمعة طيبة في السوق السعودي والعربي.
+                        </p>
+                    </div>
+                    
+                    <!-- Team Stats -->
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold">30+</div>
+                            <div class="text-sm text-white/80">خبير سياحي</div>
+                        </div>
+                        
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                            <div class="text-2xl font-bold">10</div>
+                            <div class="text-sm text-white/80">فروع في المملكة</div>
                         </div>
                     </div>
-                    <!-- FAQ 3 -->
-                    <div class="faq-card">
-                        <div class="faq-header" onclick="toggleFAQ(this)">
-                            <span class="font-bold">Are Flight Tickets Included In The Tour Price?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                
+                <!-- Why Choose Us -->
+                <div class="bg-gradient-to-r from-amber-50 to-white border border-amber-100 rounded-2xl p-8 shadow-lg animate-on-scroll-right">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">لماذا تختار روز؟</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">ضمان الجودة</h4>
+                                <p class="text-sm text-gray-600">نقدم ضمان استرداد الأموال في حالة عدم الرضا عن الخدمة.</p>
+                            </div>
                         </div>
-                        <div class="faq-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.</p>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">دعم متكامل</h4>
+                                <p class="text-sm text-gray-600">فريق دعم متاح على مدار الساعة طوال أيام الأسبوع.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-gem"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">عروض حصرية</h4>
+                                <p class="text-sm text-gray-600">إمكانية الوصول إلى عروض حصرية مع شركائنا العالميين.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="w-10 h-10 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">تخطيط مخصص</h4>
+                                <p class="text-sm text-gray-600">نصمم كل رحلة حسب اهتماماتك وميزانيتك وتفضيلاتك.</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- FAQ 4 -->
-                    <div class="faq-card">
-                        <div class="faq-header" onclick="toggleFAQ(this)">
-                            <span class="font-bold">What Is Your Cancellation Policy?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="bg-gradient-to-r from-teal-700 to-teal-800 text-white rounded-2xl p-8 shadow-xl animate-on-scroll-right animate-pulse-slow">
+                    <h2 class="text-2xl font-bold mb-4">هل أنت مستعد لرحلتك القادمة؟</h2>
+                    <p class="text-white/80 mb-6">اتصل بنا اليوم واحصل على استشارة مجانية لتخطيط رحلتك المثالية.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-white/80">اتصل بنا</div>
+                                <div class="font-bold">800 123 4567</div>
+                            </div>
                         </div>
-                        <div class="faq-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.</p>
+                        
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-white/80">البريد الإلكتروني</div>
+                                <div class="font-bold">info@rose-travel.com</div>
+                            </div>
                         </div>
                     </div>
-                    <!-- FAQ 5 -->
-                    <div class="faq-card">
-                        <div class="faq-header" onclick="toggleFAQ(this)">
-                            <span class="font-bold">How Do I Book A Tour?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
-                        </div>
-                        <div class="faq-content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
-                                ullamcorper mattis, pulvinar dapibus leo.</p>
-                        </div>
-                    </div>
+                    
+                    <a href="#" class="block mt-6 bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full text-center transition duration-300 transform hover:scale-105">
+                        احجز استشارة مجانية
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
+    
 
 
     <script>
-        function toggleFAQ(header) {
-            const content = header.nextElementSibling;
-            const isActive = header.classList.contains('active');
-
-            document.querySelectorAll('.faq-header').forEach(h => {
-                h.classList.remove('active');
-                h.nextElementSibling.classList.remove('active');
-            });
-
-            if (!isActive) {
-                header.classList.add('active');
-                content.classList.add('active');
+        // Scroll animation script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial animations
+            const animatedElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right');
+            
+            // Check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+                    rect.bottom >= 0
+                );
             }
-        }
+            
+            // Add animated class when element is in viewport
+            function checkScroll() {
+                animatedElements.forEach(element => {
+                    if (isInViewport(element) && !element.classList.contains('animated')) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+            
+            // Initial check
+            checkScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkScroll);
+            
+            // Add hover effect to cards
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Trigger some initial animations with delay
+            setTimeout(() => {
+                const stats = document.querySelectorAll('.animate-on-scroll');
+                stats.forEach((stat, index) => {
+                    setTimeout(() => {
+                        stat.classList.add('animated');
+                    }, index * 200);
+                });
+            }, 300);
+        });
     </script>
 </body>
-
 </html>

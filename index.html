@@ -1307,8 +1307,7 @@
             <nav class="hidden md:flex items-center gap-8 p-5">
                 <div class="flex items-center gap-6 rounded-full px-6 py-5 border border-white/20">
                     <a href="#" class="hover:text-cyan-400 text-white text-sm">الرئيسية</a>
-                    <a href="#" class="hover:text-cyan-400 text-white text-sm">من نحن</a>
-                    <a href="#" class="hover:text-cyan-400 text-white text-sm">الصفحات</a>
+                    <a href="/about.html" class="hover:text-cyan-400 text-white text-sm">من نحن</a>
                     <a href="#" class="hover:text-cyan-400 text-white text-sm">الخدمات</a>
                     <a href="#" class="hover:text-cyan-400 text-white text-sm">المدونة</a>
                     <a href="#" class="hover:text-cyan-400 text-white text-sm">تواصل معنا</a>
@@ -2821,33 +2820,34 @@
         }
     </script>
 
-   <footer class="bg-[#1a2336] text-white py-16">
-    <div class="max-w-7xl mx-auto px-8">
+<footer class="bg-[#1a2336] text-white py-8 md:py-12 lg:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- المحتوى الرئيسي للفوتر -->
-        <div class="grid grid-cols-4 gap-12 mb-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
+            
             <!-- شعار ووصف الوكالة -->
             <div class="col-span-1">
-                <div class="flex items-center gap-2 mb-6">
-                    <img src="./img/logo 1.png" class="w-16 h-16" alt="">
-                    <h2 class="text-2xl font-bold">وكالة روز </h2>
+                <div class="flex items-center gap-3 mb-4 lg:mb-6">
+                    <img src="./img/logo 1.png" class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16" alt="شعار وكالة روز">
+                    <h2 class="text-xl md:text-2xl font-bold">وكالة روز</h2>
                 </div>
-                <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                <p class="text-gray-300 text-sm leading-relaxed mb-4 lg:mb-6">
                     نحن نقدم أفضل خدمات السفر والسياحة لضمان تجربة ممتعة ومريحة لعملائنا الكرام حول العالم.
                 </p>
                 <div>
-                    <h3 class="font-bold mb-4">تابعنا على :</h3>
-                    <div class="flex gap-4">
-                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-10 h-10 flex items-center justify-center hover:bg-teal-100 transition">
-                            <i class="fab fa-facebook-f"></i>
+                    <h3 class="font-bold mb-3 lg:mb-4 text-sm md:text-base">تابعنا على :</h3>
+                    <div class="flex gap-3">
+                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-facebook-f text-sm md:text-base"></i>
                         </a>
-                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-10 h-10 flex items-center justify-center hover:bg-teal-100 transition">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-twitter text-sm md:text-base"></i>
                         </a>
-                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-10 h-10 flex items-center justify-center hover:bg-teal-100 transition">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-linkedin-in text-sm md:text-base"></i>
                         </a>
-                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-10 h-10 flex items-center justify-center hover:bg-teal-100 transition">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-youtube text-sm md:text-base"></i>
                         </a>
                     </div>
                 </div>
@@ -2855,41 +2855,41 @@
 
             <!-- الصفحات الرئيسية -->
             <div class="col-span-1">
-                <div class="mb-8">
-                    <h3 class="text-lg font-bold mb-4 pb-2 border-b-2 border-white inline-block">
+                <div class="mb-6 lg:mb-8">
+                    <h3 class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
                         الصفحات الرئيسية
-                        <span class="text-teal-300 ml-2">⋯</span>
+                        <span class="text-teal-300 mr-2">⋯</span>
                     </h3>
                 </div>
-                <ul class="space-y-3 text-gray-200">
+                <ul class="space-y-2 lg:space-y-3 text-gray-200">
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> الرئيسية
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> الرئيسية
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> من نحن
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> من نحن
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> خدماتنا
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> خدماتنا
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> فريقنا
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> فريقنا
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> المدونة
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> المدونة
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> اتصل بنا
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> اتصل بنا
                         </a>
                     </li>
                 </ul>
@@ -2897,41 +2897,41 @@
 
             <!-- باقات السفر -->
             <div class="col-span-1">
-                <div class="mb-8">
-                    <h3 class="text-lg font-bold mb-4 pb-2 border-b-2 border-white inline-block">
+                <div class="mb-6 lg:mb-8">
+                    <h3 class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
                         باقات السفر
-                        <span class="text-teal-300 ml-2">⋯</span>
+                        <span class="text-teal-300 mr-2">⋯</span>
                     </h3>
                 </div>
-                <ul class="space-y-3 text-gray-200">
+                <ul class="space-y-2 lg:space-y-3 text-gray-200">
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> رحلة فاخرة إلى جزر المالديف
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> رحلة فاخرة إلى جزر المالديف
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> مغامرة تايلاند
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> مغامرة تايلاند
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> باقة عطلة دبي
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> باقة عطلة دبي
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> الرحلة الذهبية للهند
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> الرحلة الذهبية للهند
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> استكشاف الطبيعة في نيبال
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> استكشاف الطبيعة في نيبال
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:text-white transition flex items-center gap-2">
-                            <span class="text-teal-300">✦</span> جولة إثارة تجديف الأنهار
+                        <a href="#" class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                            <span class="text-teal-300 text-xs md:text-sm">✦</span> جولة تجديف الأنهار
                         </a>
                     </li>
                 </ul>
@@ -2939,43 +2939,43 @@
 
             <!-- اتصل بنا -->
             <div class="col-span-1">
-                <div class="mb-8">
-                    <h3 class="text-lg font-bold mb-4 pb-2 border-b-2 border-white inline-block">
+                <div class="mb-6 lg:mb-8">
+                    <h3 class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
                         اتصل بنا
-                        <span class="text-teal-300 ml-2">⋯</span>
+                        <span class="text-teal-300 mr-2">⋯</span>
                     </h3>
                 </div>
-                <div class="space-y-6">
+                <div class="space-y-4 lg:space-y-6">
                     <!-- الهاتف -->
-                    <div class="flex items-start gap-4">
-                        <div class="bg-white text-[#1a2336] rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-phone text-lg"></i>
+                    <div class="flex items-start gap-3 md:gap-4">
+                        <div class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-sm md:text-base lg:text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white mb-1">الهاتف</h4>
-                            <p class="text-gray-300 text-sm">+123 4566 7899</p>
+                            <h4 class="font-bold text-white mb-1 text-sm md:text-base">الهاتف</h4>
+                            <p class="text-gray-300 text-xs md:text-sm">+123 4566 7899</p>
                         </div>
                     </div>
 
                     <!-- البريد -->
-                    <div class="flex items-start gap-4">
-                        <div class="bg-white text-[#1a2336] rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-envelope text-lg"></i>
+                    <div class="flex items-start gap-3 md:gap-4">
+                        <div class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-sm md:text-base lg:text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white mb-1">البريد الإلكتروني</h4>
-                            <p class="text-gray-300 text-sm">example@Domain.com</p>
+                            <h4 class="font-bold text-white mb-1 text-sm md:text-base">البريد الإلكتروني</h4>
+                            <p class="text-gray-300 text-xs md:text-sm">example@Domain.com</p>
                         </div>
                     </div>
 
                     <!-- الموقع -->
-                    <div class="flex items-start gap-4">
-                        <div class="bg-white text-[#1a2336] rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-map-marker-alt text-lg"></i>
+                    <div class="flex items-start gap-3 md:gap-4">
+                        <div class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-sm md:text-base lg:text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-white mb-1">موقع المكتب</h4>
-                            <p class="text-gray-300 text-sm">16 شارع جرين، دكا</p>
+                            <h4 class="font-bold text-white mb-1 text-sm md:text-base">موقع المكتب</h4>
+                            <p class="text-gray-300 text-xs md:text-sm">16 شارع جرين، دكا</p>
                         </div>
                     </div>
                 </div>
@@ -2983,14 +2983,18 @@
         </div>
 
         <!-- خط فاصل -->
-        <div class="border-t border-teal-700 my-8"></div>
+        <div class="border-t border-teal-700/50 my-6 lg:my-8"></div>
 
         <!-- حقوق الطبع والنشر -->
-        <div class="text-center text-gray-300 text-sm">
-            <p>وكالة روز  © حقوق النشر 2026. جميع الحقوق محفوظة لـ ashikacademy</p>
+        <div class="text-center text-gray-300 text-xs md:text-sm px-4">
+            <p>وكالة روز © حقوق النشر 2026. جميع الحقوق محفوظة لـ ashikacademy</p>
         </div>
     </div>
 </footer>
+
+<!-- رابط Font Awesome إذا لم يكن مضافاً -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
 
     <!-- JavaScript -->
