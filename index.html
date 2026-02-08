@@ -305,7 +305,7 @@
         }
 
         .cta-button:hover {
-            background: #0f172a;
+            background: #e69a17;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(30, 41, 59, 0.4);
         }
@@ -902,95 +902,150 @@
 </head>
 
 <body class=" text-white">
-    <!-- Navigation Header -->
-    <header id="headerr" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between" dir="rtl">
+   <!-- Navigation Header -->
+<header id="headerr" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between" dir="rtl">
 
-            <!-- Logo -->
-            <div class="flex items-center gap-2 text-2xl font-bold">
-                <img src="./img/logo 1.png" class="w-14 h-14" alt="الشعار">
-            </div>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center gap-8 p-5">
-                <div class="flex items-center gap-6 rounded-full px-6 py-5 border border-white/20">
-                    <a href="#" class="hover:text-[#e69a17] text-white text-sm">الرئيسية</a>
-                    <a href="/about.html" class="hover:text-[#e69a17] text-white text-sm">من نحن</a>
-                    <a href="/services.html" class="hover:text-[#e69a17] text-white text-sm">الخدمات</a>
-                    <a href="#" class="hover:text-[#e69a17] text-white text-sm">تواصل معنا</a>
-                </div>
-            </nav>
-
-            <!-- Right Actions -->
-            <div class="flex items-center gap-4">
-
-
-
-                <!-- WhatsApp -->
-                <a href="https://wa.me/20000000000" target="_blank"
-                    class="hidden md:inline-flex bg-white text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-colors text-sm items-center gap-2">
-                    <i class="fab fa-whatsapp"></i>
-                    واتساب
-                </a>
-
-                <!-- Mobile Menu Button -->
-                <button id="menuBtn" class="md:hidden text-white focus:outline-none">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-
-            </div>
+        <!-- Logo -->
+        <div class="flex items-center gap-2 text-2xl font-bold">
+            <img src="./img/logo 1.png" class="w-14 h-14" alt="الشعار">
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-slate-800">
-            <div class="flex flex-col items-center gap-6 py-6 text-white">
-                <a href="#" class="mobile-link hover:text-[#e69a17]">الرئيسية</a>
-                <a href="/about.html" class="mobile-link hover:text-[#e69a17]">من نحن</a>
-                <a href="/services.html" class="mobile-link hover:text-[#e69a17]">الخدمات</a>
-                <a href="#" class="mobile-link hover:text-[#e69a17]">تواصل معنا</a>
-                <a href="https://wa.me/20000000000"
-                    class="bg-white text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-colors text-sm">
-                    واتساب
-                </a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 p-5">
+            <div class="flex items-center gap-6 rounded-full px-6 py-5 border border-white/20">
+                <a href="#" class="hover:text-[#e69a17] text-white text-sm">الرئيسية</a>
+                <a href="/about.html" class="hover:text-[#e69a17] text-white text-sm">من نحن</a>
+                <a href="/services.html" class="hover:text-[#e69a17] text-white text-sm">الخدمات</a>
+                <a href="#" class="hover:text-[#e69a17] text-white text-sm">تواصل معنا</a>
             </div>
-        </div>
+        </nav>
 
-    </header>
+        <!-- Right Actions -->
+        <div class="flex items-center gap-4">
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/966502113147" target="_blank"
+                class="hidden md:inline-flex bg-white text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-green-500 hover:text-white transition-colors text-sm items-center gap-2">
+                <i class="fab fa-whatsapp"></i>
+                واتساب
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- Mobile Menu - قائمة جانبية بدلاً من قائمة منبثقة من الأعلى -->
+    <div id="mobileMenu" class="md:hidden fixed inset-y-0 right-0 z-50 w-64 bg-slate-900 text-white shadow-2xl transform transition-transform duration-300 ease-in-out translate-x-full">
+        <!-- زر الإغلاق -->
+        <button id="closeMenuBtn" class="absolute left-4 top-4 text-gray-500 hover:text-gray-700">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        
+        <div class="flex flex-col items-start gap-6 py-12 px-6 text-black h-full overflow-y-auto">
+            <a href="#" class="mobile-link text-lg text-white hover:text-[#e69a17] transition-colors w-full py-3 border-b border-gray-100">الرئيسية</a>
+            <a href="/about.html" class="mobile-link text-lg text-white hover:text-[#e69a17] transition-colors w-full py-3 border-b border-gray-100">من نحن</a>
+            <a href="/services.html" class="mobile-link text-lg text-white hover:text-[#e69a17] transition-colors w-full py-3 border-b border-gray-100">الخدمات</a>
+            <a href="#" class="mobile-link text-lg text-white hover:text-[#e69a17] transition-colors w-full py-3 border-b border-gray-100">تواصل معنا</a>
+            
+            <!-- زر واتساب في القائمة الجانبية -->
+            <a href="https://wa.me/966502113147" target="_blank"
+                class="mt-8 w-full bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors text-sm text-center flex items-center justify-center gap-2">
+                <i class="fab fa-whatsapp"></i>
+                تواصل عبر واتساب
+            </a>
+        </div>
+        
+        <!-- طبقة شفافة لتغطية المحتوى عند فتح القائمة -->
+        <div id="menuOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden hidden"></div>
+    </div>
+</header>
 
     <!-- Script -->
-    <script>
-        const headerr = document.getElementById("headerr");
-        const menuBtn = document.getElementById("menuBtn");
-        const mobileMenu = document.getElementById("mobileMenu");
-        const mobileLinks = document.querySelectorAll(".mobile-link");
+   <script>
+    const headerr = document.getElementById("headerr");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const closeMenuBtn = document.getElementById("closeMenuBtn");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        // تغيير لون الهيدر عند الاسكرول
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                headerr.classList.add("bg-slate-900", "shadow-lg");
-                headerr.classList.remove("bg-transparent");
-            } else {
-                headerr.classList.remove("bg-slate-900", "shadow-lg");
-                headerr.classList.add("bg-transparent");
-            }
-        });
+    // تغيير لون الهيدر عند الاسكرول
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            headerr.classList.add("bg-slate-900", "shadow-lg");
+            headerr.classList.remove("bg-transparent");
+        } else {
+            headerr.classList.remove("bg-slate-900", "shadow-lg");
+            headerr.classList.add("bg-transparent");
+        }
+    });
 
-        // فتح وقفل المينيو
-        menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
+    // فتح القائمة الجانبية
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("hidden");
+    });
 
-        // قفل المينيو عند الضغط على لينك
-        mobileLinks.forEach(link => {
-            link.addEventListener("click", () => {
-                mobileMenu.classList.add("hidden");
-            });
-        });
-    </script>
+    // إغلاق القائمة الجانبية
+    function closeMobileMenu() {
+        mobileMenu.classList.add("translate-x-full");
+        menuOverlay.classList.add("hidden");
+    }
 
+    closeMenuBtn.addEventListener("click", closeMobileMenu);
+    menuOverlay.addEventListener("click", closeMobileMenu);
+
+    // إغلاق القائمة عند الضغط على رابط
+    mobileLinks.forEach(link => {
+        link.addEventListener("click", closeMobileMenu);
+    });
+
+    // إغلاق القائمة عند الضغط على زر ESC
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+</script>
+<style>
+    /* تحسينات للقائمة الجانبية */
+    #mobileMenu {
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* منع التمرير عند فتح القائمة */
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    /* تحسين ظهور العناصر في القائمة */
+    .mobile-link {
+        transition: all 0.2s ease;
+    }
+    
+    .mobile-link:hover {
+        transform: translateX(-5px);
+    }
+    
+    /* تحسين شكل زر الإغلاق */
+    #closeMenuBtn {
+        transition: transform 0.2s ease;
+    }
+    
+    #closeMenuBtn:hover {
+        transform: rotate(90deg);
+    }
+</style>
 
 
     <!-- Hero Section -->
@@ -1042,7 +1097,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
 
                         <!-- زر الاتصال -->
-                        <a href="tel:+20000000000"
+                        <a href="tel:0502113147"
                             class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition shadow-lg hover:shadow-xl">
 
                             <i class="fas fa-phone"></i>
@@ -1050,7 +1105,7 @@
                         </a>
 
                         <!-- زر واتساب -->
-                        <a href="https://wa.me/20000000000" target="_blank"
+                        <a href="https://wa.me/966502113147" target="_blank"
                             class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 smooth-transition shadow-lg hover:shadow-xl">
 
                             <i class="fab fa-whatsapp"></i>
@@ -1089,7 +1144,7 @@
                     </div>
 
                     <div class="group relative rounded-3xl overflow-hidden h-65 cursor-pointer card-hover shadow-2xl">
-                        <img src="./img/2 (15).png" alt="Safe Traveling" class="w-full h-auto object-contain">
+                        <img src="./img/4 (3).png" alt="Safe Traveling" class="w-full h-auto object-contain">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                         <!-- <div class="absolute bottom-0 right-0 left-0 p-6 text-white">
                         <h3 class="text-xl font-bold mb-2">سفر آمن ومضمون</h3>
@@ -1153,8 +1208,8 @@
 
                 <!-- Large Image Card -->
                 <div class="relative rounded-3xl  overflow-hidden h-80 mb-8 tourden-animate tourden-pop tourden-hover">
-                    <img src="./img/New-Project-2026-01-29T124425.946.jpg" alt="وكالة سفر"
-                        class="w-full h-full object-cover">
+                    <img src="./img/./3 (8).png" alt="وكالة سفر"
+                        class="w-full h-full object-">
 
                     <!-- Card Overlay -->
                     <div class="absolute -bottom-14 left-0 right-0 p-8">
@@ -1198,7 +1253,7 @@
               <div class="rounded-2xl overflow-hidden h-[550px] group">
     <img src="./img/5 (1).png" 
          alt="خبراء السفر" 
-         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+         class="w-full h-full object- transition-transform duration-500 group-hover:scale-110">
 </div>
 
 
@@ -1271,14 +1326,14 @@
                 </p>
 
                 <!-- CTA Button -->
-                <button
+                <a href="https://wa.me/966502113147"
                     class="bg-[#e69a17] hover:bg-[#e69a17] text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center gap-2 w-fit transition-colors tourden-animate tourden-pop tourden-hover">
                     المزيد عنا
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
     </main>
@@ -1493,7 +1548,7 @@
     </script>
 
     <!-- Hero Section -->
-    <section class="w-full bg-[#e9f2f0] -mt-[80px]">
+    <section class="w-full  bg-[#e9f2f0] -mt-[80px]">
         <div class="hero ">
             <div class="hero-content py-12">
                 <h1>رحلات وتأشيرات  <span class="highlight">سياحية</span></h1>
@@ -1501,12 +1556,12 @@
                     اكتشف أجمل وجهات السفر حول العالم مع باقاتنا الحصرية،
                     المصممة بعناية لتناسب جميع احتياجاتك.
                 </p>
-                <button class="cta-button">
+                <a href="tel:0502113147" class="cta-button">
                     عرض جميع الباقات
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
-                </button>
+                </a>
             </div>
         </div>
 
@@ -1514,18 +1569,16 @@
 
         <!-- Packages Grid -->
         <div class="packages-grid">
-            <!-- Card 1: Maldives -->
+            <!-- Card 1: مصر -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=500&h=600&fit=crop"
-                    alt="Maldives" class="card-image">
+                <img src="./img/3.png"
+                    alt="مصر" class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 10%</div>
                 <div class="card-content">
-                    <div class="card-destination">جزر المالديف</div>
-                    <div class="card-title">عطلة فاخرة في جزر المالديف</div>
+                    <div class="card-destination">مصر </div>
+                    <div class="card-title">عطلة فاخرة في جمال القاهرة</div>
                     <div class="card-price">
-                        <span class="card-price-current">من 180$</span>
-                        <span class="card-price-original">200$</span>
+                  
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1540,18 +1593,16 @@
                 </div>
             </div>
 
-            <!-- Card 2: Thailand -->
+            <!-- Card 2: جورجيا -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=500&h=600&fit=crop"
-                    alt="Thailand" class="card-image">
+                <img src="./img/4.png"
+                    alt="جورجيا" class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 12%</div>
                 <div class="card-content">
-                    <div class="card-destination">تايلاند</div>
-                    <div class="card-title">رحلة مغامرات في تايلاند</div>
+                    <div class="card-destination">جورجيا </div>
+                    <div class="card-title">رحلة مغامرات في جورجيا</div>
                     <div class="card-price">
-                        <span class="card-price-current">من 290$</span>
-                        <span class="card-price-original">300$</span>
+                        
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1566,18 +1617,16 @@
                 </div>
             </div>
 
-            <!-- Card 3: Canada -->
+            <!-- Card 3: ميلانو -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
-                    alt="Canada" class="card-image">
+                <img src="./img/5.png"
+                    alt="ميلانو" class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 15%</div>
                 <div class="card-content">
-                    <div class="card-destination">كندا</div>
-                    <div class="card-title">شلالات كندا الساحرة</div>
+                    <div class="card-destination">ميلانو</div>
+                    <div class="card-title"> مدن ميلانو الساحرة</div>
                     <div class="card-price">
-                        <span class="card-price-current">من 100$</span>
-                        <span class="card-price-original">200$</span>
+                      
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1592,18 +1641,16 @@
                 </div>
             </div>
 
-            <!-- Card 4: India -->
+            <!-- Card 4: باريس -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=500&h=600&fit=crop" alt="India"
+                <img src="./img/6.png" alt="باريس"
                     class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 10%</div>
                 <div class="card-content">
-                    <div class="card-destination">الهند</div>
-                    <div class="card-title">تاج محل – تحفة الهند</div>
+                    <div class="card-destination">باريس</div>
+                    <div class="card-title"> برج ايفل  – ايقونة الجمال  </div>
                     <div class="card-price">
-                        <span class="card-price-current">من 200$</span>
-                        <span class="card-price-original">300$</span>
+                        
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1618,18 +1665,40 @@
                 </div>
             </div>
 
-            <!-- Card 5: Dubai -->
+            <!-- Card 5: لندن -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop" alt="Dubai"
+                <img src="./img/7.png" alt="لندن"
                     class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 10%</div>
+                <div class="card-content">
+                    <div class="card-destination">لندن</div>
+                    <div class="card-title">  استكشاف لندن</div>
+                    <div class="card-price">
+                       
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: دبي  -->
+            <div class="package-card">
+                <img src="./img/8.png" alt="دبي "
+                    class="card-image">
+                <div class="card-overlay"></div>
                 <div class="card-content">
                     <div class="card-destination">دبي</div>
-                    <div class="card-title">باقة عطلة استكشاف دبي</div>
+                    <div class="card-title">اكتشاف الطبيعة في دبي</div>
                     <div class="card-price">
-                        <span class="card-price-current">من 180$</span>
-                        <span class="card-price-original">200$</span>
+                       
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1644,18 +1713,16 @@
                 </div>
             </div>
 
-            <!-- Card 6: Nepal -->
+            <!-- Card 7: المالديف -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop" alt="Nepal"
-                    class="card-image">
+                <img src="./img/Artboard 1.png"
+                    alt="المالديف" class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 12%</div>
                 <div class="card-content">
-                    <div class="card-destination">نيبال</div>
-                    <div class="card-title">اكتشاف الطبيعة في نيبال</div>
+                    <div class="card-destination">المالديف</div>
+                    <div class="card-title">جولة تاريخية في المالديف</div>
                     <div class="card-price">
-                        <span class="card-price-current">من 180$</span>
-                        <span class="card-price-original">200$</span>
+                   
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1670,18 +1737,16 @@
                 </div>
             </div>
 
-            <!-- Card 7: Colombia -->
+            <!-- Card 8: تركيا -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop"
-                    alt="Colombia" class="card-image">
+                <img src="./img/Artboard 2.png"
+                    alt="تركيا" class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 15%</div>
                 <div class="card-content">
-                    <div class="card-destination">كولومبيا</div>
-                    <div class="card-title">جولة تاريخية في كولومبيا</div>
+                    <div class="card-destination">تركيا</div>
+                    <div class="card-title">اكتشف جمال تركيا </div>
                     <div class="card-price">
-                        <span class="card-price-current">من 180$</span>
-                        <span class="card-price-original">200$</span>
+                      
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1695,19 +1760,223 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Card 8: Greece -->
+            <!-- Card 9: الطائف -->
             <div class="package-card">
-                <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=500&h=600&fit=crop"
-                    alt="Greece" class="card-image">
+                <img src="./img/9.png"
+                    alt="الطائف" class="card-image">
                 <div class="card-overlay"></div>
-                <div class="discount-badge">خصم 10%</div>
                 <div class="card-content">
-                    <div class="card-destination">اليونان</div>
-                    <div class="card-title">اكتشف جمال اليونان</div>
+                    <div class="card-destination">الطائف</div>
+                    <div class="card-title">اكتشف جمال الطائف </div>
                     <div class="card-price">
-                        <span class="card-price-current">من 180$</span>
-                        <span class="card-price-original">200$</span>
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 10: ابها  -->
+            <div class="package-card">
+                <img src="./img/10.png"
+                    alt="ابها " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">ابها </div>
+                    <div class="card-title">  استمتع في ابها  </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 11: الباحة  -->
+            <div class="package-card">
+                <img src="./img/11.png"
+                    alt="الباحة " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">الباحة </div>
+                    <div class="card-title">    استمتع بجمال الباحة  </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 12: العلا  -->
+            <div class="package-card">
+                <img src="./img/12.png"
+                    alt="العلا " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">العلا </div>
+                    <div class="card-title">   قم بزيارة العلا  </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 13: امريكا  -->
+            <div class="package-card">
+                <img src="./img/13.png"
+                    alt="امريكا " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">امريكا </div>
+                    <div class="card-title">   استمتع بجمال ولايات امريكا  </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 14: الامارات  -->
+            <div class="package-card">
+                <img src="./img/Artboard 15.png"
+                    alt="الامارات " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">الامارات </div>
+                    <div class="card-title">      </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 15: قطر  -->
+            <div class="package-card">
+                <img src="./img/Artboard 16.png"
+                    alt="قطر " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">قطر </div>
+                    <div class="card-title">   دولة قطر      </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Card 15: البحرين   -->
+            <div class="package-card">
+                <img src="./img/Artboard 14.png"
+                    alt="البحرين  " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">البحرين  </div>
+                    <div class="card-title">   دولة البحرين       </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Card 16: الكويت    -->
+            <div class="package-card">
+                <img src="./img/Artboard 17.png"
+                    alt="الكويت  " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">الكويت  </div>
+                    <div class="card-title">    قم بزيارة الكويت        </div>
+                    <div class="card-price">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-rating">
+                            <span class="star">★</span>
+                            <span>5.00 (325)</span>
+                        </div>
+                        <div class="card-duration">
+                            <span>⏱</span>
+                            <span>8 ليالي - 9 أيام</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Card 16: عمان    -->
+            <div class="package-card">
+                <img src="./img/Artboard 18.png"
+                    alt="عمان  " class="card-image">
+                <div class="card-overlay"></div>
+                <div class="card-content">
+                    <div class="card-destination">عمان  </div>
+                    <div class="card-title">     استمتع بجمال عمان        </div>
+                    <div class="card-price">
+                      
                     </div>
                     <div class="card-footer">
                         <div class="card-rating">
@@ -1751,10 +2020,7 @@
             });
         });
 
-        // CTA Button click
-        document.querySelector('.cta-button').addEventListener('click', function () {
-            alert('شكراً لاهتمامك! سيتم توجيهك إلى جميع الباقات.');
-        });
+      
     </script>
 
 
@@ -2101,7 +2367,7 @@
                         </span>
                     </div>
 
-                    <h1 class="text-5xl lg:text-6xl font-bold mb-8 leading-tight">
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
                         خطط لمغامرتك القادمة<br>التي لا تُنسى
                     </h1>
 
@@ -2117,7 +2383,7 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-bold text-lg">هل تحتاج أي مساعدة؟</h3>
-                                <p class="text-[#e69a17] font-medium">(+20) 656 656 55784</p>
+                                <p class="text-[#e69a17] font-medium"> 0502113147 (+966)</p>
                             </div>
                         </div>
 
@@ -2278,17 +2544,249 @@
         }
     </script>
 
+
+<!-- خريطة واتصال روز للسفر والسياحة -->
+<section class="py-16 bg-gradient-to-b from-gray-50 to-white" dir="rtl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- العنوان -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <span class="text-[#e69a17]">خريطة</span> وكالتنا وأماكن تواجدنا
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                نعمل على تقديم خدماتنا في جميع أنحاء المملكة العربية السعودية. زورنا في فرعنا الرئيسي أو تواصل معنا عبر قنوات الاتصال المتاحة.
+            </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- معلومات الاتصال -->
+            <div class="lg:w-2/5">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-100">
+                        معلومات التواصل
+                    </h3>
+                    
+                    <!-- معلومات الاتصال -->
+                    <div class="space-y-6">
+                        <!-- العنوان -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#e69a17]/10 p-3 rounded-lg">
+                                <i class="fas fa-map-marker-alt text-[#e69a17] text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">العنوان الرئيسي</h4>
+                                <p class="text-gray-600">جدة، المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+
+                        <!-- الهاتف -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#e69a17]/10 p-3 rounded-lg">
+                                <i class="fas fa-phone text-[#e69a17] text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">الهاتف</h4>
+                                <a href="tel:+966112345678" class="text-gray-600 hover:text-[#e69a17] transition-colors block">
+                                    0502113147
+                                </a>
+                                <a href="tel:+966502113147" class="text-gray-600 hover:text-[#e69a17] transition-colors block">
+                                    +966 50 211 3147
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- البريد الإلكتروني -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#e69a17]/10 p-3 rounded-lg">
+                                <i class="fas fa-envelope text-[#e69a17] text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">البريد الإلكتروني</h4>
+                                <a href="mailto:info@rowadtravel.com" class="text-gray-600 hover:text-[#e69a17] transition-colors block">
+                                    info@rowadtravel.com
+                                </a>
+                                <a href="mailto:reservations@rowadtravel.com" class="text-gray-600 hover:text-[#e69a17] transition-colors block">
+                                    reservations@rowadtravel.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- ساعات العمل -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-[#e69a17]/10 p-3 rounded-lg">
+                                <i class="fas fa-clock text-[#e69a17] text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-1">ساعات العمل</h4>
+                                <p class="text-gray-600">الأحد - الخميس: 8 صباحاً - 10 مساءً</p>
+                                <p class="text-gray-600">الجمعة - السبت: 4 مساءً - 11 مساءً</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- وسائل التواصل الاجتماعي -->
+                    <!-- <div class="mt-8 pt-6 border-t border-gray-100">
+                        <h4 class="font-bold text-gray-900 mb-4">تابعنا على</h4>
+                        <div class="flex gap-3">
+                            <a href="#" class="bg-gray-100 hover:bg-[#e69a17] hover:text-white p-3 rounded-lg transition-all duration-300">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-[#e69a17] hover:text-white p-3 rounded-lg transition-all duration-300">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-[#e69a17] hover:text-white p-3 rounded-lg transition-all duration-300">
+                                <i class="fab fa-facebook-f text-lg"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-[#e69a17] hover:text-white p-3 rounded-lg transition-all duration-300">
+                                <i class="fab fa-snapchat-ghost text-lg"></i>
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <!-- زر واتساب -->
+                    <a href="https://wa.me/966502113147" target="_blank" 
+                       class="mt-8 w-full bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-lg shadow-lg hover:shadow-xl">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        تواصل معنا عبر واتساب
+                    </a>
+                </div>
+            </div>
+
+            <!-- الخريطة -->
+            <div class="lg:w-3/5">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 h-full">
+                    <!-- عنوان الخريطة -->
+                    <div class="p-6 border-b border-gray-100">
+                        <h3 class="text-xl font-bold text-gray-900">الموقع على الخريطة</h3>
+                        <p class="text-gray-600 mt-1">انقر على العلامة للحصول على اتجاهات للوصول إلينا</p>
+                    </div>
+                    
+                    <!-- حاوية الخريطة -->
+                    <div class="h-[500px] relative bg-gray-100">
+                       <!-- خريطة جوجل ماب -->
+<div id="map" class="h-full w-full rounded-b-2xl overflow-hidden">
+    <iframe 
+        src="https://www.google.com/maps?q=وكالة+روز+للسفر+والسياحة,+Ring+Rd,+Bani+Malik,+Jeddah+23235,+Saudi+Arabia&z=18&output=embed"
+        width="100%" 
+        height="100%" 
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+
+
+
+
+
+
+                        <!-- عناصر تحكم للخريطة -->
+                        <div class="absolute bottom-6 left-6 flex flex-col gap-2">
+                            <button id="zoomIn" class="bg-white hover:bg-gray-100 w-10 h-10 rounded-lg shadow-lg flex items-center justify-center">
+                                <i class="fas fa-plus text-gray-700"></i>
+                            </button>
+                            <button id="zoomOut" class="bg-white hover:bg-gray-100 w-10 h-10 rounded-lg shadow-lg flex items-center justify-center">
+                                <i class="fas fa-minus text-gray-700"></i>
+                            </button>
+                        </div>
+
+                        <!-- تحديد الموقع الحالي -->
+                        <button id="locateMe" class="absolute bottom-6 right-6 bg-white hover:bg-gray-100 w-10 h-10 rounded-lg shadow-lg flex items-center justify-center">
+                            <i class="fas fa-location-arrow text-gray-700"></i>
+                        </button>
+                    </div>
+
+                    <!-- التعليمات تحت الخريطة -->
+                    <div class="p-4 bg-gray-50 border-t border-gray-100">
+                        <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-[#e69a17] rounded-full"></div>
+                                <span>موقع الوكالة الرئيسي</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                <span>مواقف السيارات</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                <span>محطات النقل العام القريبة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     
+    </div>
+</section>
+
+<!-- JavaScript للخريطة -->
+<script>
+    // تفعيل أزرار التحكم في الخريطة
+    document.addEventListener('DOMContentLoaded', function() {
+        // أزرار التكبير والتصغير (تجريبية)
+        const zoomInBtn = document.getElementById('zoomIn');
+        const zoomOutBtn = document.getElementById('zoomOut');
+        const locateMeBtn = document.getElementById('locateMe');
+        
+        // if (zoomInBtn) {
+        //     zoomInBtn.addEventListener('click', function() {
+        //         alert('سيتم تفعيل خاصية التكبير عند دمج الخريطة الفعلية');
+        //         // هنا سيتم إضافة كود التكبير عند استخدام خرائط جوجل
+        //     });
+        // }
+        
+        // if (zoomOutBtn) {
+        //     zoomOutBtn.addEventListener('click', function() {
+        //         alert('سيتم تفعيل خاصية التصغير عند دمج الخريطة الفعلية');
+        //         // هنا سيتم إضافة كود التصغير عند استخدام خرائط جوجل
+        //     });
+        // }
+        
+        // if (locateMeBtn) {
+        //     locateMeBtn.addEventListener('click', function() {
+        //         if (navigator.geolocation) {
+        //             navigator.geolocation.getCurrentPosition(function(position) {
+        //                 alert(`موقعك الحالي:\nخط العرض: ${position.coords.latitude}\nخط الطول: ${position.coords.longitude}\n\nسيتم عرض اتجاهات الوصول في الخريطة الفعلية`);
+        //                 // هنا سيتم إضافة كود تحديد الموقع عند استخدام خرائط جوجل
+        //             }, function(error) {
+        //                 alert('تعذر تحديد موقعك الحالي. تأكد من تفعيل خدمات الموقع.');
+        //             });
+        //         } else {
+        //             alert('متصفحك لا يدعم خدمات الموقع الجغرافي.');
+        //         }
+        //     });
+        // }
+        
+        // إضافة تأثير عند التمرير على الفروع
+        const branchCards = document.querySelectorAll('.grid > div');
+        branchCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    });
+</script>
+
+<!-- رابط Font Awesome للأيقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Floating Contact Buttons -->
     <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
 
         <!-- زر واتساب -->
-        <a href="https://wa.me/#" target="_blank"
+        <a href="https://wa.me/966502113147" target="_blank"
             class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300">
             <i class="fab fa-whatsapp text-2xl"></i>
         </a>
 
         <!-- زر الاتصال -->
-        <a href="tel:+#"
+        <a href="tel:+966502113147"
             class="bg-cyan-600 hover:bg-cyan-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-all duration-300">
             <i class="fas fa-phone text-xl"></i>
         </a>
@@ -2312,26 +2810,61 @@
                         نحن نقدم أفضل خدمات السفر والسياحة لضمان تجربة ممتعة ومريحة لعملائنا الكرام حول العالم.
                     </p>
                     <div>
-                        <h3 class="font-bold mb-3 lg:mb-4 text-sm md:text-base">تابعنا على :</h3>
-                        <div class="flex gap-3">
-                            <a href="#"
-                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
-                                <i class="fab fa-facebook-f text-sm md:text-base"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
-                                <i class="fab fa-twitter text-sm md:text-base"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
-                                <i class="fab fa-linkedin-in text-sm md:text-base"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-white text-[#1a2336] rounded-full w-9 h-9 md:w-10 md:h-10 flex items-center justify-center hover:bg-teal-100 transition duration-300 transform hover:scale-110">
-                                <i class="fab fa-youtube text-sm md:text-base"></i>
-                            </a>
-                        </div>
-                    </div>
+    <h3 class="font-bold mb-3 lg:mb-4 text-sm md:text-base">تابعنا على :</h3>
+    <div class="flex gap-3">
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/rosee.travel/"
+            class="bg-[#1877F2] text-white rounded-full w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:brightness-90">
+            <i class="fab fa-facebook-f text-sm md:text-base"></i>
+        </a>
+
+        <!-- X (Twitter الجديد) -->
+        <a href="https://x.com/rosetravel_sa"
+            class="bg-[#1DA1F2] text-white rounded-full w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:opacity-80">
+            <i class="fab fa-twitter text-sm md:text-base"></i>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@rose_travel_agency"
+            class="bg-black text-white rounded-full w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:opacity-80">
+            <i class="fab fa-tiktok text-sm md:text-base"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/rosetravel.sa"
+            class="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
+                   text-white rounded-full w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:opacity-90">
+            <i class="fab fa-instagram text-sm md:text-base"></i>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:info@example.com"
+            class="bg-gray-600 text-white rounded-full w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:bg-gray-700">
+            <i class="fas fa-envelope text-sm md:text-base"></i>
+        </a>
+
+        <!-- Snapchat -->
+        <a href="https://www.snapchat.com/add/rosetravel-sa"
+            class="bg-[#FFFC00] text-black rounded-full w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:brightness-95">
+            <i class="fab fa-snapchat-ghost text-sm md:text-base"></i>
+        </a>
+
+    </div>
+</div>
+
                 </div>
 
                 <!-- الصفحات الرئيسية -->
@@ -2407,12 +2940,7 @@
                                 <span class="text-teal-300 text-xs md:text-sm">✦</span> الرحلة الذهبية للهند
                             </a>
                         </li>
-                        <li>
-                            <a href="#"
-                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
-                                <span class="text-teal-300 text-xs md:text-sm">✦</span> استكشاف الطبيعة في نيبال
-                            </a>
-                        </li>
+                       
                         <li>
                             <a href="#"
                                 class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
@@ -2440,7 +2968,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1 text-sm md:text-base">الهاتف</h4>
-                                <p class="text-gray-300 text-xs md:text-sm">+123 4566 7899</p>
+                                <p class="text-gray-300 text-xs md:text-sm">0502113147</p>
                             </div>
                         </div>
 
@@ -2464,7 +2992,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1 text-sm md:text-base">موقع المكتب</h4>
-                                <p class="text-gray-300 text-xs md:text-sm">16 شارع جرين، دكا</p>
+                                <p class="text-gray-300 text-xs md:text-sm">جدة - المملكة العربية السعودية</p>
                             </div>
                         </div>
                     </div>
