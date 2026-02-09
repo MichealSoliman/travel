@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روز للسفر والسياحة </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* النافبار المعدلة */
+        .navbar {
+            background-color: #0f1729;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            color: #e69a17;
+            font-size: 24px;
+            font-weight: 800;
+            margin: 0;
+        }
+        
+        .logo-text span {
+            color: white;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .website-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .website-link:hover {
+            color: #e69a17;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-btn {
+            background-color: #e69a17;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-btn:hover {
+            background-color: #d18a15;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 154, 23, 0.3);
+        }
+        
+        /* الهيرو */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 41, 0.9), rgba(15, 23, 41, 0.8)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1335&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .hero h2 {
+            color: white;
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            color: #e69a17;
+            font-size: 20px;
+            max-width: 700px;
+        }
+        
+        /* قسم السوشيال ميديا */
+        .social-section {
+            padding: 80px 8%;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .social-section h3 {
+            color: #0f1729;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        
+        .social-section p {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            background-color: #f8f9fa;
+            border-radius: 50px;
+            padding: 18px 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icon:hover {
+            transform: translateX(-10px);
+            border-color: #e69a17;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon i {
+            font-size: 24px;
+            width: 40px;
+            text-align: center;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover i {
+            transform: scale(1.2);
+        }
+        
+        /* ألوان خاصة لكل شبكة اجتماعية */
+        .facebook {
+            border-right: 5px solid #1877f2;
+        }
+        
+        .instagram {
+            border-right: 5px solid #e4405f;
+        }
+        
+        .tiktok {
+            border-right: 5px solid #000000;
+        }
+        
+        .snapchat {
+            border-right: 5px solid #fffc00;
+            color: #000;
+        }
+        
+        .twitter {
+            border-right: 5px solid #1da1f2;
+        }
+        
+        .whatsapp {
+            border-right: 5px solid #25d366;
+        }
+        
+        .email {
+            border-right: 5px solid #ea4335;
+        }
+        
+        .map {
+            border-right: 5px solid #34a853;
+        }
+        
+        /* الأنيميشن */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .social-icon {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .social-icon:nth-child(1) { animation-delay: 0.1s; }
+        .social-icon:nth-child(2) { animation-delay: 0.2s; }
+        .social-icon:nth-child(3) { animation-delay: 0.3s; }
+        .social-icon:nth-child(4) { animation-delay: 0.4s; }
+        .social-icon:nth-child(5) { animation-delay: 0.5s; }
+        .social-icon:nth-child(6) { animation-delay: 0.6s; }
+        .social-icon:nth-child(7) { animation-delay: 0.7s; }
+        .social-icon:nth-child(8) { animation-delay: 0.8s; }
+        
+        /* الفوتر */
+        footer {
+            background-color: #0f1729;
+            color: white;
+            text-align: center;
+            padding: 30px 8%;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .copyright {
+            color: #e69a17;
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+        
+        /* التجاوبية */
+        @media (max-width: 1024px) {
+            .navbar {
+                padding: 15px 5%;
+            }
+            
+            .social-section {
+                padding: 80px 5%;
+            }
+            
+            footer {
+                padding: 30px 5%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .logo-container {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .logo-text h1 {
+                font-size: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .social-section {
+                padding: 50px 20px;
+            }
+            
+            .social-section h3 {
+                font-size: 28px;
+            }
+            
+            .social-icons {
+                width: 100%;
+            }
+            
+            .social-icon {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- النافبار المعدلة -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <!-- لوجو الشركة - يمكن استبداله بلوجو حقيقي -->
+            <img src="./img/logo 1.png" alt="لوجو روز للسفر والسياحة" class="logo-img">
+            <div class="logo-text">
+                <h1>روز للسفر والسياحة</h1>
+                <span>Rose Travel & Tourism</span>
+            </div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="https://rosetravell.com/" target="_blank" class="website-link">
+                <i class="fas fa-globe"></i>
+                <span>الموقع الرسمي</span>
+            </a>
+            
+            <a href="tel:0502113147" class="contact-btn">
+                <i class="fas fa-phone-alt"></i> اتصل بنا
+            </a>
+        </div>
+    </nav>
+    
+    
+    
+    <!-- قسم السوشيال ميديا -->
+    <section class="social-section">
+        <h3>تواصل معنا عبر وسائل التواصل الاجتماعي</h3>
+        <p>تابعنا على جميع منصات التواصل الاجتماعي للحصول على أحدث العروض والأخبار</p>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/rosee.travel/" target="_blank" class="social-icon facebook">
+                <i class="fab fa-facebook-f"></i>
+                <span>فيسبوك</span>
+            </a>
+            
+            <a href="https://www.instagram.com/rosetravel.sa" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+                <span>إنستجرام</span>
+            </a>
+            
+            <a href="https://www.tiktok.com/@rose_travel_agency" target="_blank" class="social-icon tiktok">
+                <i class="fab fa-tiktok"></i>
+                <span>تيك توك</span>
+            </a>
+            
+            <a href="https://www.snapchat.com/add/rosetravel-sa" target="_blank" class="social-icon snapchat">
+                <i class="fab fa-snapchat-ghost"></i>
+                <span>سناب شات</span>
+            </a>
+            
+            <a href="https://x.com/rosetravel_sa" target="_blank" class="social-icon twitter">
+                <i class="fab fa-x-twitter"></i>
+
+                <span>تويتر</span>
+            </a>
+            
+            <a href="https://wa.me/966502113147" target="_blank" class="social-icon whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>واتساب</span>
+            </a>
+            
+            <a href="https://rosetravell.com/" target="_blank" class="social-icon snapchat">
+                 <i class="fas fa-globe"></i>
+                 <span> الموقع الراسمي </span>
+            </a>
+
+            <a href="mailto:info@rosetravell.com" class="social-icon email">
+                <i class="fas fa-envelope"></i>
+                <span>البريد الإلكتروني</span>
+            </a>
+            
+            <a href="https://maps.app.goo.gl/4PK2UzRbppoxHpMs7" target="_blank" class="social-icon map">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>موقعنا على خرائط جوجل</span>
+            </a>
+        </div>
+        
+    </section>
+    
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <p>روز للسفر والسياحة - جميع الحقوق محفوظة © 2023</p>
+            <p>نحن نقدم خدمات السفر منذ أكثر من 15 عاماً بخبرة واحترافية</p>
+            <p class="copyright">تلفون: 0502113147 | البريد: info@rosetravell.com | الموقع: https://rosetravell.com/</p>
+        </div>
+    </footer>
+    
+    <script>
+        // إضافة تأثير إضافي عند التمرير على الأيقونات
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(-15px) scale(1.02)';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+        
+        // إضافة تأثير عند النقر على زر الاتصال
+        const contactBtn = document.querySelector('.contact-btn');
+        contactBtn.addEventListener('click', function(e) {
+            // يمكن إضافة وظيفة الاتصال الفعلية هنا
+            alert('جارٍ الاتصال بروز للسفر والسياحة...');
+        });
+        
+        // إضافة تأثير عند النقر على رابط الموقع
+        const websiteLink = document.querySelector('.website-link');
+        websiteLink.addEventListener('click', function(e) {
+            // يمكن إضافة تتبع أو رسالة تأكيد هنا
+            console.log('الانتقال إلى الموقع الرسمي');
+        });
+    </script>
+</body>
+</html>
