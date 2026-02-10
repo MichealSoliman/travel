@@ -806,9 +806,9 @@
                 </div>
                 
                 <div class="flex items-center gap-6">
-                    <button class="btn-gradient px-10 py-4 rounded-full text-white font-bold flex items-center gap-3">
+                    <a href="tel:0502113147" class="btn-gradient px-10 py-4 rounded-full text-white font-bold flex items-center gap-3">
                         تواصل الآن <i class="fas fa-arrow-up-right-from-square text-sm"></i>
-                    </button>
+                    </a>
                     
                 </div>
             </div>
@@ -817,26 +817,84 @@
             <div class="bg-slate-900 bg-opacity-60 backdrop-blur-lg rounded-3xl p-10 border border-white border-opacity-10 shadow-2xl">
                 <h2 class="text-3xl font-bold text-white mb-10">أرسل لنا رسالة</h2>
                 
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="text" placeholder="الاسم" class="form-input px-5 py-4 rounded-xl w-full">
-                        <input type="tel" placeholder="رقم الهاتف" class="form-input px-5 py-4 rounded-xl w-full">
-                    </div>
-                    
-                    <input type="email" placeholder="البريد الإلكتروني" class="form-input px-5 py-4 rounded-xl w-full">
-                    
-                    <textarea placeholder="الرسالة" rows="5" class="form-input px-5 py-4 rounded-xl w-full resize-none"></textarea>
-                    
-                    <button type="submit" class="bg-white text-teal-900 px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-teal-50 transition shadow-xl">
-                        إرسال الرسالة <i class="fas fa-arrow-up-right-from-square text-sm"></i>
-                    </button>
-                </form>
+               <form id="contact-form" class="space-y-6">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="الاسم"
+                                class="form-input px-5 py-4 rounded-xl w-full" required>
+
+                            <input type="tel" name="phone" placeholder="رقم الهاتف"
+                                class="form-input px-5 py-4 rounded-xl w-full" required>
+                        </div>
+
+                        <input type="email" name="email" placeholder="البريد الإلكتروني"
+                            class="form-input px-5 py-4 rounded-xl w-full" required>
+
+                        <textarea name="message" placeholder="الرسالة" rows="5"
+                            class="form-input px-5 py-4 rounded-xl w-full resize-none" required></textarea>
+
+                        <button type="submit"
+                            class="bg-white text-teal-900 px-10 py-4 rounded-full font-bold flex items-center gap-3 hover:bg-teal-50 transition shadow-xl">
+                            إرسال الرسالة
+                        </button>
+
+                    </form>
+                    <div id="form-message" class="hidden mt-4 text-center rounded-xl px-6 py-4 font-semibold"></div>
+
             </div>
 
         </div>
     </div>
 </section>
 
+
+
+   <!-- script form  -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        (function () {
+            emailjs.init("fIVxP633aCUMPFfnk");
+        })();
+
+        const form = document.getElementById("contact-form");
+        const messageBox = document.getElementById("form-message");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("service_6jix5lt", "template_s6neetj", this)
+                .then(function () {
+
+                    messageBox.className =
+                        "mt-4 text-center rounded-xl px-6 py-4 font-semibold bg-green-100 text-green-700";
+
+                    messageBox.innerHTML = "✅ تم إرسال الرسالة بنجاح، سنتواصل معك قريباً";
+
+                    messageBox.classList.remove("hidden");
+
+                    form.reset();
+
+                    setTimeout(() => {
+                        messageBox.classList.add("hidden");
+                    }, 4000);
+
+                }, function (error) {
+
+                    messageBox.className =
+                        "mt-4 text-center rounded-xl px-6 py-4 font-semibold bg-red-100 text-red-700";
+
+                    messageBox.innerHTML = "❌ حدث خطأ أثناء الإرسال، حاول مرة أخرى";
+
+                    messageBox.classList.remove("hidden");
+
+                    setTimeout(() => {
+                        messageBox.classList.add("hidden");
+                    }, 4000);
+
+                });
+        });
+    </script>
 
 
     <!-- خريطة واتصال روز للسفر والسياحة -->
