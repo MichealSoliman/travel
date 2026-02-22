@@ -5,31 +5,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>خدمات الانتقالات والمواصلات السياحية | وكالة روز للسفر والسياحة بجدة</title>
+<title>حجز طيران داخلي ودولي بأفضل الأسعار | وكالة روز للسفر والسياحة بجدة</title>
 
 <!-- Meta Description -->
-<meta name="description" content="وكالة روز للسفر والسياحة بجدة تقدم خدمات الانتقالات والمواصلات السياحية بسيارات حديثة وسائقين محترفين. نقل من وإلى المطار، تأجير سيارات مع سائق، وتنقلات سياحية داخلية ودولية بأفضل الأسعار.">
+<meta name="description" content="وكالة روز للسفر والسياحة بجدة تقدم أفضل خدمات حجز الطيران الداخلي والدولي بأسعار تنافسية. احجز تذاكر طيران رخيصة ذهاب وعودة أو متعدد الوجهات بأفضل العروض.">
 
 <!-- Canonical -->
-<link rel="canonical" href="https://www.rosetravell.com/services/transfers-and-transportation/"/>
+<link rel="canonical" href="https://www.rosetravell.com/services/flight-reservation/"/>
 
 <!-- Robots -->
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
-<meta property="og:title" content="خدمات الانتقالات والمواصلات السياحية | وكالة روز للسفر والسياحة بجدة">
-<meta property="og:description" content="خدمات نقل احترافية بسيارات حديثة وسائقين محترفين في جميع الوجهات السياحية. استمتع برحلة مريحة وآمنة مع وكالة روز.">
-<meta property="og:image" content="https://www.rosetravell.com/img/transfers-and-transportation.webp">
-<meta property="og:url" content="https://www.rosetravell.com/services/transfers-and-transportation/">
+<meta property="og:title" content="حجز طيران داخلي ودولي بأفضل الأسعار | وكالة روز للسفر والسياحة بجدة">
+<meta property="og:description" content="خدمات احترافية في حجز الطيران الداخلي والدولي مع أفضل الأسعار وخيارات متعددة تناسب جميع المسافرين.">
+<meta property="og:image" content="https://www.rosetravell.com/img/flight-reservation.webp">
+<meta property="og:url" content="https://www.rosetravell.com/services/flight-reservation/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_SA">
 <meta property="og:site_name" content="وكالة روز للسفر والسياحة">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="خدمات الانتقالات والمواصلات السياحية | وكالة روز للسفر والسياحة بجدة">
-<meta name="twitter:description" content="احجز خدمات النقل السياحي بأفضل الأسعار مع سيارات حديثة وسائقين محترفين.">
-<meta name="twitter:image" content="https://www.rosetravell.com/img/transfers-and-transportation.webp">
+<meta name="twitter:title" content="حجز طيران داخلي ودولي بأفضل الأسعار | وكالة روز للسفر والسياحة بجدة">
+<meta name="twitter:description" content="احجز تذاكر الطيران الداخلي والدولي بسهولة وبأفضل الأسعار مع وكالة روز للسفر والسياحة.">
+<meta name="twitter:image" content="https://www.rosetravell.com/img/flight-reservation.webp">
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -39,13 +39,13 @@
   "name": "وكالة روز للسفر والسياحة",
   "url": "https://www.rosetravell.com/",
   "logo": "https://www.rosetravell.com/assets/img/logo.png",
-  "image": "https://www.rosetravell.com/img/transfers-and-transportation.webp",
-  "description": "خدمات الانتقالات والمواصلات السياحية داخل وخارج السعودية بسيارات حديثة وسائقين محترفين.",
+  "image": "https://www.rosetravell.com/img/flight-reservation.webp",
+  "description": "خدمات حجز الطيران الداخلي والدولي بأفضل الأسعار من جدة.",
   "areaServed": {
     "@type": "Country",
     "name": "Saudi Arabia"
   },
-  "serviceType": "Transfers & Transportation Services"
+  "serviceType": "Flight Reservation Services"
 }
 </script>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -119,6 +119,16 @@
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
 
+    .visa-pattern {
+      background-image: 
+        linear-gradient(45deg, rgba(230, 154, 23, 0.05) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(230, 154, 23, 0.05) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(230, 154, 23, 0.05) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(230, 154, 23, 0.05) 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+
     .country-card {
       transition: all 0.3s ease;
     }
@@ -127,11 +137,12 @@
       transform: translateY(-5px);
       box-shadow: 0 15px 30px -10px rgba(230, 154, 23, 0.2);
     }
-
-    .vehicle-card {
+    
+    .city-card {
       transition: all 0.3s ease;
     }
-    .vehicle-card:hover {
+    
+    .city-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px -10px rgba(230, 154, 23, 0.2);
     }
@@ -194,25 +205,23 @@
       <div class="w-full lg:w-1/4">
         <div class="sticky-sidebar bg-white rounded-xl shadow-lg p-6">
           <div class="flex items-center mb-6 pb-4 border-b border-gray-200">
-            <i class="fas fa-car-side text-secondary text-2xl ml-2"></i>
-            <h2 class="text-xl font-bold text-primary">خدمات الانتقالات</h2>
+            <i class="fas fa-plane text-secondary text-2xl ml-2"></i>
+            <h2 class="text-xl font-bold text-primary">خدمات حجز الطيران</h2>
           </div>
           <ul class="space-y-3">
             <li><a href="#intro" class="nav-item active block py-3 px-4 rounded-lg text-primary font-medium">نظرة عامة</a></li>
-            <li><a href="#city-transfers" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">انتقالات داخل المدن</a></li>
-            <li><a href="#intercity" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">نقل بين المدن</a></li>
-            <li><a href="#arab-world" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">انتقالات في الدول العربية</a></li>
-            <li><a href="#worldwide" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">انتقالات حول العالم</a></li>
-            <li><a href="#fleet" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">أنواع السيارات</a></li>
-            <li><a href="#drivers" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">سائقين محترفين</a></li>
+            <li><a href="#domestic" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">الطيران الداخلي</a></li>
+            <li><a href="#international" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">الطيران الدولي</a></li>
+            <li><a href="#types" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">أنواع الحجوزات</a></li>
             <li><a href="#why-us" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">لماذا روز؟</a></li>
-            <li><a href="#prices" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">أسعار الخدمات</a></li>
+            <li><a href="#prices" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">أسعار وعروض</a></li>
+            <li><a href="#steps" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">خطوات الحجز</a></li>
             <li><a href="#faq" class="nav-item block py-3 px-4 rounded-lg text-gray-700 font-medium">الأسئلة الشائعة</a></li>
           </ul>
 
           <div class="mt-8 p-4 gradient-bg rounded-lg border border-secondary border-opacity-20">
-            <h3 class="text-lg font-bold text-primary mb-3">احجز انتقالك الآن</h3>
-            <p class="text-gray-700 mb-4 text-sm">خدمة نقل مريحة وآمنة بسيارات حديثة</p>
+            <h3 class="text-lg font-bold text-primary mb-3">احجز تذكرتك الآن</h3>
+            <p class="text-gray-700 mb-4 text-sm">احصل على أفضل عروض الطيران</p>
             <a href="tel:0502113147" class="block w-full bg-secondary text-white text-center py-2 px-4 rounded-lg hover:bg-secondaryDark transition duration-300">
               <i class="fas fa-phone ml-2"></i>اتصل بنا
             </a>
@@ -226,14 +235,14 @@
         <div class="hero-pattern rounded-2xl shadow-lg text-white p-8 mb-8 relative overflow-hidden">
           <div class="absolute inset-0 bg-black opacity-20"></div>
           <div class="relative z-10">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">أفضل خدمات الانتقالات والمواصلات في الدول العربية وجميع دول العالم</h1>
-            <p class="text-lg md:text-xl mb-6">نقل من وإلى المطار، تأجير سيارات مع سائق، انتقالات سياحية. بسيارات حديثة وسائقين محترفين لضمان رحلة مريحة وآمنة.</p>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">أفضل خيارات حجز الطيران الداخلي والدولي بأسعار تنافسية</h1>
+            <p class="text-lg md:text-xl mb-6">خدمات احترافية في حجز الطيران مع وكالة روز للسفر والسياحة في جدة</p>
             <div class="flex flex-wrap gap-4">
               <a href="tel:0502113147" class="bg-secondary text-white py-3 px-6 rounded-lg font-bold hover:bg-secondaryDark transition duration-300">
-                <i class="fas fa-phone ml-2"></i>احجز خدمتك الآن
+                <i class="fas fa-plane ml-2"></i>احجز تذكرتك
               </a>
-              <a href="#worldwide" class="border-2 border-white py-3 px-6 rounded-lg font-bold hover:bg-white hover:text-primary transition duration-300">
-                <i class="fas fa-globe ml-2"></i>جميع الوجهات
+              <a href="#international" class="border-2 border-white py-3 px-6 rounded-lg font-bold hover:bg-white hover:text-primary transition duration-300">
+                <i class="fas fa-globe ml-2"></i>أشهر الوجهات
               </a>
             </div>
           </div>
@@ -243,26 +252,26 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div class="service-card bg-white rounded-xl shadow-md p-6 text-center">
             <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-plane-arrival text-secondary text-2xl"></i>
+              <i class="fas fa-plane-departure text-secondary text-2xl"></i>
             </div>
-            <h3 class="text-lg font-bold text-primary mb-2">نقل من وإلى المطار</h3>
-            <p class="text-gray-600 text-sm">استقبال وتوديع في جميع المطارات</p>
+            <h3 class="text-lg font-bold text-primary mb-2">رحلات داخلية</h3>
+            <p class="text-gray-600 text-sm">بين جميع مدن المملكة</p>
           </div>
 
           <div class="service-card bg-white rounded-xl shadow-md p-6 text-center">
             <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-city text-secondary text-2xl"></i>
+              <i class="fas fa-globe-asia text-secondary text-2xl"></i>
             </div>
-            <h3 class="text-lg font-bold text-primary mb-2">انتقالات داخل المدن</h3>
-            <p class="text-gray-600 text-sm">سياحة، أعمال، تسوق</p>
+            <h3 class="text-lg font-bold text-primary mb-2">رحلات دولية</h3>
+            <p class="text-gray-600 text-sm">إلى جميع دول العالم</p>
           </div>
 
           <div class="service-card bg-white rounded-xl shadow-md p-6 text-center">
             <div class="w-16 h-16 bg-secondary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i class="fas fa-road text-secondary text-2xl"></i>
+              <i class="fas fa-tags text-secondary text-2xl"></i>
             </div>
-            <h3 class="text-lg font-bold text-primary mb-2">نقل بين المدن</h3>
-            <p class="text-gray-600 text-sm">رحلات برية مريحة وآمنة</p>
+            <h3 class="text-lg font-bold text-primary mb-2">عروض خاصة</h3>
+            <p class="text-gray-600 text-sm">أسعار تنافسية للعائلات</p>
           </div>
         </div>
 
@@ -270,255 +279,198 @@
         <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
           <!-- نظرة عامة -->
           <section id="intro" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">نظرة عامة على خدمات الانتقالات والمواصلات</h2>
+            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">نظرة عامة على خدمات حجز الطيران</h2>
             <div class="flex flex-col lg:flex-row gap-6 mb-6">
               <!-- النص -->
               <div class="w-full lg:w-1/2 flex flex-col justify-center">
                 <p class="text-gray-700 mb-4 leading-relaxed text-lg">
-                  تقدم <span class="font-bold text-secondary rose">وكالة روز للسفر والسياحة</span> خدمات احترافية في <span class="font-bold text-secondary rose">الانتقالات والمواصلات داخل المدن وبينها</span> في <span class="font-bold text-secondary rose">الدول العربية وجميع دول العالم</span> بسيارات حديثة وسائقين محترفين، لضمان رحلة مريحة وآمنة للسياح ورجال الأعمال والعائلات.
+                  تقدم <span class="font-bold text-secondary rose">وكالة روز للسفر والسياحة في جدة</span> خدمات احترافية في <span class="font-bold text-secondary rose">حجز الطيران الداخلي والدولي</span> مع أفضل الأسعار وخيارات متعددة تناسب جميع المسافرين، سواء كنت تخطط لـ رحلة عمل، رحلة سياحية، رحلة شهر العسل، أو رحلة عائلية.
                 </p>
                 <p class="text-gray-700 leading-relaxed text-lg">
-                  تشمل خدمات وكالة روز للسفر والسياحة <span class="font-bold text-secondary rose">نقل من وإلى المطار</span>، <span class="font-bold text-secondary rose">تأجير سيارات مع سائق</span>، <span class="font-bold text-secondary rose">انتقالات سياحية</span>، <span class="font-bold text-secondary rose">نقل بين المدن</span>، <span class="font-bold text-secondary rose">سيارات VIP</span>، تنقلات خاصة للعائلات والشركات في أوروبا وآسيا ودول الخليج وجميع الوجهات السياحية.
+                  توفر وكالة روز للسفر والسياحة خدمة <span class="font-bold text-secondary rose">حجز تذاكر طيران رخيصة</span>، حجز طيران دولي، حجز طيران داخلي في السعودية، عروض طيران خاصة، حجوزات طيران عاجلة، حجز طيران ذهاب وعودة، حجز طيران متعدد الوجهات، مع متابعة كاملة حتى تأكيد التذكرة.
                 </p>
               </div>
 
               <!-- الصورة الأولى -->
               <div class="w-full lg:w-1/2 flex justify-center items-center">
-                <img src="../../img/Artboard 4.png" alt="خدمات الانتقالات والمواصلات من وكالة روز" class="rounded-xl shadow-lg w-full h-96 w-full object-containe bg-gray-100 p-2" onerror="this.src='https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+                <img src="../../img/flight-reservation.webp" alt="حجز الطيران مع وكالة روز" class="rounded-xl shadow-lg w-full h-96 object-cover bg-gray-100 p-2" onerror="this.src='https://images.pexels.com/photos/912050/pexels-photo-912050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'">
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-primary to-primaryLight text-white p-6 rounded-lg mt-6">
+              <h3 class="text-xl font-bold mb-3">أكثر ما يبحث عنه الناس</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary text-xl mt-1 ml-3"></i>
+                  <p>حجز طيران داخلي رخيص</p>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary text-xl mt-1 ml-3"></i>
+                  <p>حجز طيران دولي بأسعار مخفضة</p>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary text-xl mt-1 ml-3"></i>
+                  <p>عروض طيران تركيا</p>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary text-xl mt-1 ml-3"></i>
+                  <p>عروض طيران دبي</p>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary text-xl mt-1 ml-3"></i>
+                  <p>حجز طيران أوروبا (باريس، لندن، ميلانو)</p>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-check-circle text-secondary text-xl mt-1 ml-3"></i>
+                  <p>حجز طيران تايلاند وماليزيا</p>
+                </div>
               </div>
             </div>
           </section>
 
-          <!-- انتقالات داخل المدن -->
-          <section id="city-transfers" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">خدمات الانتقالات داخل المدن حول العالم</h2>
+          <!-- الطيران الداخلي -->
+          <section id="domestic" class="content-section mb-12">
+            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">حجز الطيران الداخلي داخل السعودية</h2>
             
-            <p class="text-gray-700 mb-4">توفر وكالة روز للسفر والسياحة خدمات تنقلات داخل المدن في أهم الوجهات السياحية مثل:</p>
+            <p class="text-gray-700 mb-4">توفر <span class="font-bold text-secondary rose">وكالة روز للسفر والسياحة في جدة</span> خدمات حجز الطيران الداخلي في السعودية بين جميع المدن مثل:</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">جدة - الرياض</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">جدة - الدمام</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">الرياض - الدمام</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">جدة - المدينة</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">الرياض - أبها</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">جدة - الطائف</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">الرياض - القصيم</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">جدة - تبوك</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">الرياض - جازان</h4>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center city-card border border-gray-200">
+                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">جدة - القصيم</h4>
+              </div>
+            </div>
+            
+            <p class="text-gray-700">مع أفضل أسعار الطيران الداخلي وخيارات رحلات متعددة في أوقات مختلفة. تشمل الخدمة اختيار أفضل شركة طيران، أفضل وقت سفر، وأفضل سعر تذكرة.</p>
+          </section>
+
+          <!-- الطيران الدولي -->
+          <section id="international" class="content-section mb-12">
+            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">حجز الطيران الدولي إلى جميع دول العالم</h2>
+            
+            <p class="text-gray-700 mb-4">تقدم <span class="font-bold text-secondary rose">وكالة روز للسفر والسياحة</span> خدمات حجز طيران دولي إلى أهم الوجهات العالمية مثل:</p>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
                 <h4 class="font-bold text-primary">دبي</h4>
                 <p class="text-xs text-gray-500">الإمارات</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">أبوظبي</h4>
-                <p class="text-xs text-gray-500">الإمارات</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
                 <h4 class="font-bold text-primary">الدوحة</h4>
                 <p class="text-xs text-gray-500">قطر</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">الكويت</h4>
+                <p class="text-xs text-gray-500">الكويت</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
                 <h4 class="font-bold text-primary">المنامة</h4>
                 <p class="text-xs text-gray-500">البحرين</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">الكويت</h4>
-                <p class="text-xs text-gray-500">الكويت</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
                 <h4 class="font-bold text-primary">مسقط</h4>
                 <p class="text-xs text-gray-500">عمان</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">القاهرة</h4>
-                <p class="text-xs text-gray-500">مصر</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">شرم الشيخ</h4>
-                <p class="text-xs text-gray-500">مصر</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">مراكش</h4>
-                <p class="text-xs text-gray-500">المغرب</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">إسطنبول</h4>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">اسطنبول</h4>
                 <p class="text-xs text-gray-500">تركيا</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">تبليسي</h4>
+                <p class="text-xs text-gray-500">جورجيا</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
                 <h4 class="font-bold text-primary">باريس</h4>
                 <p class="text-xs text-gray-500">فرنسا</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
                 <h4 class="font-bold text-primary">لندن</h4>
                 <p class="text-xs text-gray-500">بريطانيا</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">ميلانو</h4>
+                <p class="text-xs text-gray-500">إيطاليا</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">برلين</h4>
+                <p class="text-xs text-gray-500">ألمانيا</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">زيورخ</h4>
+                <p class="text-xs text-gray-500">سويسرا</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">فيينا</h4>
+                <p class="text-xs text-gray-500">النمسا</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
+                <h4 class="font-bold text-primary">بانكوك</h4>
+                <p class="text-xs text-gray-500">تايلاند</p>
+              </div>
+              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
+                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
                 <h4 class="font-bold text-primary">كوالالمبور</h4>
                 <p class="text-xs text-gray-500">ماليزيا</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-city text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">بوكيت</h4>
-                <p class="text-xs text-gray-500">تايلاند</p>
-              </div>
-            </div>
-            
-            <p class="text-gray-700">تشمل الخدمة سيارات حديثة مكيفة مع <span class="font-bold text-secondary rose">سائقين محترفين</span> يعرفون الطرق والأماكن السياحية.</p>
-          </section>
-
-          <!-- نقل بين المدن -->
-          <section id="intercity" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">خدمات النقل بين المدن والدول</h2>
-            
-            <p class="text-gray-700 mb-4">توفر وكالة روز للسفر والسياحة خدمات النقل بين المدن مثل:</p>
-            <ul class="list-disc pr-8 space-y-2 text-gray-700 mb-4">
-              <li>النقل بين مدن تركيا (إسطنبول - بورصة - إزمير - أنطاليا)</li>
-              <li>النقل بين مدن أوروبا (باريس - ليون - مرسيليا)</li>
-              <li>النقل بين مدن الإمارات (دبي - أبوظبي - الشارقة)</li>
-              <li>النقل بين مدن المغرب (مراكش - الدار البيضاء - فاس)</li>
-              <li>النقل بين مدن مصر (القاهرة - الإسكندرية - الغردقة)</li>
-            </ul>
-            <p class="text-gray-700">مع سيارات مريحة تناسب العائلات والرحلات السياحية.</p>
-          </section>
-
-          <!-- انتقالات في الدول العربية -->
-          <section id="arab-world" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">انتقالات سياحية في الدول العربية</h2>
-            
-            <p class="text-gray-700 mb-4">توفر وكالة روز للسفر والسياحة انتقالات سياحية في:</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
                 <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">السعودية</h4>
-                <p class="text-xs text-gray-500">الرياض - جدة</p>
+                <h4 class="font-bold text-primary">جاكرتا</h4>
+                <p class="text-xs text-gray-500">إندونيسيا</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
                 <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">الإمارات</h4>
-                <p class="text-xs text-gray-500">دبي - أبوظبي</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">قطر</h4>
-                <p class="text-xs text-gray-500">الدوحة</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">البحرين</h4>
-                <p class="text-xs text-gray-500">المنامة</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">الكويت</h4>
-                <p class="text-xs text-gray-500">الكويت</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">عمان</h4>
-                <p class="text-xs text-gray-500">مسقط</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">مصر</h4>
-                <p class="text-xs text-gray-500">القاهرة - شرم الشيخ</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">الأردن</h4>
-                <p class="text-xs text-gray-500">عمان - العقبة</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">لبنان</h4>
-                <p class="text-xs text-gray-500">بيروت</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">المغرب</h4>
-                <p class="text-xs text-gray-500">مراكش - الدار البيضاء</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">تونس</h4>
-                <p class="text-xs text-gray-500">تونس</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">الجزائر</h4>
-                <p class="text-xs text-gray-500">الجزائر</p>
-              </div>
-            </div>
-            
-            <p class="text-gray-700">بسيارات فاخرة وسائقين محترفين مع برامج سياحية متكاملة.</p>
-          </section>
-
-          <!-- انتقالات حول العالم -->
-          <section id="worldwide" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">انتقالات سياحية في جميع دول العالم</h2>
-            
-            <p class="text-gray-700 mb-4">تشمل خدمات وكالة روز للسفر والسياحة في جدة انتقالات في:</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">تركيا</h4>
-                <p class="text-xs text-gray-500">إسطنبول - أنطاليا</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">جورجيا</h4>
-                <p class="text-xs text-gray-500">تبليسي - باتومي</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">فرنسا</h4>
-                <p class="text-xs text-gray-500">باريس - ليون</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">إيطاليا</h4>
-                <p class="text-xs text-gray-500">روما - ميلانو</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">ألمانيا</h4>
-                <p class="text-xs text-gray-500">برلين - ميونخ</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">سويسرا</h4>
-                <p class="text-xs text-gray-500">زيورخ - جنيف</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">النمسا</h4>
-                <p class="text-xs text-gray-500">فيينا - سالزبورغ</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">تايلاند</h4>
-                <p class="text-xs text-gray-500">بانكوك - بوكيت</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">ماليزيا</h4>
-                <p class="text-xs text-gray-500">كوالالمبور</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">إندونيسيا</h4>
-                <p class="text-xs text-gray-500">بالي - جاكرتا</p>
-              </div>
-              <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
-                <i class="fas fa-flag text-secondary text-xl mb-2"></i>
-                <h4 class="font-bold text-primary">المالديف</h4>
-                <p class="text-xs text-gray-500">ماليه</p>
+                <h4 class="font-bold text-primary">ماليه</h4>
+                <p class="text-xs text-gray-500">المالديف</p>
               </div>
               <div class="bg-gray-50 p-3 rounded-lg text-center country-card border border-gray-200">
                 <i class="fas fa-flag text-secondary text-xl mb-2"></i>
@@ -527,151 +479,176 @@
               </div>
             </div>
             
-            <p class="text-gray-700">مع سيارات سياحية مريحة وسائقين يعرفون أفضل الأماكن.</p>
+            <p class="text-gray-700">مع أفضل عروض الطيران وخيارات شركات طيران متعددة.</p>
           </section>
 
-          <!-- أنواع السيارات -->
-          <section id="fleet" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">أنواع السيارات المتوفرة</h2>
+          <!-- أنواع الحجوزات -->
+          <section id="types" class="content-section mb-12">
+            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">أنواع حجوزات الطيران المتوفرة</h2>
             
-            <p class="text-gray-700 mb-4">توفر وكالة روز للسفر والسياحة أسطولاً متنوعاً من السيارات:</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-              <div class="vehicle-card bg-white border border-gray-200 p-4 rounded-lg text-center">
-                <i class="fas fa-car text-secondary text-3xl mb-2"></i>
-                <h4 class="font-bold text-primary">سيارات اقتصادية</h4>
-                <p class="text-xs text-gray-500">للأفراد والثنائي</p>
-              </div>
-              <div class="vehicle-card bg-white border border-gray-200 p-4 rounded-lg text-center">
-                <i class="fas fa-car-side text-secondary text-3xl mb-2"></i>
-                <h4 class="font-bold text-primary">سيارات عائلية</h4>
-                <p class="text-xs text-gray-500">SUV - 7 راكب</p>
-              </div>
-              <div class="vehicle-card bg-white border border-gray-200 p-4 rounded-lg text-center">
-                <i class="fas fa-gem text-secondary text-3xl mb-2"></i>
-                <h4 class="font-bold text-primary">سيارات VIP</h4>
-                <p class="text-xs text-gray-500">مرسيدس - لكزس</p>
-              </div>
-              <div class="vehicle-card bg-white border border-gray-200 p-4 rounded-lg text-center">
-                <i class="fas fa-truck text-secondary text-3xl mb-2"></i>
-                <h4 class="font-bold text-primary">سيارات فان</h4>
-                <p class="text-xs text-gray-500">للرحلات الجماعية</p>
-              </div>
-              <div class="vehicle-card bg-white border border-gray-200 p-4 rounded-lg text-center">
-                <i class="fas fa-bus text-secondary text-3xl mb-2"></i>
-                <h4 class="font-bold text-primary">باصات سياحية</h4>
-                <p class="text-xs text-gray-500">للمجموعات الكبيرة</p>
-              </div>
-            </div>
-            
-            <p class="text-gray-700">جميع السيارات حديثة ونظيفة ومجهزة للراحة.</p>
-          </section>
-
-          <!-- سائقين محترفين -->
-          <section id="drivers" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">سائقين محترفين ومدربين</h2>
-            
-            <p class="text-gray-700 mb-4">تتميز وكالة روز للسفر والسياحة بوجود سائقين:</p>
+            <p class="text-gray-700 mb-4">توفر <span class="font-bold text-secondary rose">وكالة روز للسفر والسياحة</span>:</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div class="flex items-center bg-gray-50 p-3 rounded-lg">
                 <i class="fas fa-check-circle text-secondary text-xl ml-3"></i>
-                <span class="text-gray-700">ذوي خبرة في الطرق المحلية والدولية</span>
+                <span class="text-gray-700">حجز طيران اقتصادي</span>
               </div>
               <div class="flex items-center bg-gray-50 p-3 rounded-lg">
                 <i class="fas fa-check-circle text-secondary text-xl ml-3"></i>
-                <span class="text-gray-700">ملتزمين بالمواعيد والجدول الزمني</span>
+                <span class="text-gray-700">حجز طيران درجة رجال الأعمال</span>
               </div>
               <div class="flex items-center bg-gray-50 p-3 rounded-lg">
                 <i class="fas fa-check-circle text-secondary text-xl ml-3"></i>
-                <span class="text-gray-700">يجيدون التعامل مع السياح</span>
+                <span class="text-gray-700">حجز طيران درجة أولى</span>
               </div>
               <div class="flex items-center bg-gray-50 p-3 rounded-lg">
                 <i class="fas fa-check-circle text-secondary text-xl ml-3"></i>
-                <span class="text-gray-700">يتحدثون عدة لغات</span>
+                <span class="text-gray-700">حجز طيران ذهاب وعودة</span>
+              </div>
+              <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                <i class="fas fa-check-circle text-secondary text-xl ml-3"></i>
+                <span class="text-gray-700">حجز طيران متعدد الوجهات</span>
+              </div>
+              <div class="flex items-center bg-gray-50 p-3 rounded-lg">
+                <i class="fas fa-check-circle text-secondary text-xl ml-3"></i>
+                <span class="text-gray-700">حجز طيران عاجل</span>
               </div>
             </div>
             
-            <p class="text-gray-700">لضمان تجربة تنقل آمنة ومريحة.</p>
+            <p class="text-gray-700">مع أفضل شركات الطيران العالمية.</p>
           </section>
 
           <!-- لماذا روز -->
           <section id="why-us" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">لماذا تختار وكالة روز للسفر والسياحة في جدة؟</h2>
+            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">لماذا تحجز طيرانك مع وكالة روز للسفر والسياحة في جدة؟</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div class="flex items-start">
-                <i class="fas fa-star text-secondary text-xl ml-2"></i>
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 ml-2 flex-shrink-0">
+                  <i class="fas fa-star"></i>
+                </div>
                 <div>
-                  <h4 class="font-bold text-primary">أفضل أسعار الانتقالات</h4>
-                  <p class="text-sm text-gray-600">أسعار تنافسية وجودة عالية</p>
+                  <h4 class="font-bold text-primary">أفضل أسعار تذاكر الطيران</h4>
+                  <p class="text-sm text-gray-600">نضمن لك أقل الأسعار في السوق</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-star text-secondary text-xl ml-2"></i>
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 ml-2 flex-shrink-0">
+                  <i class="fas fa-star"></i>
+                </div>
                 <div>
-                  <h4 class="font-bold text-primary">سيارات حديثة ومريحة</h4>
-                  <p class="text-sm text-gray-600">أسطول متنوع ومحدث باستمرار</p>
+                  <h4 class="font-bold text-primary">عروض طيران خاصة</h4>
+                  <p class="text-sm text-gray-600">عروض حصرية للعائلات ورجال الأعمال</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-star text-secondary text-xl ml-2"></i>
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 ml-2 flex-shrink-0">
+                  <i class="fas fa-star"></i>
+                </div>
                 <div>
-                  <h4 class="font-bold text-primary">سائقين محترفين</h4>
-                  <p class="text-sm text-gray-600">ذوي خبرة وأخلاق عالية</p>
+                  <h4 class="font-bold text-primary">خيارات رحلات متعددة</h4>
+                  <p class="text-sm text-gray-600">أوقات وشركات طيران متنوعة</p>
                 </div>
               </div>
               <div class="flex items-start">
-                <i class="fas fa-star text-secondary text-xl ml-2"></i>
-                <div>
-                  <h4 class="font-bold text-primary">تنقلات داخل المدن وبينها</h4>
-                  <p class="text-sm text-gray-600">تغطية جميع الوجهات</p>
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 ml-2 flex-shrink-0">
+                  <i class="fas fa-star"></i>
                 </div>
-              </div>
-              <div class="flex items-start">
-                <i class="fas fa-star text-secondary text-xl ml-2"></i>
-                <div>
-                  <h4 class="font-bold text-primary">خدمة 24 ساعة</h4>
-                  <p class="text-sm text-gray-600">فريق دعم متاح طوال الوقت</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <i class="fas fa-star text-secondary text-xl ml-2"></i>
                 <div>
                   <h4 class="font-bold text-primary">حجز سريع وسهل</h4>
-                  <p class="text-sm text-gray-600">عملية حجز بسيطة عبر الهاتف</p>
+                  <p class="text-sm text-gray-600">إجراءات بسيطة وتأكيد فوري</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 ml-2 flex-shrink-0">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-primary">دعم كامل قبل وبعد السفر</h4>
+                  <p class="text-sm text-gray-600">فريق دعم متاح على مدار الساعة</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 ml-2 flex-shrink-0">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-primary">إمكانية حجز طيران وفنادق معًا</h4>
+                  <p class="text-sm text-gray-600">باقات سياحية متكاملة</p>
                 </div>
               </div>
             </div>
             
-            <p class="text-gray-700">ولهذا تعتبر وكالة روز للسفر والسياحة من <span class="font-bold text-secondary rose">أفضل شركات النقل السياحي في الدول العربية والعالم</span>.</p>
+            <p class="text-gray-700">ولهذا تعتبر <span class="font-bold text-secondary rose">وكالة روز للسفر والسياحة</span> من أفضل مكاتب حجز الطيران في جدة.</p>
           </section>
 
-          <!-- أسعار الخدمات -->
+          <!-- أسعار وعروض -->
           <section id="prices" class="content-section mb-12">
-            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">أسعار خدمات الانتقالات</h2>
+            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">أسعار حجز الطيران والعروض</h2>
             
-            <p class="text-gray-700 mb-4">تختلف أسعار الانتقالات حسب المسافة ونوع السيارة وعدد الركاب والدولة، وتوفر وكالة روز للسفر والسياحة أسعار مناسبة تشمل:</p>
+            <p class="text-gray-700 mb-4">تختلف أسعار تذاكر الطيران حسب الدولة والموسم ووقت الحجز، وتوفر <span class="font-bold text-secondary rose">وكالة روز للسفر والسياحة</span> أفضل أسعار الطيران الداخلي والدولي مع عروض خاصة للعائلات ورجال الأعمال.</p>
             
+            <p class="text-gray-700 mb-4">يبحث الناس عن:</p>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
-              <div class="bg-gray-50 p-2 rounded text-center text-sm">نقل من المطار</div>
-              <div class="bg-gray-50 p-2 rounded text-center text-sm">سيارة مع سائق يوم كامل</div>
-              <div class="bg-gray-50 p-2 rounded text-center text-sm">نقل بين المدن</div>
-              <div class="bg-gray-50 p-2 rounded text-center text-sm">سيارات VIP</div>
-              <div class="bg-gray-50 p-2 rounded text-center text-sm">تنقلات سياحية</div>
+              <div class="bg-gray-50 p-2 rounded text-center text-sm">تذاكر طيران رخيصة</div>
+              <div class="bg-gray-50 p-2 rounded text-center text-sm">عروض طيران أوروبا</div>
+              <div class="bg-gray-50 p-2 rounded text-center text-sm">عروض طيران تركيا</div>
+              <div class="bg-gray-50 p-2 rounded text-center text-sm">عروض طيران دبي</div>
+              <div class="bg-gray-50 p-2 rounded text-center text-sm">عروض طيران تايلاند</div>
+              <div class="bg-gray-50 p-2 rounded text-center text-sm">عروض طيران شهر العسل</div>
             </div>
             
-            <p class="text-gray-700">مع عروض خاصة للعائلات والشركات.</p>
+            <p class="text-gray-700">وتشمل العروض: تذاكر طيران رخيصة، عروض طيران أوروبا، عروض طيران تركيا، عروض طيران دبي، عروض طيران شهر العسل.</p>
+          </section>
+
+          <!-- خطوات الحجز -->
+          <section id="steps" class="content-section mb-12">
+            <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-gray-200">خطوات حجز الطيران مع وكالة روز للسفر والسياحة</h2>
             
-            <div class="bg-yellow-50 p-5 rounded-lg mt-4 border-r-4 border-secondary">
-              <h4 class="font-bold text-lg mb-2 text-yellow-700">عروض خاصة:</h4>
-              <p class="text-gray-700">اتصل بنا لتحصل على أفضل العروض على باقات الانتقالات لجميع الوجهات.</p>
+            <div class="space-y-4 mb-6">
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold ml-3 flex-shrink-0">1</div>
+                <div>
+                  <h3 class="font-bold text-primary">اختيار الوجهة</h3>
+                  <p class="text-gray-600">داخليًا أو دوليًا</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold ml-3 flex-shrink-0">2</div>
+                <div>
+                  <h3 class="font-bold text-primary">تحديد التاريخ</h3>
+                  <p class="text-gray-600">تاريخ السفر والعودة</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold ml-3 flex-shrink-0">3</div>
+                <div>
+                  <h3 class="font-bold text-primary">اختيار الرحلة</h3>
+                  <p class="text-gray-600">من بين أفضل الخيارات المتاحة</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold ml-3 flex-shrink-0">4</div>
+                <div>
+                  <h3 class="font-bold text-primary">تأكيد الحجز</h3>
+                  <p class="text-gray-600">نقوم بتأكيد الحجز فورًا</p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold ml-3 flex-shrink-0">5</div>
+                <div>
+                  <h3 class="font-bold text-primary">استلام التذكرة</h3>
+                  <p class="text-gray-600">تصلك التذكرة عبر البريد الإلكتروني</p>
+                </div>
+              </div>
             </div>
+            
+            <p class="text-gray-700">عملية حجز سهلة وسريعة.</p>
           </section>
 
           <!-- قسم الأسئلة الشائعة -->
-          <section id="faq" class="py-10 bg-gray-50 content-section rounded-lg">
-            <div class="container mx-auto px-4">
+          <section id="faq" class="py-16 bg-gray-50 content-section">
+            <div class="container mx-auto px-6">
               <!-- العنوان الرئيسي -->
               <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-primary relative inline-block">
@@ -679,7 +656,7 @@
                   <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-secondary rounded-full"></span>
                 </h2>
                 <p class="text-gray-600 mt-4 max-w-2xl mx-auto leading-relaxed">
-                  نجيب هنا على أكثر الأسئلة التي تصلنا من عملائنا حول خدمات الانتقالات والمواصلات.
+                  نجيب هنا على أكثر الأسئلة التي تصلنا من عملائنا حول خدمات حجز الطيران.
                 </p>
               </div>
 
@@ -688,12 +665,12 @@
                 <!-- سؤال 1 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                   <button class="w-full flex justify-between items-center p-4 text-right focus:outline-none faq-toggle">
-                    <span class="font-semibold text-gray-800">ما هي المدن التي تغطيها خدمات الانتقالات؟</span>
+                    <span class="font-semibold text-gray-800">ما هي الدول التي يمكن حجز طيران إليها؟</span>
                     <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
                   </button>
                   <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                     <p class="p-4 text-gray-600 leading-relaxed">
-                      تغطي خدماتنا جميع المدن الرئيسية في الدول العربية (الخليج، مصر، الأردن، المغرب) وجميع دول العالم (تركيا، جورجيا، أوروبا، آسيا). يمكنك الاستفسار عن أي مدينة ترغب في زيارتها.
+                      نوفر حجوزات طيران لجميع دول العالم تقريبًا، بما في ذلك دول الخليج، تركيا، جورجيا، دول أوروبا (بريطانيا، فرنسا، إيطاليا، ألمانيا، سويسرا، النمسا)، ودول شرق آسيا (تايلاند، ماليزيا، إندونيسيا، المالديف، سنغافورة).
                     </p>
                   </div>
                 </div>
@@ -701,12 +678,12 @@
                 <!-- سؤال 2 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                   <button class="w-full flex justify-between items-center p-4 text-right focus:outline-none faq-toggle">
-                    <span class="font-semibold text-gray-800">هل يمكن توفير سائق يتحدث العربية أو الإنجليزية؟</span>
+                    <span class="font-semibold text-gray-800">كم تستغرق عملية حجز الطيران؟</span>
                     <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
                   </button>
                   <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                     <p class="p-4 text-gray-600 leading-relaxed">
-                      نعم، نوفر سائقين يتحدثون العربية والإنجليزية، وفي بعض الوجهات نوفر سائقين يتحدثون لغات إضافية حسب الطلب.
+                      عملية الحجز سريعة جدًا وتستغرق دقائق معدودة. نقوم بتأكيد الحجز وإصدار التذكرة فور الانتهاء من الإجراءات.
                     </p>
                   </div>
                 </div>
@@ -714,12 +691,12 @@
                 <!-- سؤال 3 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                   <button class="w-full flex justify-between items-center p-4 text-right focus:outline-none faq-toggle">
-                    <span class="font-semibold text-gray-800">هل يمكن حجز سيارة ليوم كامل مع سائق؟</span>
+                    <span class="font-semibold text-gray-800">هل توفرون عروضًا خاصة على تذاكر الطيران؟</span>
                     <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
                   </button>
                   <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                     <p class="p-4 text-gray-600 leading-relaxed">
-                      نعم، نوفر خدمة تأجير سيارات مع سائق ليوم كامل (8 ساعات) أو حسب رغبتك، لمرافقتك في جولاتك السياحية أو أعمالك.
+                      نعم، لدينا عروض خاصة على تذاكر الطيران الداخلي والدولي طوال العام، خاصة للعائلات ورجال الأعمال وحجوزات شهر العسل.
                     </p>
                   </div>
                 </div>
@@ -727,12 +704,12 @@
                 <!-- سؤال 4 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                   <button class="w-full flex justify-between items-center p-4 text-right focus:outline-none faq-toggle">
-                    <span class="font-semibold text-gray-800">ما هي أنواع السيارات المتوفرة للعائلات؟</span>
+                    <span class="font-semibold text-gray-800">هل يمكن حجز طيران وفنادق معًا؟</span>
                     <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
                   </button>
                   <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                     <p class="p-4 text-gray-600 leading-relaxed">
-                      نوفر سيارات عائلية (SUV) تتسع لـ 7 ركاب، وسيارات فان تتسع لـ 12 راكب، وجميعها مجهزة لراحة العائلة.
+                      نعم، نوفر باقات متكاملة تشمل حجز الطيران والفنادق والبرامج السياحية لتناسب احتياجاتك وتوفر عليك الوقت والجهد.
                     </p>
                   </div>
                 </div>
@@ -740,12 +717,12 @@
                 <!-- سؤال 5 -->
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                   <button class="w-full flex justify-between items-center p-4 text-right focus:outline-none faq-toggle">
-                    <span class="font-semibold text-gray-800">كيف يمكنني حجز خدمة الانتقالات مع روز؟</span>
+                    <span class="font-semibold text-gray-800">هل يمكن إلغاء أو تغيير الحجز بعد التأكيد؟</span>
                     <i class="fas fa-chevron-down text-secondary transition-transform duration-300"></i>
                   </button>
                   <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                     <p class="p-4 text-gray-600 leading-relaxed">
-                      يمكنك الاتصال بنا على الرقم 0502113147 أو زيارة مكتبنا في جدة. أخبرنا بوجهتك واحتياجاتك وسنقوم بترتيب كل شيء.
+                      تعتمد إمكانية الإلغاء أو التعديل على سياسة شركة الطيران. يساعدك فريقنا في متابعة أي تعديلات أو إلغاءات حسب الحاجة.
                     </p>
                   </div>
                 </div>
@@ -755,12 +732,16 @@
 
           <!-- قسم دعائي -->
           <section class="bg-primary text-white p-8 rounded-lg text-center my-8">
-            <h2 class="text-2xl font-bold mb-4">احصل على خدمات الانتقالات والمواصلات داخل المدن وبينها مع أفضل السيارات والسائقين</h2>
-            <p class="mb-6">بأفضل الأسعار مع وكالة روز للسفر والسياحة في جدة - رحلتك تبدأ هنا</p>
+            <h2 class="text-2xl font-bold mb-4">احصل على أفضل عروض الطيران مع وكالة روز</h2>
+            <p class="mb-6">فريقنا من الخبراء جاهز لمساعدتك في اختيار أفضل الرحلات بأقل الأسعار</p>
             <a href="tel:0502113147" class="bg-secondary text-white py-3 px-8 rounded-lg font-bold inline-block hover:bg-secondaryDark transition duration-300">
-              <i class="fas fa-phone ml-2"></i>اتصل بنا الآن: 0502113147
+              <i class="fas fa-phone ml-2"></i>اتصل بنا الآن
             </a>
           </section>
+          
+          <!-- ختام -->
+          <p class="text-gray-700 text-center text-lg">إذا كنت تبحث عن أفضل شركة حجز طيران داخلي ودولي بأسعار تنافسية وخيارات متعددة للرحلات، فإن وكالة روز للسفر والسياحة في جدة تقدم لك أفضل خدمات حجز الطيران مع عروض قوية وخيارات مرنة تناسب جميع المسافرين.</p>
+          <p class="text-gray-700 text-center text-lg font-bold mt-4">رحلتك تبدأ من تذكرتك و وكالة روز للسفر والسياحة توفر لك أفضل رحلة بأفضل سعر.</p>
         </div>
       </div>
     </div>
@@ -780,7 +761,7 @@
               <p class="text-gray-400 text-sm">رحلتك تبدأ بتأشيرتك</p>
             </div>
           </div>
-          <p class="text-gray-300 mb-6">نحن شريكك الموثوق في رحلة السفر، نقدم خدمات سياحية متكاملة بسرعة وكفاءة عالية.</p>
+          <p class="text-gray-300 mb-6">نحن شريكك الموثوق في رحلة السفر، نقدم خدمات حجز طيران متكاملة بسرعة وكفاءة عالية.</p>
            <div class="flex gap-3 ">
 
                             <!-- Facebook -->
@@ -833,11 +814,11 @@
         <div>
           <h4 class="text-lg font-bold mb-6">خدماتنا</h4>
           <ul class="space-y-3">
-            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>نقل من وإلى المطار</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>تأجير سيارات مع سائق</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>انتقالات سياحية</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>نقل بين المدن</a></li>
-            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>سيارات VIP</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>حجز طيران داخلي</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>حجز طيران دولي</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>عروض طيران خاصة</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>حجوزات فنادق</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-secondary transition-colors flex items-center"><i class="fas fa-chevron-left text-xs ml-2"></i>باقات سياحية متكاملة</a></li>
           </ul>
         </div>
 
@@ -939,12 +920,8 @@
           mobileMenu.classList.toggle('hidden');
         });
       }
-    });
-  </script>
-  
-  <script>
-    // FAQ Accordion
-    document.addEventListener("DOMContentLoaded", function() {
+
+      // FAQ toggle
       const toggles = document.querySelectorAll('.faq-toggle');
 
       toggles.forEach(toggle => {
@@ -956,7 +933,9 @@
           document.querySelectorAll('.faq-content').forEach(item => {
             if (item !== content) {
               item.style.maxHeight = null;
-              item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+              if (item.previousElementSibling) {
+                item.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+              }
             }
           });
 
@@ -972,18 +951,17 @@
       });
     });
   </script>
-  
   <script>
-    // Clickable rose elements
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll(".rose").forEach(function(el) {
-            el.style.cursor = "pointer";
-            el.addEventListener("click", function() {
-                window.open("https://www.rosetravell.com/", "_blank");
-            });
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll(".rose").forEach(function(el) {
+        el.style.cursor = "pointer"; // يخلي شكل المؤشر يشير أنه قابل للضغط
+        el.addEventListener("click", function() {
+            window.open("https://www.rosetravell.com/", "_blank");
         });
     });
-  </script>
+});
+</script>
 
 </body>
+
 </html>

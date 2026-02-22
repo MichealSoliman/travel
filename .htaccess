@@ -1,0 +1,63 @@
+# =========================
+# BEGIN .htaccess for rosetravell.com
+# =========================
+
+# 1. Enable Rewrite Engine
+RewriteEngine On
+
+# 2. Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3. Force www (اختياري)
+RewriteCond %{HTTP_HOST} ^rosetravell\.com [NC]
+RewriteRule ^(.*)$ https://www.rosetravell.com/$1 [L,R=301]
+
+# 4. Remove index.html from URLs
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# 5. Default Directory Index
+DirectoryIndex index.html index.php
+
+# 6. Protect sensitive files
+<FilesMatch "^(\.htaccess|\.htpasswd|wp-config.php|readme\.html)">
+  Order Allow,Deny
+  Deny from all
+</FilesMatch>
+
+# 7. Enable GZIP compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# 8. Leverage browser caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType application/x-shockwave-flash "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# 9. Redirect old pages to new URLs (مثال)
+# Redirect 301 /old-page.html https://www.rosetravell.com/new-page.html
+
+# 10. SEO Friendly Rewrite for pretty URLs (لو فيه PHP site)
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L]
+</IfModule>
+
+# =========================
+# END .htaccess
+# =========================
