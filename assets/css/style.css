@@ -724,7 +724,7 @@
         .contact-bg {
             background:
                 linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.5) 100%),
-                url('./img/qf367QfrPR76Sti3ABzF.webp') center / cover no-repeat;
+                url('../../img/qf367QfrPR76Sti3ABzF.webp') center / cover no-repeat;
 
             background-attachment: fixed;
             position: relative;
