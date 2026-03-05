@@ -1815,14 +1815,16 @@
                         <input type="email" name="email" placeholder="البريد الإلكتروني"
                             class="form-input px-5 py-4 rounded-xl w-full" required>
 
-                            <select name="department" id="department"
+                            <select name="department" id="department" placeholder=" سبب الارسال "
                                     class="form-input px-5 py-4 rounded-xl w-full" required>
                                     
-                                    <option value="">اختر نوع الرسالة</option>
+                                    <!-- <option value="">سبب الارسال </option> -->
+                                    
+                                    <option value="management">حجوزات</option>
+                                     <option value="inquiry">استفسار</option>
+                                    <option value="management">تقيم خدمة العملاء</option>
                                     <option value="complaint">شكوى</option>
                                     <option value="management">الإدارة</option>
-                                    <option value="inquiry">استفسار</option>
-
                                 </select>
 
                         <textarea name="message" placeholder="الرسالة" rows="5"
