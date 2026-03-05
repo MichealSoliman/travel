@@ -1815,6 +1815,16 @@
                         <input type="email" name="email" placeholder="البريد الإلكتروني"
                             class="form-input px-5 py-4 rounded-xl w-full" required>
 
+                            <select name="department" id="department"
+                                    class="form-input px-5 py-4 rounded-xl w-full" required>
+                                    
+                                    <option value="">اختر نوع الرسالة</option>
+                                    <option value="complaint">شكوى</option>
+                                    <option value="management">الإدارة</option>
+                                    <option value="inquiry">استفسار</option>
+
+                                </select>
+
                         <textarea name="message" placeholder="الرسالة" rows="5"
                             class="form-input px-5 py-4 rounded-xl w-full resize-none" required></textarea>
 
@@ -1836,49 +1846,76 @@
     <!-- script form  -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <script>
-        (function () {
-            emailjs.init("fIVxP633aCUMPFfnk");
-        })();
+  <script>
 
-        const form = document.getElementById("contact-form");
-        const messageBox = document.getElementById("form-message");
+(function () {
+    emailjs.init("fIVxP633aCUMPFfnk");
+})();
 
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
+const form = document.getElementById("contact-form");
+const messageBox = document.getElementById("form-message");
 
-            emailjs.sendForm("service_6jix5lt", "template_s6neetj", this)
-                .then(function () {
+form.addEventListener("submit", function (event) {
 
-                    messageBox.className =
-                        "mt-4 text-center rounded-xl px-6 py-4 font-semibold bg-green-100 text-green-700";
+    event.preventDefault();
 
-                    messageBox.innerHTML = "✅ تم إرسال الرسالة بنجاح، سنتواصل معك قريباً";
+    const department = document.getElementById("department").value;
 
-                    messageBox.classList.remove("hidden");
+    let emailTo = "";
 
-                    form.reset();
+    if (department === "complaint") {
+        emailTo = "micheal1242002@gmail.com";
+    } 
+    else if (department === "management") {
+        emailTo = "michealsely527@gmail.com";
+    } 
+    else if (department === "inquiry") {
+        emailTo = "info@rosetravell.com";
+    } 
+    else {
+        alert("من فضلك اختر نوع الرسالة");
+        return;
+    }
 
-                    setTimeout(() => {
-                        messageBox.classList.add("hidden");
-                    }, 4000);
+    const formData = {
+        name: form.name.value,
+        phone: form.phone.value,
+        email: form.email.value,
+        message: form.message.value,
+        email_to: emailTo
+    };
 
-                }, function (error) {
+    emailjs.send("service_6jix5lt", "template_s6neetj", formData)
+    .then(() => {
 
-                    messageBox.className =
-                        "mt-4 text-center rounded-xl px-6 py-4 font-semibold bg-red-100 text-red-700";
+        messageBox.className =
+        "mt-4 text-center rounded-xl px-6 py-4 font-semibold bg-green-100 text-green-700";
 
-                    messageBox.innerHTML = "❌ حدث خطأ أثناء الإرسال، حاول مرة أخرى";
+        messageBox.innerHTML = "✅ تم إرسال الرسالة بنجاح، سنتواصل معك قريباً";
 
-                    messageBox.classList.remove("hidden");
+        messageBox.classList.remove("hidden");
 
-                    setTimeout(() => {
-                        messageBox.classList.add("hidden");
-                    }, 4000);
+        form.reset();
 
-                });
-        });
-    </script>
+        setTimeout(() => {
+            messageBox.classList.add("hidden");
+        }, 4000);
+
+    })
+    .catch(() => {
+
+        messageBox.className =
+        "mt-4 text-center rounded-xl px-6 py-4 font-semibold bg-red-100 text-red-700";
+
+        messageBox.innerHTML = "❌ حدث خطأ أثناء الإرسال، حاول مرة أخرى";
+
+        messageBox.classList.remove("hidden");
+
+    });
+
+});
+
+</script>
 
 
 
