@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روز للسفر والسياحة | مدونة إبداعية</title>
+    <!-- TailwindCSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Custom fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        /* تخصيصات إضافية للتأثيرات */
+        .hero-pattern {
+            background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 40px -20px rgba(230, 154, 23, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+
+    <!-- نفبار مطورة - عصرية وتفاعلية -->
+    <nav id="mainNav" class="fixed w-full z-50 transition-all duration-500" dir="rtl">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- الطبقة الرئيسية مع تأثير الزجاج -->
+            <div class="flex items-center justify-between my-3 px-6 py-3 rounded-2xl transition-all duration-500 backdrop-blur-md"
+                id="navContainer"
+                style="background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(230, 154, 23, 0.2);">
+
+                <!-- Logo مع تأثير متحرك -->
+                <div class="flex items-center gap-3 group">
+                    <div class="relative">
+                        <img src="../img/logo.webp" class="w-16 h-16" alt="">
+
+                    </div>
+                    <!-- <span class="text-2xl font-black text-[#e69a17] tracking-tight">
+                    روز <span class="text-[#e69a17] relative">للسفر
+                        <span class="absolute -bottom-1 right-0 w-0 group-hover:w-full h-0.5 bg-[#e69a17] transition-all duration-300"></span>
+                    </span>
+                </span> -->
+                </div>
+
+                <!-- القائمة الرئيسية - تصميم مطور -->
+                <div class="hidden lg:flex items-center gap-1">
+                    <!-- الرابط النشط -->
+                    <a href="../index.html"
+                        class="relative px-5 py-2.5 rounded-xl text-[#e69a17] font-semibold transition-all duration-300 group active-nav">
+                        <span class="relative z-10">الرئيسية</span>
+                        <span
+                            class="absolute inset-0 bg-[#e69a17]/10 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                    </a>
+
+                    <a href="../about.html"
+                        class="relative px-5 py-2.5 rounded-xl text-[#e69a17] font-semibold transition-all duration-300 group">
+                        <span class="relative z-10">من نحن </span>
+                        <span
+                            class="absolute inset-0 bg-[#e69a17]/10 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                        <!-- عداد للرحلات الجديدة -->
+                    </a>
+
+                    <a href="#"
+                        class="relative px-5 py-2.5 rounded-xl text-[#e69a17] font-semibold transition-all duration-300 group">
+                        <span class="relative z-10">المدونة</span>
+                        <span
+                            class="absolute inset-0 bg-[#e69a17]/10 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                    </a>
+
+                    <a href="../services.html"
+                        class="relative px-5 py-2.5 rounded-xl text-[#e69a17] font-semibold transition-all duration-300 group">
+                        <span class="relative z-10">خدماتنا </span>
+                        <span
+                            class="absolute inset-0 bg-[#e69a17]/10 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                    </a>
+
+                    <a href="../contact.html"
+                        class="relative px-5 py-2.5 rounded-xl text-[#e69a17] font-semibold transition-all duration-300 group">
+                        <span class="relative z-10"> تواصل معنا </span>
+                        <span
+                            class="absolute inset-0 bg-[#e69a17]/10 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                    </a>
+                </div>
+
+                <!-- الأيقونات والحجز - تصميم مطور -->
+                <div class="flex items-center gap-3">
+
+
+                    <!-- زر حجز متطور -->
+                    <button class="relative group overflow-hidden rounded-full">
+                        <!-- خلفية متدرجة -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-[#e69a17] to-[#f5b347] group-hover:from-[#0f1729] group-hover:to-[#1e293b] transition-all duration-500">
+                        </div>
+
+                        <!-- محتوى الزر -->
+                        <a href="tel:0502113147" class="relative px-6 py-2.5 flex items-center gap-2 text-white font-bold">
+                            <i class="fas fa-calendar-check text-sm"></i>
+                            <span>احجز الآن</span>
+                            <i
+                                class="fas fa-arrow-left text-sm transform group-hover:-translate-x-1 transition-transform duration-300"></i>
+                        </a>
+
+                        <!-- تأثير النور المتحرك -->
+                        <div
+                            class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12">
+                        </div>
+                    </button>
+
+                    <!-- زر القائمة الجانبية للموبايل -->
+                    <button id="mobileMenuBtn"
+                        class="lg:hidden relative w-10 h-10 rounded-full bg-[#e69a17]/10 hover:bg-[#e69a17] transition-colors duration-300 group">
+                        <i class="fas fa-bars text-[#e69a17] group-hover:text-white transition-colors duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة للجوال -->
+        <div id="mobileSidebar"
+            class="lg:hidden fixed inset-y-0 right-0 w-72 bg-white shadow-2xl transform translate-x-full transition-transform duration-500 ease-out z-50 border-l-4 border-[#e69a17]">
+            <div class="p-6 bg-gradient-to-b from-[#0f1729] to-[#1a2639] text-white h-full overflow-y-auto">
+                <!-- رأس القائمة -->
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center gap-2">
+                          <img src="../img/logo.webp" class="w-16 h-16" alt="">
+                        
+                    </div>
+                    <button id="closeMobileMenu"
+                        class="w-8 h-8 rounded-full bg-white/10 hover:bg-[#e69a17] transition-colors duration-300 flex items-center justify-center">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- روابط الجوال -->
+                <div class="space-y-2">
+                    <a href="../index.html"
+                        class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#e69a17] transition-all duration-300 group">
+                        <i class="fas fa-home w-6 text-[#e69a17] group-hover:text-white transition-colors"></i>
+                        <span>الرئيسية</span>
+                    </a>
+                    <a href="../about.html"
+                        class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#e69a17] transition-all duration-300 group">
+                        <i class="fas fa-plane w-6 text-[#e69a17] group-hover:text-white transition-colors"></i>
+                       من نحن 
+                    </a>
+                    <a href="#"
+                        class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#e69a17] transition-all duration-300 group bg-[#e69a17]/20">
+                        <i class="fas fa-blog w-6 text-[#e69a17] group-hover:text-white transition-colors"></i>
+                        <span>المدونة</span>
+                    </a>
+                    <a href="../services.html"
+                        class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#e69a17] transition-all duration-300 group">
+                        <i class="fas fa-info-circle w-6 text-[#e69a17] group-hover:text-white transition-colors"></i>
+                        <span>خدماتنا</span>
+                    </a>
+                    <a href="../contact.html"
+                        class="flex items-center gap-3 p-3 rounded-xl hover:bg-[#e69a17] transition-all duration-300 group">
+                        <i class="fas fa-envelope w-6 text-[#e69a17] group-hover:text-white transition-colors"></i>
+                        <span> تواصل معنا </span>
+                    </a>
+                </div>
+
+                <!-- معلومات الاتصال -->
+                <div class="mt-8 p-4 rounded-xl bg-white/5 border border-white/10">
+                    <h4 class="font-bold mb-3 flex items-center gap-2">
+                        <i class="fas fa-phone-alt text-[#e69a17]"></i>
+                        تواصل معنا
+                    </h4>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p>📞 +966 502113147</p>
+                        <p>✉️ info@rose-travel.com</p>
+                    </div>
+                </div>
+
+                <!-- وسائل التواصل الاجتماعي -->
+                <div class="mt-6 flex justify-center gap-3">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e69a17] transition-colors duration-300 flex items-center justify-center">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e69a17] transition-colors duration-300 flex items-center justify-center">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e69a17] transition-colors duration-300 flex items-center justify-center">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 hover:bg-[#e69a17] transition-colors duration-300 flex items-center justify-center">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- طبقة خلفية عند فتح القائمة الجانبية -->
+        <div id="overlay"
+            class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-500 z-40 lg:hidden">
+        </div>
+    </nav>
+
+    <!-- إضافة Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- JavaScript للتفاعلات -->
+    <script>
+        // عناصر DOM
+        const nav = document.getElementById('mainNav');
+        const navContainer = document.getElementById('navContainer');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+        const overlay = document.getElementById('overlay');
+
+        // تغيير شكل النفبار عند التمرير
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navContainer.style.background = 'rgba(15, 23, 41, 0.95)'; // #0f1729 مع شفافية
+                navContainer.style.borderColor = '#e69a17';
+                navContainer.classList.add('shadow-2xl');
+
+                // تغيير ألوان النصوص
+                document.querySelectorAll('#mainNav .text-[#0f1729]').forEach(el => {
+                    el.style.color = '#0f1729';
+                });
+            } else {
+                navContainer.style.background = 'rgba(255, 255, 255, 0.9)';
+                navContainer.style.borderColor = 'rgba(230, 154, 23, 0.2)';
+                navContainer.classList.remove('shadow-2xl');
+
+                // إعادة ألوان النصوص
+                document.querySelectorAll('#mainNav .text-[#0f1729]').forEach(el => {
+                    el.style.color = '#0f1729';
+                });
+            }
+        });
+
+        // فتح القائمة الجانبية
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileSidebar.classList.remove('translate-x-full');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // إغلاق القائمة الجانبية
+        function closeSidebar() {
+            mobileSidebar.classList.add('translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeMobileMenu.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+
+        // إغلاق القائمة عند الضغط على ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileSidebar.classList.contains('translate-x-full')) {
+                closeSidebar();
+            }
+        });
+
+        // تأثيرات حركية للروابط
+        document.querySelectorAll('#mainNav .group').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.querySelector('span:last-child')?.classList.remove('scale-0');
+            });
+
+            link.addEventListener('mouseleave', () => {
+                link.querySelector('span:last-child')?.classList.add('scale-0');
+            });
+        });
+
+        // تمييز الرابط النشط
+        const currentPath = window.location.pathname;
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active-nav');
+            }
+        });
+    </script>
+
+    <!-- CSS إضافي -->
+    <style>
+        /* تأثيرات مخصصة */
+        .active-nav {
+            position: relative;
+            color: #e69a17 !important;
+        }
+
+        .active-nav::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 5px;
+            height: 5px;
+            background: #e69a17;
+            border-radius: 50%;
+        }
+
+        /* تحسين التمرير في القائمة الجانبية */
+        #mobileSidebar>div {
+            scrollbar-width: thin;
+            scrollbar-color: #e69a17 #0f1729;
+        }
+
+        #mobileSidebar>div::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #mobileSidebar>div::-webkit-scrollbar-track {
+            background: #0f1729;
+        }
+
+        #mobileSidebar>div::-webkit-scrollbar-thumb {
+            background: #e69a17;
+            border-radius: 4px;
+        }
+
+        /* تأثير النبض للعداد */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+    <!-- هيرو إبداعي مع خلفية بيضاء -->
+    <section class="hero-pattern min-h-screen pt-24 flex items-center relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- النص الرئيسي -->
+                <div class="space-y-6">
+                    <span class="text-[#e69a17] font-bold text-lg inline-block bg-[#e69a17]/10 px-4 py-2 rounded-full">
+                        <i class="fas fa-plane-departure ml-2"></i> مدونة السفر الأولى
+                    </span>
+                    <h1 class="text-5xl md:text-6xl font-black text-[#0f1729] leading-tight">
+                        اكتشف <span class="text-[#e69a17]">العالم</span> <br>مغامرات لا تنسى
+                    </h1>
+                    <p class="text-gray-600 text-lg leading-relaxed max-w-lg">
+                        انضم إلى مجتمع المسافرين واكتشف أجمل الوجهات، نصائح السفر، وتجارب فريدة من وكالة روز للسفر.
+                    </p>
+
+                    <!-- مربع بحث متقدم -->
+                    <div class="bg-white p-2 rounded-full shadow-xl border border-gray-100 max-w-lg flex">
+                        <input type="text" placeholder="ابحث عن وجهتك المفضلة..."
+                            class="flex-1 px-6 py-3 outline-none text-gray-700 rounded-full">
+                        <button
+                            class="bg-[#e69a17] text-white px-8 py-3 rounded-full font-bold hover:bg-[#0f1729] transition duration-300">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+
+                    <!-- إحصائيات سريعة -->
+                    <div class="flex items-center space-x-8 rtl:space-x-reverse pt-4">
+                        <div>
+                            <span class="text-3xl font-black text-[#0f1729]">500+</span>
+                            <p class="text-gray-500 text-sm">مقال سياحي</p>
+                        </div>
+                        <div class="w-px h-10 bg-gray-300"></div>
+                        <div>
+                            <span class="text-3xl font-black text-[#0f1729]">15k+</span>
+                            <p class="text-gray-500 text-sm">متابع سعيد</p>
+                        </div>
+                        <div class="w-px h-10 bg-gray-300"></div>
+                        <div>
+                            <span class="text-3xl font-black text-[#0f1729]">120+</span>
+                            <p class="text-gray-500 text-sm">وجهة سياحية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- صورة مميزة متحركة -->
+                <div class="relative hidden md:block">
+                    <div class="absolute -top-10 -right-10 w-72 h-72 bg-[#e69a17]/10 rounded-full blur-3xl"></div>
+                    <div
+                        class="relative bg-white p-4 rounded-[40px] shadow-2xl rotate-3 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?q=80&w=2070&auto=format&fit=crop"
+                            alt="Travel" class="rounded-[30px] w-full h-[400px] object-cover">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-camera text-[#e69a17] text-2xl"></i>
+                                <span class="font-bold text-[#0f1729]">وجهات 2026</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المقالات المميزة -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <!-- عنوان القسم بتصميم مبتكر -->
+            <div class="text-center mb-16">
+                <span class="text-[#e69a17] font-bold tracking-wider text-sm">أحدث المقالات</span>
+                <h2 class="text-4xl md:text-5xl font-black text-[#0f1729] mt-2 mb-4">مغامرات <span
+                        class="text-[#e69a17]">ملهمة</span></h2>
+                <div class="w-24 h-1 bg-[#e69a17] mx-auto rounded-full"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6">استكشف مقالاتنا الحصرية من جميع أنحاء العالم، مع نصائح
+                    الخبراء وتجارب حقيقية</p>
+            </div>
+
+            <!-- شبكة الكروت الإبداعية -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- كارت 1 - تصميم مبتكر -->
+                <div class="group card-hover bg-white rounded-[40px] overflow-hidden shadow-xl border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=2083&auto=format&fit=crop"
+                            alt="إسطنبول"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-[#e69a17] text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="fas fa-map-pin ml-1"></i> تركيا
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#0f1729] px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> 5 دقائق
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-user-circle text-[#e69a17] text-2xl"></i>
+                                <span class="text-sm text-gray-600">نورا أحمد</span>
+                            </div>
+                            <span class="text-sm text-gray-400">١٥ مارس ٢٠٢٥</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-[#0f1729] mb-3 group-hover:text-[#e69a17] transition">
+                            إسطنبول: مدينة البوسفور الساحرة</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">رحلة عبر أزقة إسطنبول التاريخية، من آيا صوفيا إلى
+                            البازار الكبير، واكتشاف أسرار المطبخ التركي الشهي.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                <span class="text-sm text-gray-500 mr-2">(٤.٥)</span>
+                            </div>
+                            <a href="#"
+                                class="text-[#e69a17] font-bold hover:text-[#0f1729] transition flex items-center">
+                                اقرأ المزيد <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- كارت 2 - المالديف -->
+                <div class="group card-hover bg-white rounded-[40px] overflow-hidden shadow-xl border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?q=80&w=1968&auto=format&fit=crop"
+                            alt="المالديف"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-[#e69a17] text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="fas fa-map-pin ml-1"></i> المالديف
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#0f1729] px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> ٧ دقائق
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-user-circle text-[#e69a17] text-2xl"></i>
+                                <span class="text-sm text-gray-600">سامر عبدالله</span>
+                            </div>
+                            <span class="text-sm text-gray-400">١٠ مارس ٢٠٢٥</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-[#0f1729] mb-3 group-hover:text-[#e69a17] transition">
+                            المالديف: الجنة الاستوائية</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">تقرير مصور عن أجمل جزر المالديف، البنجلوهات
+                            الفاخرة، وتجارب الغوص مع الحياة البحرية النادرة.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm text-gray-500 mr-2">(٥.٠)</span>
+                            </div>
+                            <a href="#"
+                                class="text-[#e69a17] font-bold hover:text-[#0f1729] transition flex items-center">
+                                اقرأ المزيد <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- كارت 3 - اليابان -->
+                <div class="group card-hover bg-white rounded-[40px] overflow-hidden shadow-xl border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop"
+                            alt="اليابان"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-[#e69a17] text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="fas fa-map-pin ml-1"></i> اليابان
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#0f1729] px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> ١٠ دقائق
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-user-circle text-[#e69a17] text-2xl"></i>
+                                <span class="text-sm text-gray-600">ليلى محمود</span>
+                            </div>
+                            <span class="text-sm text-gray-400">٥ مارس ٢٠٢٥</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-[#0f1729] mb-3 group-hover:text-[#e69a17] transition">
+                            اليابان: ما بين التقاليد والمستقبل</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">رحلة إلى بلاد الشمس المشرقة، من معابد كيوتو إلى
+                            شوارع طوكيو النابضة بالحياة.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="far fa-star text-yellow-400"></i>
+                                <span class="text-sm text-gray-500 mr-2">(٤.٠)</span>
+                            </div>
+                            <a href="#"
+                                class="text-[#e69a17] font-bold hover:text-[#0f1729] transition flex items-center">
+                                اقرأ المزيد <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- كارت 4 - باريس -->
+                <div class="group card-hover bg-white rounded-[40px] overflow-hidden shadow-xl border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop"
+                            alt="باريس"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-[#e69a17] text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="fas fa-map-pin ml-1"></i> فرنسا
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#0f1729] px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> ٦ دقائق
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-user-circle text-[#e69a17] text-2xl"></i>
+                                <span class="text-sm text-gray-600">كريم وليد</span>
+                            </div>
+                            <span class="text-sm text-gray-400">١ مارس ٢٠٢٥</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-[#0f1729] mb-3 group-hover:text-[#e69a17] transition">باريس:
+                            مدينة الحب والأناقة</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">دليلك الشامل لأجمل المقاهي والمتاحف الباريسية، مع
+                            نصائح لتوفير المال والاستمتاع برومانسية المدينة.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                <span class="text-sm text-gray-500 mr-2">(٤.٥)</span>
+                            </div>
+                            <a href="#"
+                                class="text-[#e69a17] font-bold hover:text-[#0f1729] transition flex items-center">
+                                اقرأ المزيد <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- كارت 5 - مصر -->
+                <div class="group card-hover bg-white rounded-[40px] overflow-hidden shadow-xl border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?q=80&w=2070&auto=format&fit=crop"
+                            alt="مصر" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-[#e69a17] text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="fas fa-map-pin ml-1"></i> مصر
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#0f1729] px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> ٨ دقائق
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-user-circle text-[#e69a17] text-2xl"></i>
+                                <span class="text-sm text-gray-600">هبة الله</span>
+                            </div>
+                            <span class="text-sm text-gray-400">٢٥ فبراير ٢٠٢٥</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-[#0f1729] mb-3 group-hover:text-[#e69a17] transition">مصر:
+                            رحلة عبر الزمن</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">استكشف عظمة الفراعنة في الأقصر وأسوان، واستمتع
+                            بجمال البحر الأحمر وشرم الشيخ.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm text-gray-500 mr-2">(٥.٠)</span>
+                            </div>
+                            <a href="#"
+                                class="text-[#e69a17] font-bold hover:text-[#0f1729] transition flex items-center">
+                                اقرأ المزيد <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- كارت 6 - إيطاليا -->
+                <div class="group card-hover bg-white rounded-[40px] overflow-hidden shadow-xl border border-gray-100">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?q=80&w=2076&auto=format&fit=crop"
+                            alt="إيطاليا"
+                            class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div
+                            class="absolute top-4 left-4 bg-[#e69a17] text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="fas fa-map-pin ml-1"></i> إيطاليا
+                        </div>
+                        <div
+                            class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm text-[#0f1729] px-4 py-2 rounded-full text-sm font-bold">
+                            <i class="far fa-clock ml-1"></i> ٦ دقائق
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-user-circle text-[#e69a17] text-2xl"></i>
+                                <span class="text-sm text-gray-600">أحمد فوزي</span>
+                            </div>
+                            <span class="text-sm text-gray-400">٢٠ فبراير ٢٠٢٥</span>
+                        </div>
+                        <h3 class="text-2xl font-black text-[#0f1729] mb-3 group-hover:text-[#e69a17] transition">
+                            إيطاليا: فن وطعام وتاريخ</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">من روما الخالدة إلى فينيسيا الرومانسية، وزيارة
+                            مصانع الجبن والبيتزا في نابولي.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                <span class="text-sm text-gray-500 mr-2">(٤.٥)</span>
+                            </div>
+                            <a href="#"
+                                class="text-[#e69a17] font-bold hover:text-[#0f1729] transition flex items-center">
+                                اقرأ المزيد <i class="fas fa-arrow-left mr-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- زر عرض المزيد -->
+            <div class="text-center mt-16">
+                <button
+                    class="bg-white border-2 border-[#e69a17] text-[#e69a17] hover:bg-[#e69a17] hover:text-white px-10 py-4 rounded-full font-bold text-lg transition duration-300 shadow-lg hover:shadow-2xl">
+                    عرض جميع المقالات
+                    <i class="fas fa-arrow-down mr-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="bg-[#1a2336] text-white py-8 md:py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- المحتوى الرئيسي للفوتر -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-8 lg:mb-12">
+
+                <!-- شعار ووصف الوكالة -->
+                <div class="col-span-1">
+                    <div class="flex items-center gap-3 mb-4 lg:mb-6">
+                        <img src="../img/logo.webp" class="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16"
+                            alt="شعار وكالة روز">
+                        <h2 class="text-xl md:text-2xl font-bold">وكالة روز</h2>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4 lg:mb-6">
+                        نحن نقدم أفضل خدمات السفر والسياحة لضمان تجربة ممتعة ومريحة لعملائنا الكرام حول العالم.
+                    </p>
+                    <div>
+                        <h3 class="font-bold mb-3 lg:mb-4 text-sm md:text-base md:mt-[100px]">تابعنا على :</h3>
+                        <div class="flex gap-3 ">
+
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/rosee.travel/" class="bg-[#1877F2] text-white rounded-full px-5 w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:brightness-90">
+                                <i class="fab fa-facebook-f text-sm md:text-base"></i>
+                            </a>
+
+                            <!-- X (Twitter الجديد) -->
+                            <a href="https://x.com/rosetravel_sa" class="bg-black text-white rounded-full px-5 w-9 h-9 md:w-10 md:h-10 
+           flex items-center justify-center 
+           transition duration-300 transform hover:scale-110 hover:opacity-80">
+                                <i class="fa-brands fa-x-twitter text-sm md:text-base"></i>
+                            </a>
+
+
+                            <!-- TikTok -->
+                            <a href="https://www.tiktok.com/@rose_travel_agency" class="bg-black text-white rounded-full px-5 w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:opacity-80">
+                                <i class="fab fa-tiktok text-sm md:text-base"></i>
+                            </a>
+
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/rosetravel.sa" class="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 
+                   text-white rounded-full px-5 w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:opacity-90">
+                                <i class="fab fa-instagram text-sm md:text-base"></i>
+                            </a>
+
+                            <!-- Email -->
+                            <a href="mailto:Hatem@Rosetravell.com" class="bg-gray-600 text-white rounded-full px-5 w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:bg-gray-700">
+                                <i class="fas fa-envelope text-sm md:text-base"></i>
+                            </a>
+
+                            <!-- Snapchat -->
+                            <a href="https://www.snapchat.com/add/rosetravel-sa" class="bg-[#FFFC00] text-black rounded-full px-5 w-9 h-9 md:w-10 md:h-10 
+                   flex items-center justify-center 
+                   transition duration-300 transform hover:scale-110 hover:brightness-95">
+                                <i class="fab fa-snapchat-ghost text-sm md:text-base"></i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- الصفحات الرئيسية -->
+                <div class="col-span-1">
+                    <div class="mb-6 lg:mb-8">
+                        <h3
+                            class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
+                            الصفحات الرئيسية
+                            <span class="text-teal-300 mr-2">⋯</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-2 lg:space-y-3 text-gray-200">
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> الرئيسية
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../about.html"
+                                class="hover:text-white transition duration-300  flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> من نحن
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../services.html"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> خدماتنا
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="./contact.html"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> تواصل معنا
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- باقات السفر -->
+                <div class="col-span-1">
+                    <div class="mb-6 lg:mb-8">
+                        <h3
+                            class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
+                            باقات السفر
+                            <span class="text-teal-300 mr-2">⋯</span>
+                        </h3>
+                    </div>
+                    <ul class="space-y-2 lg:space-y-3 text-gray-200">
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> رحلة فاخرة إلى جزر المالديف
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> مغامرة ميلانو وروما
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> باقة عطلة دبي
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> الرحلة الذهبية لامريكا
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                                class="hover:text-white transition duration-300 flex items-center gap-2 text-sm md:text-base">
+                                <span class="text-teal-300 text-xs md:text-sm">✦</span> جولة استمتاع داخل القاهرة
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- اتصل بنا -->
+                <div class="col-span-1">
+                    <div class="mb-6 lg:mb-8">
+                        <h3
+                            class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
+                            اتصل بنا
+                            <span class="text-teal-300 mr-2">⋯</span>
+                        </h3>
+                    </div>
+                    <div class="space-y-4 lg:space-y-6">
+                        <!-- الهاتف -->
+                        <div class="flex flex-col gap-4">
+
+                            <!-- خدمة العملاء -->
+                            <div class="flex items-start gap-3 md:gap-4">
+                                <div
+                                    class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-sm md:text-base lg:text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1 text-sm md:text-base">خدمة العملاء</h4>
+                                    <p class="text-gray-300 text-xs md:text-sm flex gap-2">
+                                        <a href="tel:0502113147" class="hover:text-blue-500">0502113147</a>
+                                        |
+                                        <a href="https://wa.me/966502113147" target="_blank"
+                                            class="hover:text-green-500">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- الإدارة -->
+                            <div class="flex items-start gap-3 md:gap-4">
+                                <div
+                                    class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-sm md:text-base lg:text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1 text-sm md:text-base">التواصل مع الإدارة</h4>
+                                    <p class="text-gray-300 text-xs md:text-sm flex gap-2">
+                                        <a href="tel:0554482154" class="hover:text-blue-500">0554482154</a>
+                                        |
+                                        <a href="https://wa.me/966554482154" target="_blank"
+                                            class="hover:text-green-500">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- البريد -->
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <div
+                                class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-sm md:text-base lg:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 text-sm md:text-base">البريد الإلكتروني</h4>
+                                <p class="text-gray-300 text-xs md:text-sm">Hatem@Rosetravell.com</p>
+                                <p class="text-gray-300 text-xs md:text-sm">Saleh@Rosetravell.com</p>
+                            </div>
+                        </div>
+
+                        <!-- الموقع -->
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <div
+                                class="bg-white text-[#1a2336] rounded-full w-10 h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-sm md:text-base lg:text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1 text-sm md:text-base">موقع المكتب</h4>
+                                <p class="text-gray-300 text-xs md:text-sm">جدة - المملكة العربية السعودية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- البيانات الرسمية -->
+                <div class="col-span-1">
+                    <div class="mb-6 lg:mb-8">
+                        <h3
+                            class="text-base md:text-lg font-bold mb-3 lg:mb-4 pb-2 border-b-2 border-white inline-block">
+                            البيانات الرسمية
+                            <span class="text-teal-300 mr-2">⋯</span>
+                        </h3>
+                    </div>
+
+                    <div class="space-y-4 text-gray-300 text-sm">
+
+                        <div>
+                            <p class="font-semibold text-white">السجل التجاري</p>
+                            <p>7053006909</p>
+                        </div>
+
+                        <div>
+                            <p class="font-semibold text-white">رقم الترخيص</p>
+                            <p>73107227</p>
+                        </div>
+
+                        <!-- QR -->
+                        <div class="mt-4">
+                            <img src="../img/qr-code.png" alt="QR Code"
+                                class="w-28 h-28 bg-white p-2 rounded-xl shadow-md">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- خط فاصل -->
+            <div class="border-t border-teal-700/50 my-6 lg:my-8"></div>
+
+
+
+        </div>
+    </footer>
+
+    <!-- سكربت بسيط للتفاعل -->
+    <script>
+        // تأثيرات إضافية عند التمرير للنفبار
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95');
+                nav.classList.remove('bg-white/90');
+            } else {
+                nav.classList.remove('bg-white/95');
+                nav.classList.add('bg-white/90');
+            }
+        });
+    </script>
+</body>
+
+</html>
